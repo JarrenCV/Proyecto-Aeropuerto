@@ -30,6 +30,24 @@
     <ClInclude Include="Avion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="AviacionCivil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AvionComercial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AvionDeCarga.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AviacionMilitar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NodoAvion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListaAviones.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TablaAMilitar.cpp">
@@ -45,6 +63,27 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Avion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AviacionCivil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AvionComercial.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AvionDeCarga.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AviacionMilitar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NodoAvion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListaAviones.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Principal.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

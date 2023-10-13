@@ -127,15 +127,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AviacionCivil.h" />
+    <ClInclude Include="AviacionMilitar.h" />
     <ClInclude Include="Avion.h" />
+    <ClInclude Include="AvionComercial.h" />
+    <ClInclude Include="AvionDeCarga.h" />
     <ClInclude Include="Fecha.h" />
+    <ClInclude Include="ListaAviones.h" />
+    <ClInclude Include="NodoAvion.h" />
     <ClInclude Include="TablaACarga.h" />
     <ClInclude Include="TablaAComercial.h" />
     <ClInclude Include="TablaAMilitar.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AviacionCivil.cpp" />
+    <ClCompile Include="AviacionMilitar.cpp" />
     <ClCompile Include="Avion.cpp" />
+    <ClCompile Include="AvionComercial.cpp" />
+    <ClCompile Include="AvionDeCarga.cpp" />
     <ClCompile Include="Fecha.cpp" />
+    <ClCompile Include="ListaAviones.cpp" />
+    <ClCompile Include="NodoAvion.cpp" />
+    <ClCompile Include="Principal.cpp" />
     <ClCompile Include="TablaACarga.cpp" />
     <ClCompile Include="TablaAComercial.cpp" />
     <ClCompile Include="TablaAMilitar.cpp" />

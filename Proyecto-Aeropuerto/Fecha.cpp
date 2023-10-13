@@ -47,3 +47,10 @@ int Fecha::getAnio()
 {
     return anio;
 }
+
+string Fecha::toString()
+{
+    stringstream s;
+    s << dia << "/" << mes << "/" << anio;
+    return s.str();
+}

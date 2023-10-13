@@ -2,14 +2,19 @@
 
 Avion::Avion()
 {
+    fechaCreacion = NULL;
+    distanciaRecorrida = 0;
 }
 
-Avion::Avion(Fecha&, double)
+Avion::Avion(Fecha& fC, double dR)
 {
+    fechaCreacion = (Fecha*)&fC;
+    distanciaRecorrida = dR;
 }
 
 Avion::~Avion()
 {
+    if (fechaCreacion != NULL) delete fechaCreacion;
 }
 
 void Avion::setFecha(int d, int m, int a)

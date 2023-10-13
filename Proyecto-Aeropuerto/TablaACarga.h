@@ -4,6 +4,7 @@
 using namespace std;
 
 class TablaACarga{
+public:
 	static string nombre(string);
 	static double carga(string);
 	static int pasajeros(string);

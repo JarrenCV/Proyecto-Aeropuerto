@@ -4,6 +4,7 @@
 using namespace std;
 
 class TablaAComercial{
+public:
 	static string nombre(string);
 	static int pasajeros(string);
 	static double rango(string);

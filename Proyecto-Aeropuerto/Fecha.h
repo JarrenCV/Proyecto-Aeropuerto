@@ -20,5 +20,7 @@ public:
 	int getDia();
 	int getMes();
 	int getAnio();
+
+	string toString();
 };
 
