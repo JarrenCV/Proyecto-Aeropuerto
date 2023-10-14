@@ -21,7 +21,7 @@
     <ClInclude Include="TablaACarga.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TablaAComercial.h">
+    <ClInclude Include="TablaAviones.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Fecha.h">
@@ -50,13 +50,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="TablaAMilitar.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TablaACarga.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TablaAComercial.cpp">
+    <ClCompile Include="TablaAviones.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Fecha.cpp">

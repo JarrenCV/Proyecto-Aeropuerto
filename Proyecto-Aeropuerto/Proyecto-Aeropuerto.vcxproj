@@ -136,7 +136,7 @@
     <ClInclude Include="ListaAviones.h" />
     <ClInclude Include="NodoAvion.h" />
     <ClInclude Include="TablaACarga.h" />
-    <ClInclude Include="TablaAComercial.h" />
+    <ClInclude Include="TablaAviones.h" />
     <ClInclude Include="TablaAMilitar.h" />
   </ItemGroup>
   <ItemGroup>
@@ -149,9 +149,7 @@
     <ClCompile Include="ListaAviones.cpp" />
     <ClCompile Include="NodoAvion.cpp" />
     <ClCompile Include="Principal.cpp" />
-    <ClCompile Include="TablaACarga.cpp" />
-    <ClCompile Include="TablaAComercial.cpp" />
-    <ClCompile Include="TablaAMilitar.cpp" />
+    <ClCompile Include="TablaAviones.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

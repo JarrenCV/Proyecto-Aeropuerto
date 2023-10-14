@@ -1,7 +1,7 @@
 #pragma once
 #include"Fecha.h"
 #include"TablaACarga.h"
-#include"TablaAComercial.h"
+#include"TablaAviones.h"
 #include"TablaAMilitar.h"
 
 class Avion{
