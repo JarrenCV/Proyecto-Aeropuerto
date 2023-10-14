@@ -135,9 +135,7 @@
     <ClInclude Include="Fecha.h" />
     <ClInclude Include="ListaAviones.h" />
     <ClInclude Include="NodoAvion.h" />
-    <ClInclude Include="TablaACarga.h" />
     <ClInclude Include="TablaAviones.h" />
-    <ClInclude Include="TablaAMilitar.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AviacionCivil.cpp" />

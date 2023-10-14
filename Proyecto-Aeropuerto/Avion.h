@@ -1,8 +1,6 @@
 #pragma once
 #include"Fecha.h"
-#include"TablaACarga.h"
 #include"TablaAviones.h"
-#include"TablaAMilitar.h"
 
 class Avion{
 protected:

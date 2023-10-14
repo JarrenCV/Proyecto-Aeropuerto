@@ -15,12 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="TablaAMilitar.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TablaACarga.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="TablaAviones.h">
       <Filter>Header Files</Filter>
     </ClInclude>
