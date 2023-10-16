@@ -2,7 +2,7 @@
 #include"AvionDeCarga.h"
 #include"AviacionMilitar.h"
 #include"ListaAviones.h"
-
+// siuuuuuuuuuu
 int main() {
 
 	Fecha* aC1 = new Fecha(11, 3, 1998);
