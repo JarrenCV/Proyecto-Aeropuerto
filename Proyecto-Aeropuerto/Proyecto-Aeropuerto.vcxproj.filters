@@ -42,6 +42,36 @@
     <ClInclude Include="ListaAviones.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Empleado.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tripulacion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Piloto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Copiloto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Azafata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Planta.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Adminitrativo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Miscelaneo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NodoEmpleado.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListaEmpleados.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TablaAviones.cpp">
@@ -72,6 +102,36 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Principal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Empleado.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tripulacion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Piloto.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Copiloto.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Azafata.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Planta.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Adminitrativo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Miscelaneo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NodoEmpleado.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListaEmpleados.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

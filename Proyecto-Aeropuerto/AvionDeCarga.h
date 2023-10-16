@@ -3,7 +3,6 @@
 
 class AvionDeCarga: public AviacionCivil{
 private:
-	string categoria;
 	double alturaPuerta;
 	double anchuraPuerta;
 public:
@@ -11,11 +10,9 @@ public:
 	AvionDeCarga(Fecha&, double, string, string, string, double, double);
 	virtual ~AvionDeCarga();
 
-	void setCategoria(string);
 	void setAlturaPuerta(double);
 	void setAnchuraPuerta(double);
-
-	string getCategoria();
+	
 	double getAlturaPuerta();
 	double getAnchuraPuerta();
 

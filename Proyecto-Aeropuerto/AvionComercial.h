@@ -3,17 +3,11 @@
 
 class AvionComercial:public AviacionCivil{
 private:
-	//Preguntar esto.
-	string categoria;
+	//Queda sin atributos porque asi dijo el profe
 public:
 	AvionComercial();
 	AvionComercial(Fecha&,double,string,string,string);
 	virtual ~AvionComercial();
-
-
-	void setCategoria(string);
-	
-	string getCategoria();
 
 	string toString();
 };

@@ -2,26 +2,14 @@
 
 AvionComercial::AvionComercial():AviacionCivil()
 {
-    categoria = "No definida";
 }
 
-AvionComercial::AvionComercial(Fecha& fC, double dR, string nP, string tA, string cat):AviacionCivil(fC, dR, nP, tA)
+AvionComercial::AvionComercial(Fecha& fC, double dR, string nP, string tA, string cat):AviacionCivil(fC, dR, cat, tA, nP)
 {
-    categoria = cat;
 }
 
 AvionComercial::~AvionComercial()
 {
-}
-
-void AvionComercial::setCategoria(string cat)
-{
-    categoria = cat;
-}
-
-string AvionComercial::getCategoria()
-{
-    return categoria;
 }
 
 string AvionComercial::toString()

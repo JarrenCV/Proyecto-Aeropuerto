@@ -4,12 +4,16 @@ Avion::Avion()
 {
     fechaCreacion = NULL;
     distanciaRecorrida = 0;
+    categoria = "";
+    tipoAvion = "";
 }
 
-Avion::Avion(Fecha& fC, double dR)
+Avion::Avion(Fecha& fC, double dR, string categ, string tipoA)
 {
     fechaCreacion = (Fecha*)&fC;
     distanciaRecorrida = dR;
+    categoria = categ;
+    tipoAvion = tipoA;
 }
 
 Avion::~Avion()
@@ -29,6 +33,16 @@ void Avion::setDistanciaRecorrida(double dR)
     distanciaRecorrida = dR;
 }
 
+void Avion::setCategoria(string categ)
+{
+    categoria = categ;
+}
+
+void Avion::setTipoAvion(string tipoA)
+{
+    tipoAvion = tipoA;
+}
+
 Fecha* Avion::getFecha()
 {
     return fechaCreacion;
@@ -37,4 +51,14 @@ Fecha* Avion::getFecha()
 double Avion::getDistanciaRecorrida()
 {
     return distanciaRecorrida;
+}
+
+string Avion::getCategoria()
+{
+    return categoria;
+}
+
+string Avion::getTipoAvion()
+{
+    return tipoAvion;
 }

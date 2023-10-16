@@ -127,27 +127,47 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Adminitrativo.h" />
     <ClInclude Include="AviacionCivil.h" />
     <ClInclude Include="AviacionMilitar.h" />
     <ClInclude Include="Avion.h" />
     <ClInclude Include="AvionComercial.h" />
     <ClInclude Include="AvionDeCarga.h" />
+    <ClInclude Include="Azafata.h" />
+    <ClInclude Include="Copiloto.h" />
+    <ClInclude Include="Empleado.h" />
     <ClInclude Include="Fecha.h" />
     <ClInclude Include="ListaAviones.h" />
+    <ClInclude Include="ListaEmpleados.h" />
+    <ClInclude Include="Miscelaneo.h" />
     <ClInclude Include="NodoAvion.h" />
+    <ClInclude Include="NodoEmpleado.h" />
+    <ClInclude Include="Piloto.h" />
+    <ClInclude Include="Planta.h" />
     <ClInclude Include="TablaAviones.h" />
+    <ClInclude Include="Tripulacion.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Adminitrativo.cpp" />
     <ClCompile Include="AviacionCivil.cpp" />
     <ClCompile Include="AviacionMilitar.cpp" />
     <ClCompile Include="Avion.cpp" />
     <ClCompile Include="AvionComercial.cpp" />
     <ClCompile Include="AvionDeCarga.cpp" />
+    <ClCompile Include="Azafata.cpp" />
+    <ClCompile Include="Copiloto.cpp" />
+    <ClCompile Include="Empleado.cpp" />
     <ClCompile Include="Fecha.cpp" />
     <ClCompile Include="ListaAviones.cpp" />
+    <ClCompile Include="ListaEmpleados.cpp" />
+    <ClCompile Include="Miscelaneo.cpp" />
     <ClCompile Include="NodoAvion.cpp" />
+    <ClCompile Include="NodoEmpleado.cpp" />
+    <ClCompile Include="Piloto.cpp" />
+    <ClCompile Include="Planta.cpp" />
     <ClCompile Include="Principal.cpp" />
     <ClCompile Include="TablaAviones.cpp" />
+    <ClCompile Include="Tripulacion.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
