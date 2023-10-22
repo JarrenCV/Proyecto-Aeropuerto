@@ -19,6 +19,7 @@ string TablaAviones::nombre(string categ)
     //Militar
     if (categ == "M300") return "Airbus 300-600";
     if (categ == "M130") return "Antonov";
+    else return "codigo Inexistente";
 }
 
 double TablaAviones::carga(string categ) {
@@ -33,6 +34,7 @@ double TablaAviones::carga(string categ) {
     //Militar
     if (categ == "M300") return 1400;
     if (categ == "M130") return 1300;
+    else return -1;
 }
 
 int TablaAviones::pasajeros(string categ)
@@ -54,6 +56,7 @@ int TablaAviones::pasajeros(string categ)
     //Militar
     if (categ == "M300") return 0;
     if (categ == "M130") return 0;
+    else return -1;
 }
 
 double TablaAviones::rango(string categ)
@@ -75,6 +78,7 @@ double TablaAviones::rango(string categ)
     //Militar
     if (categ == "M300") return 4630;
     if (categ == "M130") return 4000;
+    else return -1;
 }
 
 double TablaAviones::velocidad(string categ)
@@ -86,6 +90,7 @@ double TablaAviones::velocidad(string categ)
     if (categ == "777") return 980;
     if (categ == "130") return 2200;
     if (categ == "850") return 875;
+    else return -1;
 }
 
 double TablaAviones::precio(string categ)
@@ -97,4 +102,5 @@ double TablaAviones::precio(string categ)
     if (categ == "777") return 180;
     if (categ == "130") return 350;
     if (categ == "850") return 80;
+    else return -1;
 }

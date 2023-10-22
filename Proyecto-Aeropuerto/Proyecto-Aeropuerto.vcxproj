@@ -134,6 +134,7 @@
     <ClInclude Include="AvionComercial.h" />
     <ClInclude Include="AvionDeCarga.h" />
     <ClInclude Include="Azafata.h" />
+    <ClInclude Include="Contrato.h" />
     <ClInclude Include="Copiloto.h" />
     <ClInclude Include="Empleado.h" />
     <ClInclude Include="Fecha.h" />
@@ -144,7 +145,11 @@
     <ClInclude Include="NodoEmpleado.h" />
     <ClInclude Include="Piloto.h" />
     <ClInclude Include="Planta.h" />
+    <ClInclude Include="Plaza.h" />
+    <ClInclude Include="PlazoFijo.h" />
+    <ClInclude Include="ServicioProfesional.h" />
     <ClInclude Include="TablaAviones.h" />
+    <ClInclude Include="TiempoIndefinido.h" />
     <ClInclude Include="Tripulacion.h" />
   </ItemGroup>
   <ItemGroup>
@@ -155,6 +160,7 @@
     <ClCompile Include="AvionComercial.cpp" />
     <ClCompile Include="AvionDeCarga.cpp" />
     <ClCompile Include="Azafata.cpp" />
+    <ClCompile Include="Contrato.cpp" />
     <ClCompile Include="Copiloto.cpp" />
     <ClCompile Include="Empleado.cpp" />
     <ClCompile Include="Fecha.cpp" />
@@ -165,8 +171,12 @@
     <ClCompile Include="NodoEmpleado.cpp" />
     <ClCompile Include="Piloto.cpp" />
     <ClCompile Include="Planta.cpp" />
+    <ClCompile Include="Plaza.cpp" />
+    <ClCompile Include="PlazoFijo.cpp" />
     <ClCompile Include="Principal.cpp" />
+    <ClCompile Include="ServicioProfesional.cpp" />
     <ClCompile Include="TablaAviones.cpp" />
+    <ClCompile Include="TiempoIndefinido.cpp" />
     <ClCompile Include="Tripulacion.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

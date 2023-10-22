@@ -72,6 +72,21 @@
     <ClInclude Include="ListaEmpleados.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Contrato.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ServicioProfesional.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PlazoFijo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TiempoIndefinido.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Plaza.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TablaAviones.cpp">
@@ -132,6 +147,21 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ListaEmpleados.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Contrato.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ServicioProfesional.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PlazoFijo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Plaza.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TiempoIndefinido.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
