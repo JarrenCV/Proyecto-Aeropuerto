@@ -36,6 +36,19 @@ void ListaEmpleados::ingresaUltimo(Empleado& emp)
     }
 }
 
+bool ListaEmpleados::buscaCedula(string ced) 
+{
+    NodoEmpleado* PE = ppio;
+
+    while (PE != NULL) {
+        if (PE->getEmpleado()->getCedula() == ced) {
+            return true;
+        }
+        PE = PE->getSigNodo();
+    }
+    return false;
+}
+
 string ListaEmpleados::toString()
 {
     stringstream s;

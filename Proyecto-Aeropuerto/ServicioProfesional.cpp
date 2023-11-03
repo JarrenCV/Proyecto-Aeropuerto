@@ -40,7 +40,7 @@ string ServicioProfecional::getTipoServicio()
 string ServicioProfecional::toString()
 {
     stringstream s;
-    s << "CONTRATO DE SERVICIO PROFECIONAL" << endl
+    s << "CONTRATO DE SERVICIO PROFESIONAL" << endl
         << empContratado->toString() << endl
         << "Horario: " << horario << endl
         << "Tipo de servicio: " << tipoServicio << endl;

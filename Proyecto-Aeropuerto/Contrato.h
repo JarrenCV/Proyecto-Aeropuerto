@@ -21,7 +21,7 @@ public:
 	virtual ~Contrato();  // Aquí si se borrarian los objetos dinámicos
 
 //-------------- set´s ------------------
-	void setCodigoContrado(string);
+	void setCodigoContrato(string);
 	void setDescripcionPuesto(string);
 	void setSalario(double);
 	void setFechaIngreso(Fecha*);
@@ -30,7 +30,7 @@ public:
 
 	void setEmpleadoContratado(Empleado*);
 //-------------- get´s ------------------
-	string getCodigoContrado();                      // los get´s deberían de ser virtuales? a parte de su toString ya que es una clase virtual y tal
+	string getCodigoContrato();                      // los get´s deberían de ser virtuales? a parte de su toString ya que es una clase virtual y tal
 	string getDescripcionPuesto();
 	double getSalario();
 	Fecha* getFechaIngreso();

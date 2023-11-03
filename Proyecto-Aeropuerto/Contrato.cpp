@@ -24,7 +24,7 @@ Contrato::~Contrato()
     if (empContratado != NULL) delete empContratado;
 }
 
-void Contrato::setCodigoContrado(string codC)
+void Contrato::setCodigoContrato(string codC)
 {
     codigoContrato = codC;
 }
@@ -39,21 +39,24 @@ void Contrato::setSalario(double sal)
     salario = sal;
 }
 
-void Contrato::setFechaIngreso(Fecha*)
+void Contrato::setFechaIngreso(Fecha* fI)
 {
+    ingresoLaboral = fI;
 }
 
-void Contrato::setFechaCulminacion(Fecha*)
+void Contrato::setFechaCulminacion(Fecha* fC)
 {
+    culminacionLaboral = fC;
 }
 
-void Contrato::setEmpleadoContratado(Empleado*)
+void Contrato::setEmpleadoContratado(Empleado* emp)
 {
+    empContratado = emp;
 }
 
 // -------------------------------------------------------------
 
-string Contrato::getCodigoContrado()
+string Contrato::getCodigoContrato()
 {
     return codigoContrato;
 }
