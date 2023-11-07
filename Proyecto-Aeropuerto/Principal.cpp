@@ -4,6 +4,7 @@
 #include"Adminitrativo.h"
 #include"Miscelaneo.h"
 #include"InterfazEmpleado.h"
+
 int main() {
 	int opcion;
 	ListaEmpleados* contEmpleados = new ListaEmpleados();
@@ -19,6 +20,7 @@ int main() {
 
 		switch (opcion) {
 		case 1:
+		{
 			// AQUI VA OTRO SUB MENU QUE PREGUNTA SI ES TRIPULANTE O MISELANEO
 			int segOpcion;
 			do {
@@ -64,7 +66,7 @@ int main() {
 					int cuartOpcion;
 					do {
 						cuartOpcion = InterfazEmpleado::menuEmpleadoPlanta();
-						
+
 						switch (cuartOpcion) {
 						case 1: {
 							InterfazEmpleado::ingresaInfoAdministrativo(*contEmpleados);
@@ -93,11 +95,53 @@ int main() {
 				system("cls");
 			} while (segOpcion != 3);
 
-
-		case 2: {
-
 		}
-		case 3: {
+		case 2: 
+		{
+			int opCase2;
+			do {
+				cout << "------------------MENU AVIONES------------------" << endl;
+				cout << "Digite (1)				Ingresar Avion Civil" << endl;
+				cout << "Digite (2)				Ingresar Avion militar" << endl;
+				cout << "Digite (3)				Cancelar" << endl;
+				cout << "--------------------------------------------------" << endl;
+				cout << "Digite la opcion: "; cin >> opCase2;
+				switch (opCase2) {
+				case 1:
+				{
+					int caseCivil;
+					do {
+						cout << "------------------MENU AVIACION CIVIL------------------" << endl;
+						cout << "Digite (1)				Ingresar Avion Comercial" << endl;
+						cout << "Digite (2)				Ingresar Avion De Carga" << endl;
+						cout << "Digite (3)				Cancelar" << endl;
+						cout << "----------------------------------------------------" << endl;
+						cout << "Digite la opcion: "; cin >> caseCivil;
+						switch (caseCivil) 
+						{
+						case 1:
+							break;
+						case 2:
+							break;
+						default:
+							cout << "Opcion invalida." << endl;
+
+						}
+						cin.get();
+						cin.get();
+						system("cls");
+					} while (caseCivil != 3);
+					break;
+				}
+				case 2: 
+				{
+					break;
+				}
+				}
+			} while (opCase2 != 3);
+		}
+		case 3: 
+		{
 		
 		}
 
