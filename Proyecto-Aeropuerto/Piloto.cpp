@@ -5,7 +5,7 @@ Piloto::Piloto():Tripulacion()
     aniosExperiencia = 0;
 }
 
-Piloto::Piloto(string ced, string nom, int ed, Avion& avi, int aniosExp) :Tripulacion(ced, nom, ed, avi)
+Piloto::Piloto(string ced, string nom, int ed, int aniosExp) :Tripulacion(ced, nom, ed)
 {
     aniosExperiencia = aniosExp;
 }
@@ -32,10 +32,6 @@ string Piloto::toString()
     s << "Cedula: " << cedula << endl;
     s << "Nombre: " << nombre << endl;
     s << "Edad: " << edad << endl;
-    if (getAvion() != NULL) {
-        s << "-------------AVION ASOCIADO-------------" << endl;
-        s << getAvion()->toString();
-    }
     s << "Anios de experiencia: " << aniosExperiencia <<endl;
     
     return s.str();

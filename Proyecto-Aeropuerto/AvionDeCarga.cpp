@@ -6,10 +6,11 @@ AvionDeCarga::AvionDeCarga():AviacionCivil()
     anchuraPuerta = 0;
 }
 
-AvionDeCarga::AvionDeCarga(Fecha& fC, double dR, string cat, string tA, string nP, double altP, double anchP) :AviacionCivil(fC, dR, cat, tA, nP)
+AvionDeCarga::AvionDeCarga(Fecha& fC, double dR, string cat, string nP, double altP, double anchP) :AviacionCivil(fC, dR, cat, nP)
 {
     alturaPuerta = altP;
     anchuraPuerta = anchP;
+    tipoAvion = 2;
 }
 
 AvionDeCarga::~AvionDeCarga()
@@ -39,7 +40,13 @@ double AvionDeCarga::getAnchuraPuerta()
 string AvionDeCarga::toString()
 {
     stringstream s;
-
+    if (piloto != NULL || copiloto != NULL) {
+        cout << "----------------Informacion de la tripulaicion----------------" << endl;
+        if (piloto != NULL)
+            cout << piloto->toString();
+        if (copiloto != NULL)
+            cout << copiloto->toString();
+    }
     s << "---------------AVION DE CARGA---------------" << endl;
     s << "Categoria: " << categoria << endl;
     s << "Fecha de creacion: " << fechaCreacion->toString() << endl;

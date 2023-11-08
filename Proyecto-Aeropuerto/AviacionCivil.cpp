@@ -5,7 +5,7 @@ AviacionCivil::AviacionCivil():Avion()
     numeroPlaca = "No definido";
 }
 
-AviacionCivil::AviacionCivil(Fecha& fC, double dR, string categ, string tipoA, string nP) :Avion(fC, dR, categ, tipoA)
+AviacionCivil::AviacionCivil(Fecha& fC, double dR, string categ, string nP) :Avion(fC, dR, categ)
 {
     numeroPlaca = nP;
 }

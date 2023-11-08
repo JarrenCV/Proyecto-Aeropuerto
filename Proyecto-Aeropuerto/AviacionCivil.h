@@ -8,7 +8,7 @@ private:
 
 public:
 	AviacionCivil();
-	AviacionCivil(Fecha&, double, string, string, string);
+	AviacionCivil(Fecha&, double, string, string);
 	virtual ~AviacionCivil();
 
 	void setNumeroPlaca(string);

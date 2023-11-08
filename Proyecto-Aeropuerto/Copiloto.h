@@ -6,7 +6,7 @@ private:
 	string telefono;
 public:
 	Copiloto();
-	Copiloto(string, string, int, Avion&, string);
+	Copiloto(string, string, int, string);
 	virtual ~Copiloto();
 
 	void setTelefono(string);

@@ -7,16 +7,15 @@ AviacionMilitar::AviacionMilitar():Avion()
    
 }
 
-AviacionMilitar::AviacionMilitar(Fecha& fC, double dR, string cat, string tAvionMili, double vMax) :Avion(fC, dR, cat, tAvionMili)
+AviacionMilitar::AviacionMilitar(Fecha& fC, double dR, string cat, double vMax) : Avion(fC, dR, cat)
 {
     velocidadMaxima = vMax;
+    tipoAvion = 3;
 }
 
 AviacionMilitar::~AviacionMilitar()
 {
 }
-
-
 
 void AviacionMilitar::setVelocidadMaxima(double vMax)
 {
@@ -31,7 +30,10 @@ double AviacionMilitar::getVelocidadMaxima()
 string AviacionMilitar::toString()
 {
     stringstream s;
-
+    if (piloto != NULL) {
+        cout << "----------------Informacion de la tripulaicion----------------" << endl;
+        cout << piloto->toString();
+    }
     s << "---------------AVION MILITAR---------------" << endl;
     s << "Categoria: " << categoria << endl;
     s << "Fecha de creacion: " << fechaCreacion->toString() << endl;

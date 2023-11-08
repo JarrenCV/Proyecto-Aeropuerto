@@ -20,7 +20,7 @@ int MenuPrincipal::menuIngresos()
 {
 	int opcion;
 	system("cls");
-	cout << "------------------MENU INGRESOS	------------------" << endl;
+	cout << "------------------MENU INGRESOS------------------" << endl;
 	cout << "Digite (1)				Ingresar Empleados" << endl;
 	cout << "Digite (2)				Ingresar Aviones" << endl;
 	cout << "Digite (3)				Crear un Contrato" << endl;
@@ -54,10 +54,10 @@ int MenuPrincipal::menuReportes()
 	cout << "Digite (1)             Reporte de contratos con emleados" << endl;
 	cout << "Digite (2)				Reporte de aereonaves con tripulación" << endl;
 	cout << "Digite (3)				Reporte de todas las aereonaves" << endl;
-	cout << "Digite (4)				Reporte Reporte de las personas contratadas" << endl;
+	cout << "Digite (4)				Reporte de las personas contratadas" << endl;
 	cout << "Digite (5)				Reporte de pilotos para aviones de carga" << endl;
 	cout << "Digite (6)				Reporte de aviones de más de 20 años de uso" << endl;
-	cout << "Digite (7)				Reporte de contratos de servicios profecionales" << endl;
+	cout << "Digite (7)				Reporte de contratos de servicios profesionales" << endl;
 	cout << "Digite (8)				Reporte de contratos de plazo fijo" << endl;
 	cout << "Digite (9)				Reporte de contratos de plazo indefinido" << endl;
 	cout << "Digite (10)		    Reporte de todas las tripulaciones de aviones comerciales" << endl;

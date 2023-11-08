@@ -5,20 +5,29 @@ Avion::Avion()
     fechaCreacion = NULL;
     distanciaRecorrida = 0;
     categoria = "";
-    tipoAvion = "";
+    tipoAvion = 0;
+    piloto = NULL;
+    copiloto = NULL;
+    azafata = NULL;
 }
 
-Avion::Avion(Fecha& fC, double dR, string categ, string tipoA)
+Avion::Avion(Fecha& fC, double dR, string categ)
 {
     fechaCreacion = (Fecha*)&fC;
     distanciaRecorrida = dR;
     categoria = categ;
-    tipoAvion = tipoA;
+    piloto = NULL;
+    copiloto = NULL;
+    azafata = NULL;
 }
 
 Avion::~Avion()
 {
     if (fechaCreacion != NULL) delete fechaCreacion;
+
+    if (piloto != NULL) delete piloto;
+    if (copiloto != NULL) delete copiloto;
+    if (azafata != NULL) delete azafata;
 }
 
 void Avion::setFecha(int d, int m, int a)
@@ -38,9 +47,24 @@ void Avion::setCategoria(string categ)
     categoria = categ;
 }
 
-void Avion::setTipoAvion(string tipoA)
+void Avion::setTipoAvion(int tipoA)
 {
     tipoAvion = tipoA;
+}
+
+void Avion::setPiloto(Empleado& pilot)
+{
+    piloto = (Empleado*)&pilot;
+}
+
+void Avion::setCopiloto(Empleado& copi)
+{
+    copiloto = (Empleado*)&copi;
+}
+
+void Avion::setAzafata(Empleado& azaf)
+{
+    azafata = (Empleado*)&azaf;
 }
 
 Fecha* Avion::getFecha()
@@ -58,7 +82,22 @@ string Avion::getCategoria()
     return categoria;
 }
 
-string Avion::getTipoAvion()
+int Avion::getTipoAvion()
 {
     return tipoAvion;
+}
+
+Empleado* Avion::setPiloto()
+{
+    return piloto;
+}
+
+Empleado* Avion::setCopiloto()
+{
+    return copiloto;
+}
+
+Empleado* Avion::setAzafata()
+{
+    return azafata;
 }

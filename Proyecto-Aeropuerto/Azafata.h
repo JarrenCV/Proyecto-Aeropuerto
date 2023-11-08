@@ -7,7 +7,7 @@ private:
 	string nacionalidad;
 public:
 	Azafata();
-	Azafata(string, string, int, Avion&, string);
+	Azafata(string, string, int, string);
 	virtual ~Azafata();
 
 	void setNacionalidad(string);

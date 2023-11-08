@@ -36,6 +36,21 @@ void ListaAviones::ingresaUltimo(Avion& avi)
     }
 }
 
+bool ListaAviones::existeAvionConPlaca(string numP)
+{
+    NodoAvion* PE = ppio;
+
+    while (PE != NULL) {
+        if (PE->getAvion()->getCategoria() == numP) {
+            return true;
+        }
+        PE = PE->getSigNodo();
+    }
+    return false;
+}
+
+
+
 string ListaAviones::toString()
 {
     stringstream s;

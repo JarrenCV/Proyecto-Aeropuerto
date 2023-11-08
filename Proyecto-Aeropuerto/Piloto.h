@@ -6,7 +6,7 @@ private:
 	int aniosExperiencia;
 public:
 	Piloto();
-	Piloto(string, string, int, Avion&, int);
+	Piloto(string, string, int, int);
 	virtual ~Piloto();
 
 	void setAniosExperiencia(int);

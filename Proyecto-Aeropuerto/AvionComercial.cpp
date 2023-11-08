@@ -4,8 +4,9 @@ AvionComercial::AvionComercial():AviacionCivil()
 {
 }
 
-AvionComercial::AvionComercial(Fecha& fC, double dR, string nP, string tA, string cat):AviacionCivil(fC, dR, cat, tA, nP)
+AvionComercial::AvionComercial(Fecha& fC, double dR, string cat, string nP):AviacionCivil(fC, dR, cat, nP)
 {
+    tipoAvion = 1;
 }
 
 AvionComercial::~AvionComercial()
@@ -15,7 +16,15 @@ AvionComercial::~AvionComercial()
 string AvionComercial::toString()
 {
     stringstream s;
-
+    if (piloto != NULL|| copiloto != NULL || azafata != NULL) {
+        cout << "----------------Informacion de la tripulaicion----------------" << endl;
+        if(piloto != NULL)
+            cout << piloto->toString();
+        if (copiloto != NULL)
+            cout << copiloto->toString();
+        if (azafata != NULL)
+            cout << azafata->toString();
+    }
     s << "---------------AVION COMERCIAL---------------" << endl;
     s << "Categoria: " << categoria << endl;
     s << "Fecha de creacion: " << fechaCreacion->toString() << endl;

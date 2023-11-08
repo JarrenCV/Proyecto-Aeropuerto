@@ -6,7 +6,7 @@ private:
 	//Queda sin atributos porque asi dijo el profe
 public:
 	AvionComercial();
-	AvionComercial(Fecha&,double,string,string,string);
+	AvionComercial(Fecha&,double,string,string);
 	virtual ~AvionComercial();
 
 	string toString();

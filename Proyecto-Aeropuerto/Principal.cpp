@@ -1,22 +1,17 @@
 #include"ListaContratos.h"
 #include"ListaAviones.h"
 #include"ListaEmpleados.h"
-#include"Adminitrativo.h"
-#include"Miscelaneo.h"
 #include"InterfazEmpleado.h"
+#include"MenuPrincipal.h"
+#include"InterfazAvion.h"
 
 int main() {
 	int opcion;
 	ListaEmpleados* contEmpleados = new ListaEmpleados();
+	ListaAviones* contAviones = new ListaAviones();
 
 	do {
-		cout << "------------------MENU PRINCIPAL------------------" << endl;
-		cout << "Digite (1)				Ingresar Empleados" << endl;
-		cout << "Digite (2)				Ingresar Aviones" << endl;
-		cout << "Digite (3)				Crear un Contrato" << endl;
-		cout << "Digite (4)				Salir" << endl;
-		cout << "--------------------------------------------------" << endl;
-		cout << "Digite la opcion: "; cin >> opcion;
+		opcion = MenuPrincipal::menuIngresos();
 
 		switch (opcion) {
 		case 1:
@@ -24,37 +19,40 @@ int main() {
 			// AQUI VA OTRO SUB MENU QUE PREGUNTA SI ES TRIPULANTE O MISELANEO
 			int segOpcion;
 			do {
-				cout << "------------------MENU EMPLEADOS------------------" << endl;
-				cout << "Digite (1)				Ingresar Empleado Tripulante" << endl;
-				cout << "Digite (2)				Ingresar Empleado de Planta" << endl;
-				cout << "Digite (3)				Cancelar" << endl;
-				cout << "--------------------------------------------------" << endl;
-				cout << "Digite la opcion: "; cin >> segOpcion;
+				segOpcion = InterfazEmpleado::menuEmpleado();
+				
 				switch (segOpcion) {
 				case 1:
 				{
 					// AQUI VA OTRO SUB MENU QUE PREGUNTA SI ES PILOTO, COPILOTO O AZAFATA
 					int terOpcion;
 					do {
-						cout << "------------------MENU TRIPULACION------------------" << endl;
-						cout << "Digite (1)				Ingresar Piloto" << endl;
-						cout << "Digite (2)				Ingresar Copiloto" << endl;
-						cout << "Digite (3)				Ingresar Azafata" << endl;
-						cout << "Digite (4)				Cancelar" << endl;
-						cout << "----------------------------------------------------" << endl;
-						cout << "Digite la opcion: "; cin >> terOpcion;
+						terOpcion = InterfazEmpleado::menuEmpleadoTripulacion();
+						
 						switch (terOpcion) {
-						case 1:
+						case 1: {
+							InterfazEmpleado::ingresaInfoPiloto(*contEmpleados);
 							break;
-						case 2:
-							break;
-						case 3:
-							break;
-						default:
-							cout << "Opcion invalida." << endl;
-
 						}
 						
+						case 2:{
+							InterfazEmpleado::ingresaInfoCopiloto(*contEmpleados);
+							break;
+						}
+						case 3:
+						{
+							InterfazEmpleado::ingresaInfoAzafata(*contEmpleados);
+							break;
+						}
+						case 4:
+						{
+							MensajesGenerales::msjRegreso();
+							break;
+						}
+						default:
+							MensajesGenerales::msjErrorRango();
+						}
+						cin.get();
 						cin.get();	// system("pause") mas fino.
 						system("cls");
 					} while (terOpcion != 4);
@@ -76,21 +74,26 @@ int main() {
 							InterfazEmpleado::ingresaInfoMiscelaneo(*contEmpleados);
 							break;
 						}
-						default:
-							InterfazEmpleado::msjErrorRango();
+						case 3:
+						{
+							MensajesGenerales::msjRegreso();
+							break;
 						}
-
+						default:
+							MensajesGenerales::msjErrorRango();
+						}
+						cin.get();
 						cin.get();	// system("pause") mas fino.
 						system("cls");
 					} while (cuartOpcion != 3);
 					break;
 				}
 				default:
-					InterfazEmpleado::msjErrorRango();
+					MensajesGenerales::msjErrorRango();
 
 				}
 
-				
+				cin.get();
 				cin.get();	// system("pause") mas fino.
 				system("cls");
 			} while (segOpcion != 3);
@@ -100,33 +103,37 @@ int main() {
 		{
 			int opCase2;
 			do {
-				cout << "------------------MENU AVIONES------------------" << endl;
-				cout << "Digite (1)				Ingresar Avion Civil" << endl;
-				cout << "Digite (2)				Ingresar Avion militar" << endl;
-				cout << "Digite (3)				Cancelar" << endl;
-				cout << "--------------------------------------------------" << endl;
-				cout << "Digite la opcion: "; cin >> opCase2;
+				opCase2 = InterfazAvion::menuAvion();
+				
 				switch (opCase2) {
 				case 1:
 				{
 					int caseCivil;
 					do {
-						cout << "------------------MENU AVIACION CIVIL------------------" << endl;
-						cout << "Digite (1)				Ingresar Avion Comercial" << endl;
-						cout << "Digite (2)				Ingresar Avion De Carga" << endl;
-						cout << "Digite (3)				Cancelar" << endl;
-						cout << "----------------------------------------------------" << endl;
-						cout << "Digite la opcion: "; cin >> caseCivil;
+						caseCivil = InterfazAvion::menuAvionCivil();
+						
 						switch (caseCivil) 
 						{
 						case 1:
+						{
+							InterfazAvion::ingresaInfoAvionComercial(*contAviones);
 							break;
+						}
 						case 2:
+						{
+							InterfazAvion::ingresaInfoAvionDeCarga(*contAviones);
 							break;
+						}
+						case 3:
+						{
+							MensajesGenerales::msjRegreso();
+							break;
+						}
 						default:
-							cout << "Opcion invalida." << endl;
+							MensajesGenerales::msjErrorRango();
 
 						}
+						cin.get();
 						cin.get();
 						system("cls");
 					} while (caseCivil != 3);
@@ -134,10 +141,17 @@ int main() {
 				}
 				case 2: 
 				{
+					InterfazAvion::ingresaInfoAvionMilitar(*contAviones);
 					break;
+				}
+				case 3:
+				{
+					MensajesGenerales::msjRegreso();
+					break; 
 				}
 				}
 			} while (opCase2 != 3);
+			break;
 		}
 		case 3: 
 		{
@@ -147,6 +161,7 @@ int main() {
 				cout << "Digite (1)				Crear contrato de servicios profesionales" << endl;
 				cout << "Digite (2)				Crear contrato Plazo fijo" << endl;
 				cout << "Digite (3)             Crear contrato de Tiempo indefinido" << endl;
+				cout << "Digite (4)             Salir" << endl;
 				cout << "--------------------------------------------------" << endl;
 				cout << "Digite la opcion: "; cin >> opCase3;
 				switch (opCase3) {
@@ -162,21 +177,27 @@ int main() {
 				{
 					break;
 				}
+				case 4:
+				{
+					MensajesGenerales::msjRegreso();
+					break;
 				}
-			} while (opCase3 != 3);
+				}
+			} while (opCase3 != 4);
+			break;
 		}
 
 		case 4: 
 		{
-			cout << "Saliendo del sistema..." << endl;
+			MensajesGenerales::msjSalirSistema();
 			break;
 		}
 		default:
-			InterfazEmpleado::msjErrorRango();
+			MensajesGenerales::msjErrorRango();
 		}
 
 
-		
+		cin.get();
 		cin.get();	// system("pause") mas fino.
 		system("cls");
 

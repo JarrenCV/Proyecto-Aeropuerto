@@ -7,7 +7,7 @@ private:
 
 public:
 	AviacionMilitar();
-	AviacionMilitar(Fecha&, double, string, string, double);
+	AviacionMilitar(Fecha&, double, string, double);
 	virtual ~AviacionMilitar();
 	
 	void setVelocidadMaxima(double);

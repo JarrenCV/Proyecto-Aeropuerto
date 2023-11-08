@@ -5,7 +5,7 @@ Azafata::Azafata() :Tripulacion()
     nacionalidad = "No definido";
 }
 
-Azafata::Azafata(string ced, string nom, int ed, Avion& avi, string nacionali) :Tripulacion(ced, nom, ed, avi)
+Azafata::Azafata(string ced, string nom, int ed, string nacionali) :Tripulacion(ced, nom, ed)
 {
     nacionalidad = nacionali;
 }
@@ -32,10 +32,6 @@ string Azafata::toString()
     s << "Cedula: " << cedula << endl;
     s << "Nombre: " << nombre << endl;
     s << "Edad: " << edad << endl;
-    if (getAvion() != NULL) {
-        s << "-------------AVION ASOCIADO-------------" << endl;
-        s << getAvion()->toString();
-    }
     s << "Nacionalidad: " << nacionalidad << endl;
 
     return s.str();

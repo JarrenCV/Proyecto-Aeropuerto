@@ -5,15 +5,11 @@
 class Tripulacion : public Empleado
 {
 private:
-	Avion* avion;
+	
 public:
 	Tripulacion();
-	Tripulacion(string, string, int, Avion&);
+	Tripulacion(string, string, int);
 	virtual ~Tripulacion();
-
-	void setAvion(Avion&);
-
-	Avion* getAvion();
 
 	virtual string toString() = 0;
 };

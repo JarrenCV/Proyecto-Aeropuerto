@@ -5,7 +5,7 @@ Copiloto::Copiloto() :Tripulacion()
     telefono = "No definido";
 }
 
-Copiloto::Copiloto(string ced, string nom, int ed, Avion& avi, string telef) :Tripulacion(ced, nom, ed, avi)
+Copiloto::Copiloto(string ced, string nom, int ed, string telef) :Tripulacion(ced, nom, ed)
 {
     telefono = telef;
 }
@@ -32,10 +32,6 @@ string Copiloto::toString()
     s << "Cedula: " << cedula << endl;
     s << "Nombre: " << nombre << endl;
     s << "Edad: " << edad << endl;
-    if (getAvion() != NULL) {
-        s << "-------------AVION ASOCIADO-------------" << endl;
-        s << getAvion()->toString();
-    }
     s << "Numero de telefono: " << telefono << endl;
 
     return s.str();

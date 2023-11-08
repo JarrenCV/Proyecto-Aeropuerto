@@ -7,7 +7,7 @@ private:
 	double anchuraPuerta;
 public:
 	AvionDeCarga();
-	AvionDeCarga(Fecha&, double, string, string, string, double, double);
+	AvionDeCarga(Fecha&, double, string, string, double, double);
 	virtual ~AvionDeCarga();
 
 	void setAlturaPuerta(double);

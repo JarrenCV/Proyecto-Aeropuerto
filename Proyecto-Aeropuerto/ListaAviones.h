@@ -12,6 +12,8 @@ public:
 	void ingresaPrimero(Avion&);
 	void ingresaUltimo(Avion&);
 
+	bool existeAvionConPlaca(string);
+
 
 	string toString();
 };
