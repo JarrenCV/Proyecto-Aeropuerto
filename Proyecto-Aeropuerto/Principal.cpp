@@ -54,7 +54,7 @@ int main() {
 							cout << "Opcion invalida." << endl;
 
 						}
-						cin.get();
+						
 						cin.get();	// system("pause") mas fino.
 						system("cls");
 					} while (terOpcion != 4);
@@ -79,7 +79,7 @@ int main() {
 						default:
 							InterfazEmpleado::msjErrorRango();
 						}
-						cin.get();
+
 						cin.get();	// system("pause") mas fino.
 						system("cls");
 					} while (cuartOpcion != 3);
@@ -90,7 +90,7 @@ int main() {
 
 				}
 
-				cin.get();
+				
 				cin.get();	// system("pause") mas fino.
 				system("cls");
 			} while (segOpcion != 3);
@@ -128,7 +128,6 @@ int main() {
 
 						}
 						cin.get();
-						cin.get();
 						system("cls");
 					} while (caseCivil != 3);
 					break;
@@ -142,7 +141,29 @@ int main() {
 		}
 		case 3: 
 		{
-		
+			int opCase3;
+			do {
+				cout << "------------------MENU CONTRATOS------------------" << endl;
+				cout << "Digite (1)				Crear contrato de servicios profesionales" << endl;
+				cout << "Digite (2)				Crear contrato Plazo fijo" << endl;
+				cout << "Digite (3)             Crear contrato de Tiempo indefinido" << endl;
+				cout << "--------------------------------------------------" << endl;
+				cout << "Digite la opcion: "; cin >> opCase3;
+				switch (opCase3) {
+				case 1:
+				{
+					break;
+				}
+				case 2:
+				{
+					break;
+				}
+				case 3:
+				{
+					break;
+				}
+				}
+			} while (opCase3 != 3);
 		}
 
 		case 4: 
@@ -155,7 +176,7 @@ int main() {
 		}
 
 
-		cin.get();
+		
 		cin.get();	// system("pause") mas fino.
 		system("cls");
 

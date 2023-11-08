@@ -27,6 +27,7 @@ int MenuPrincipal::menuIngresos()
 	cout << "Digite (4)				Salir" << endl;
 	cout << "--------------------------------------------------" << endl;
 	cout << "Digite la opcion: "; cin >> opcion;
+	return opcion;
 }
 
 int MenuPrincipal::menuMantenimiento()
@@ -40,6 +41,7 @@ int MenuPrincipal::menuMantenimiento()
 	cout << "Digite (4)				Salir" << endl;
 	cout << "--------------------------------------------------" << endl;
 	cout << "Digite la opcion: "; cin >> opcion;
+	return opcion;
 }
 
 int MenuPrincipal::menuReportes()
@@ -64,6 +66,8 @@ int MenuPrincipal::menuReportes()
 
 	cout << "--------------------------------------------------" << endl;
 	cout << "Digite la opcion: "; cin >> opcion;
+
+	return opcion;
 }
 int MenuPrincipal::menuConsultas()
 {
@@ -76,6 +80,8 @@ int MenuPrincipal::menuConsultas()
 	cout << "Digite (4)				Salir" << endl;
 	cout << "--------------------------------------------------" << endl;
 	cout << "Digite la opcion: "; cin >> opcion;
+
+	return opcion;
 }
 
 void MenuPrincipal::msjErrorRango() {
