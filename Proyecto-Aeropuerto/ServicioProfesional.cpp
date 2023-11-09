@@ -1,43 +1,45 @@
 #include "ServicioProfesional.h"
 
-ServicioProfecional::ServicioProfecional() : Contrato()
+ServicioProfesional::ServicioProfesional() : Contrato()
 {
     horario = "Sin definir";
     tipoServicio = "Sin definir";
 
 }
 
-ServicioProfecional::ServicioProfecional(string h, string tS, string cContra, string dPuesto, double sal, Fecha& ingreso, Fecha& culmen):Contrato(cContra,dPuesto,sal,ingreso,culmen)
+ServicioProfesional::ServicioProfesional(string h, string tS, string cContra, string dPuesto, double sal, Fecha& ingreso, Fecha& culmen):Contrato(cContra,dPuesto,sal,ingreso,culmen)
 {
     horario = h;
     tipoServicio = tS;
 }
 
-ServicioProfecional::~ServicioProfecional()
+ServicioProfesional::~ServicioProfesional()
 {
+    if (ingresoLaboral != NULL) delete ingresoLaboral;
+    if (culminacionLaboral != NULL) delete culminacionLaboral;
 }
 
-void ServicioProfecional::setHorario(string h) 
+void ServicioProfesional::setHorario(string h)
 {  
     horario = h;
 }
 
-void ServicioProfecional::setTipoServicio(string tS)
+void ServicioProfesional::setTipoServicio(string tS)
 {
     tipoServicio = tS;
 }
 
-string ServicioProfecional::getHorario()
+string ServicioProfesional::getHorario()
 {
     return horario;
 }
 
-string ServicioProfecional::getTipoServicio()
+string ServicioProfesional::getTipoServicio()
 {
     return tipoServicio;
 }
 
-string ServicioProfecional::toString()
+string ServicioProfesional::toString()
 {
     stringstream s;
     s << "CONTRATO DE SERVICIO PROFESIONAL" << endl

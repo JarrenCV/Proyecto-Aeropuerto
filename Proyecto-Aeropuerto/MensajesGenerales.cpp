@@ -22,6 +22,16 @@ void MensajesGenerales::msjErrorCedula()
 
 }
 
+void MensajesGenerales::msjErrorCodigo()
+{
+	cout << "ERROR: El codigo del contrato ya existe en el sistema" << endl;
+}
+
+void MensajesGenerales::msjErrorFechaIngCul()
+{
+	cout << "ERROR: La fecha de ingreso no puede ser despues de la fehca de culminacion." << endl;
+}
+
 void MensajesGenerales::msjErrorRango()
 {
 	cout << "Opcion invalida." << endl;

@@ -87,6 +87,30 @@
     <ClInclude Include="Plaza.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Aeropuerto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InterfazAvion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InterfazEmpleado.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListaContratos.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MensajesGenerales.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuPrincipal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NodoContrato.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InterfazContrato.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TablaAviones.cpp">
@@ -162,6 +186,30 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TiempoIndefinido.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Aeropuerto.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InterfazAvion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InterfazEmpleado.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListaContratos.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MensajesGenerales.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuPrincipal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NodoContrato.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InterfazContrato.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

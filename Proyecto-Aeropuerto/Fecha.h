@@ -21,6 +21,9 @@ public:
 	int getMes();
 	int getAnio();
 
+	bool esMenorQue(Fecha&);
+	int diferenciaAnios(Fecha&, Fecha&);
+
 	string toString();
 };
 

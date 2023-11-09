@@ -36,12 +36,12 @@ void ListaContratos::ingresaUltimo(Contrato& contrat)
     }
 }
 
-bool ListaContratos::buscaContrato(Contrato& contrat)
+bool ListaContratos::buscaContrato(string contrat)
 {
     NodoContrato* PE = ppio;
 
     while (PE != NULL) {
-        if (PE->getContrato()->getCodigoContrato() == contrat.getCodigoContrato()) {
+        if (PE->getContrato()->getCodigoContrato() == contrat) {
             return true;
         }
     }

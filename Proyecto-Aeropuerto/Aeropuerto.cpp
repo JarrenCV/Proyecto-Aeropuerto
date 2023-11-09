@@ -17,6 +17,21 @@ Aeropuerto::~Aeropuerto()
 	if (contenedorEmpleados != NULL) delete contenedorEmpleados;
 }
 
+ListaAviones* Aeropuerto::getListaAviones()
+{
+	return contenedorAviones;
+}
+
+ListaContratos* Aeropuerto::getListaContratos()
+{
+	return contenedorContratos;
+}
+
+ListaEmpleados* Aeropuerto::getListaEmpleados()
+{
+	return contenedorEmpleados;
+}
+
 bool Aeropuerto::ingresaEmpleado(Empleado& emp)
 {
 	contenedorEmpleados->ingresaUltimo(emp);
@@ -33,7 +48,8 @@ bool Aeropuerto::ingresaAvion(Avion& avi)
 
 bool Aeropuerto::ingresaContrato(Contrato& contrat)
 {
-	if (!contenedorContratos->buscaContrato(contrat)) { // == false
+	string cod = contrat.getCodigoContrato();
+	if (!contenedorContratos->buscaContrato(cod)) { // == false
 		contenedorContratos->ingresaUltimo(contrat);
 		return true;
 	}

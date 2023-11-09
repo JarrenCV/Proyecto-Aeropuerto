@@ -13,7 +13,7 @@ public:
 	void ingresaPrimero(Contrato&);
 	void ingresaUltimo(Contrato&);
 
-	bool buscaContrato(Contrato&);
+	bool buscaContrato(string);
 
 
 	string toString();

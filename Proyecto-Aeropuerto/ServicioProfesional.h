@@ -1,7 +1,7 @@
 #pragma once
 #include"Contrato.h"
 
-class ServicioProfecional : public Contrato {
+class ServicioProfesional : public Contrato {
 private:
 
 	string horario;
@@ -9,10 +9,10 @@ private:
 
 public:
 
-	ServicioProfecional();
-	ServicioProfecional(string, string, string, string, double, Fecha&, Fecha&);
+	ServicioProfesional();
+	ServicioProfesional(string, string, string, string, double, Fecha&, Fecha&);
 
-	virtual ~ServicioProfecional();
+	virtual ~ServicioProfesional();
 
 //-------------- set´s ------------------
 

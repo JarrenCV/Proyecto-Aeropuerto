@@ -17,6 +17,11 @@ public:
 	Aeropuerto(string, string, string, ListaAviones&, ListaContratos&, ListaEmpleados&);
 	virtual ~Aeropuerto();
 
+	ListaAviones* getListaAviones();
+	ListaContratos* getListaContratos();
+	ListaEmpleados* getListaEmpleados();
+
+
 	bool ingresaEmpleado(Empleado&);
 	bool ingresaAvion(Avion&);
 	bool ingresaContrato(Contrato&);

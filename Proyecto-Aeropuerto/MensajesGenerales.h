@@ -9,6 +9,8 @@ public:
 	static void msjSalirSistema();
 	static void msjRegreso();
 	static void msjErrorCedula();
+	static void msjErrorCodigo();
+	static void msjErrorFechaIngCul();
 	static void msjErrorRango();
 };
 

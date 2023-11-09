@@ -11,7 +11,8 @@ int MenuPrincipal::menuPrincipal()
 	cout << "Digite (3)				Reportes" << endl;
 	cout << "Digite (4)				Consultas" << endl;
 	cout << "Digite (5)				Salir" << endl;
-	cin >> op;
+	cout << "--------------------------------------------------" << endl;
+	cout << "Digite la opcion: "; cin >> op;
 
 	return op;
 }
@@ -76,7 +77,7 @@ int MenuPrincipal::menuConsultas()
 	cout << "------------------MENU CONSULTAS------------------" << endl;
 	cout << "Digite (1)				Consultar por trabajador" << endl; // se necesita ver a que aeronave pertenece, se busca por cedula
 	cout << "Digite (2)				Consultar por contrato " << endl;    // El tipo de contrato al que pertenece, se busca por num de contrato
-	cout << "Digite (3)				Informacion de una aeronave" << endl; // se busca por ayuda de su placa
+	cout << "Digite (3)				Informacion de una aeronave" << endl; // se busca por ayuda de su placa, El problema con la aeronaves es que no todas tienen placa.
 	cout << "Digite (4)				Salir" << endl;
 	cout << "--------------------------------------------------" << endl;
 	cout << "Digite la opcion: "; cin >> opcion;

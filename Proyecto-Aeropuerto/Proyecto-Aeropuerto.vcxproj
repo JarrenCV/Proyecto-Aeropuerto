@@ -140,6 +140,7 @@
     <ClInclude Include="Empleado.h" />
     <ClInclude Include="Fecha.h" />
     <ClInclude Include="InterfazAvion.h" />
+    <ClInclude Include="InterfazContrato.h" />
     <ClInclude Include="InterfazEmpleado.h" />
     <ClInclude Include="ListaAviones.h" />
     <ClInclude Include="ListaContratos.h" />
@@ -173,6 +174,7 @@
     <ClCompile Include="Empleado.cpp" />
     <ClCompile Include="Fecha.cpp" />
     <ClCompile Include="InterfazAvion.cpp" />
+    <ClCompile Include="InterfazContrato.cpp" />
     <ClCompile Include="InterfazEmpleado.cpp" />
     <ClCompile Include="ListaAviones.cpp" />
     <ClCompile Include="ListaContratos.cpp" />

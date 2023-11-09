@@ -48,6 +48,48 @@ int Fecha::getAnio()
     return anio;
 }
 
+bool Fecha::esMenorQue(Fecha& fecha2) {
+    
+    if (anio < fecha2.getAnio()) {
+        return true;
+    }
+    else {
+        if (anio == fecha2.getAnio() && mes < fecha2.getMes()) {
+            return true;
+        }
+        else {
+            if (anio == fecha2.getAnio() && mes == fecha2.getMes() && dia < fecha2.getDia()) {
+                return true;
+            }
+            else {
+                if (anio == fecha2.getAnio() && mes == fecha2.getMes() && dia == fecha2.getDia()) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+        }
+    }
+    return false;
+}
+
+int Fecha::diferenciaAnios(Fecha& actual, Fecha& culminacion)
+{
+    if(actual.esMenorQue(culminacion)){
+        int diferencia = actual.getAnio() - anio;
+        if (diferencia > 2) {
+            return diferencia;
+        }
+        else {
+            if ((diferencia == 2 && mes > actual.getMes()) || (diferencia == 2 && mes == actual.getMes() && dia >= actual.getDia()))
+                return diferencia;
+        }
+    }
+    return -1;
+}
+
+
 string Fecha::toString()
 {
     stringstream s;
