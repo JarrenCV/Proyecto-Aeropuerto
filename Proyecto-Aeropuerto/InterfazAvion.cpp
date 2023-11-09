@@ -31,7 +31,7 @@ int InterfazAvion::menuAvionCivil()
 	return opcion;
 }
 
-void InterfazAvion::ingresaInfoAvionComercial(ListaAviones& contAviones)
+void InterfazAvion::ingresaInfoAvionComercial(Aeropuerto& aeropuerto)
 {
 	int dia, mes, anio;
 	double distanciaRecorrida;
@@ -56,11 +56,11 @@ void InterfazAvion::ingresaInfoAvionComercial(ListaAviones& contAviones)
 	// (Fecha& fC, double dR, string nP, string cat)
 	Fecha* creacion = new Fecha(dia, mes, anio);
 	Avion* avionComercial = new AvionComercial(*creacion, distanciaRecorrida, categoria, numeroPlaca);
-	contAviones.ingresaUltimo(*avionComercial);
+	aeropuerto.ingresaAvion(*avionComercial);
 	MensajesGenerales::IngresoExitoso();
 	
 }
-void InterfazAvion::ingresaInfoAvionDeCarga(ListaAviones& contAviones)
+void InterfazAvion::ingresaInfoAvionDeCarga(Aeropuerto& aeropuerto)
 {
 	int dia, mes, anio;
 	double distanciaRecorrida, alturaPuerta, anchoPuerta;
@@ -86,13 +86,13 @@ void InterfazAvion::ingresaInfoAvionDeCarga(ListaAviones& contAviones)
 	// (Fecha& fC, double dR, string cat, string nP, double altP, double anchP)
 	Fecha* creacion = new Fecha(dia, mes, anio);
 	Avion* avionDeCarga = new AvionDeCarga(*creacion, distanciaRecorrida, categoria, numeroPlaca, alturaPuerta, anchoPuerta);
-	contAviones.ingresaUltimo(*avionDeCarga);
+	aeropuerto.ingresaAvion(*avionDeCarga);
 	MensajesGenerales::IngresoExitoso();
 }
 
 //----------------------------------------------------------------------------
 
-void InterfazAvion::ingresaInfoAvionMilitar(ListaAviones& contAviones)
+void InterfazAvion::ingresaInfoAvionMilitar(Aeropuerto& aeropuerto)
 {
 
 	int dia, mes, anio;
@@ -113,7 +113,7 @@ void InterfazAvion::ingresaInfoAvionMilitar(ListaAviones& contAviones)
 	// (Fecha& fC, double dR, string cat, double vMax)
 	Fecha* creacion = new Fecha(dia, mes, anio);
 	Avion* avionMilitar = new AviacionMilitar(*creacion, distanciaRecorrida, categoria, velocidadMaxima);
-	contAviones.ingresaUltimo(*avionMilitar);
+	aeropuerto.ingresaAvion(*avionMilitar);
 	MensajesGenerales::IngresoExitoso();
 }
 

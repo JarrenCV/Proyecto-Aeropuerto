@@ -1,12 +1,11 @@
 #pragma once
-#include"ListaEmpleados.h"
 #include"Adminitrativo.h"
 #include"Miscelaneo.h"
 #include"Piloto.h"
 #include"Copiloto.h"
 #include"Azafata.h"
 #include"MensajesGenerales.h"
-
+#include"Aeropuerto.h"
 
 class InterfazEmpleado
 {
@@ -20,17 +19,17 @@ public:
 
 	static int menuEmpleadoTripulacion();
 
-	static void ingresaInfoPiloto(ListaEmpleados&);
-	static void ingresaInfoCopiloto(ListaEmpleados&);
-	static void ingresaInfoAzafata(ListaEmpleados&);
+	static void ingresaInfoPiloto(Aeropuerto&);
+	static void ingresaInfoCopiloto(Aeropuerto&);
+	static void ingresaInfoAzafata(Aeropuerto&);
 
 
 
 	//----------------------------------------------------------------------------
 	static int menuEmpleadoPlanta();
 
-	static void ingresaInfoAdministrativo(ListaEmpleados&);
-	static void ingresaInfoMiscelaneo(ListaEmpleados&);
+	static void ingresaInfoAdministrativo(Aeropuerto&);
+	static void ingresaInfoMiscelaneo(Aeropuerto&);
 	
 	//----------------------------------------------------------------------------
 };

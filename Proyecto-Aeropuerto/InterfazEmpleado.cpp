@@ -30,7 +30,7 @@ int InterfazEmpleado::menuEmpleadoTripulacion()
 	return opcion;
 }
 
-void InterfazEmpleado::ingresaInfoPiloto(ListaEmpleados& contEmpleados)
+void InterfazEmpleado::ingresaInfoPiloto(Aeropuerto& aeropuerto)
 {
 	string cedula, nombre;
 	int edad, aniosExp;
@@ -40,7 +40,7 @@ void InterfazEmpleado::ingresaInfoPiloto(ListaEmpleados& contEmpleados)
 	// Ya que estos "nacen" con avion
 
 	cout << "Digite el numero de cedula: "; cin >> cedula;
-	if (!contEmpleados.buscaCedula(cedula)) { // == false 
+	if (!aeropuerto.getListaEmpleados()->buscaCedula(cedula)) { // == false 
 		cin.ignore();
 		cout << "Digite el nombre del Empleado: "; getline(cin, nombre);
 		cout << "Digite la edad del empleado: "; cin >> edad;
@@ -49,7 +49,7 @@ void InterfazEmpleado::ingresaInfoPiloto(ListaEmpleados& contEmpleados)
 
 		// (string ced, string nom, int ed, int aniosExp)
 		Empleado* emp = new Piloto(cedula, nombre, edad, aniosExp);
-		contEmpleados.ingresaUltimo(*emp);
+		aeropuerto.ingresaEmpleado(*emp);
 		MensajesGenerales::IngresoExitoso();
 		
 	}
@@ -58,7 +58,7 @@ void InterfazEmpleado::ingresaInfoPiloto(ListaEmpleados& contEmpleados)
 	}
 }
 
-void InterfazEmpleado::ingresaInfoCopiloto(ListaEmpleados& contEmpleados)
+void InterfazEmpleado::ingresaInfoCopiloto(Aeropuerto& aeropuerto)
 {
 	string cedula, nombre, telef;
 	int edad;
@@ -68,7 +68,7 @@ void InterfazEmpleado::ingresaInfoCopiloto(ListaEmpleados& contEmpleados)
 	// Ya que estos "nacen" con avion
 
 	cout << "Digite el numero de cedula: "; cin >> cedula;
-	if (!contEmpleados.buscaCedula(cedula)) { // == false 
+	if (!aeropuerto.getListaEmpleados()->buscaCedula(cedula)) { // == false 
 		cin.ignore();
 		cout << "Digite el nombre del Empleado: "; getline(cin, nombre);
 		cout << "Digite la edad del empleado: "; cin >> edad;
@@ -77,7 +77,7 @@ void InterfazEmpleado::ingresaInfoCopiloto(ListaEmpleados& contEmpleados)
 
 		// (string ced, string nom, int ed, string telef)
 		Empleado* emp = new Copiloto(cedula, nombre, edad, telef);
-		contEmpleados.ingresaUltimo(*emp);
+		aeropuerto.ingresaEmpleado(*emp);
 		MensajesGenerales::IngresoExitoso();
 		
 	}
@@ -86,7 +86,7 @@ void InterfazEmpleado::ingresaInfoCopiloto(ListaEmpleados& contEmpleados)
 	}
 }
 
-void InterfazEmpleado::ingresaInfoAzafata(ListaEmpleados& contEmpleados)
+void InterfazEmpleado::ingresaInfoAzafata(Aeropuerto& aeropuerto)
 {
 	string cedula, nombre, nacionali;
 	int edad;
@@ -96,7 +96,7 @@ void InterfazEmpleado::ingresaInfoAzafata(ListaEmpleados& contEmpleados)
 	// Ya que estos "nacen" con avion
 
 	cout << "Digite el numero de cedula: "; cin >> cedula;
-	if (!contEmpleados.buscaCedula(cedula)) { // == false 
+	if (!aeropuerto.getListaEmpleados()->buscaCedula(cedula)) { // == false 
 		cin.ignore();
 		cout << "Digite el nombre del Empleado: "; getline(cin, nombre);
 		cout << "Digite la edad del empleado: "; cin >> edad;
@@ -105,7 +105,7 @@ void InterfazEmpleado::ingresaInfoAzafata(ListaEmpleados& contEmpleados)
 
 		// (string ced, string nom, int ed, string nacionali)
 		Empleado* emp = new Azafata(cedula, nombre, edad, nacionali);
-		contEmpleados.ingresaUltimo(*emp);
+		aeropuerto.ingresaEmpleado(*emp);
 		MensajesGenerales::IngresoExitoso();
 		
 	}
@@ -130,13 +130,13 @@ int InterfazEmpleado::menuEmpleadoPlanta()
     return opcion;
 }
 
-void InterfazEmpleado::ingresaInfoAdministrativo(ListaEmpleados& contEmpleados)
+void InterfazEmpleado::ingresaInfoAdministrativo(Aeropuerto& aeropuerto)
 {
 	string cedula, nombre, labor, tituloU;
 	int edad;
 	cout << "----------------------EMPLEADO ADMINISTRATIVO----------------------" << endl;
 	cout << "Digite el numero de cedula: "; cin >> cedula;
-	if (!contEmpleados.buscaCedula(cedula)) { // == false 
+	if (!aeropuerto.getListaEmpleados()->buscaCedula(cedula)) { // == false 
 		cin.ignore();
 		cout << "Digite el nombre del Empleado: "; getline(cin, nombre);
 		cout << "Digite la edad del empleado: "; cin >> edad;
@@ -149,7 +149,7 @@ void InterfazEmpleado::ingresaInfoAdministrativo(ListaEmpleados& contEmpleados)
 
 									// (string ced, string nom, int ed, string lab, string tituloU)
 		Empleado* emp = new Adminitrativo(cedula, nombre, edad, labor, tituloU);
-		contEmpleados.ingresaUltimo(*emp);
+		aeropuerto.ingresaEmpleado(*emp);
 		MensajesGenerales::IngresoExitoso();
 		
 	}
@@ -158,13 +158,13 @@ void InterfazEmpleado::ingresaInfoAdministrativo(ListaEmpleados& contEmpleados)
 	}
 }
 
-void InterfazEmpleado::ingresaInfoMiscelaneo(ListaEmpleados& contEmpleados)
+void InterfazEmpleado::ingresaInfoMiscelaneo(Aeropuerto& aeropuerto)
 {
 	string cedula, nombre, labor, gradoEsc;
 	int edad;
 	cout << "----------------------EMPLEADO MISCELANEO----------------------" << endl;
 	cout << "Digite el numero de cedula: "; cin >> cedula;
-	if (!contEmpleados.buscaCedula(cedula)) { // == false 
+	if (!aeropuerto.getListaEmpleados()->buscaCedula(cedula)) { // == false 
 		cin.ignore();
 		cout << "Digite el nombre del Empleado: "; getline(cin, nombre);
 		cout << "Digite la edad del empleado: "; cin >> edad;
@@ -177,7 +177,7 @@ void InterfazEmpleado::ingresaInfoMiscelaneo(ListaEmpleados& contEmpleados)
 
 							// (string ced, string nom, int ed, string lab, string gradoEsc)
 		Empleado* emp = new Miscelaneo(cedula, nombre, edad, labor, gradoEsc);
-		contEmpleados.ingresaUltimo(*emp);
+		aeropuerto.ingresaEmpleado(*emp);
 		MensajesGenerales::IngresoExitoso();
 		
 	}

@@ -67,10 +67,10 @@ void InterfazContrato::ingresaServiciosProfesionales(Aeropuerto& aeropuerto)
 	}
 }
 
-void InterfazContrato::ingresaPlazoFijo(Aeropuerto&)
+void InterfazContrato::ingresaPlazoFijo(Aeropuerto& aeropuerto)
 {
 }
 
-void InterfazContrato::ingresaTiempoIndefinido(Aeropuerto&)
+void InterfazContrato::ingresaTiempoIndefinido(Aeropuerto& aeropuerto)
 {
 }

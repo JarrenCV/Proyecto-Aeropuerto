@@ -19,7 +19,7 @@ int main() {
 	ListaContratos* contContratos = new ListaContratos();
 
 	//(string nomE, string cedJur, string numTelf, ListaAviones& contAvion, ListaContratos& contContrato, ListaEmpleados& contEmpleado)
-	Aeropuerto* aeropuerto = new Aeropuerto("Aeropuerto Tilin", "11114-2314", "9861-4673", *contAviones, *contContratos, *contEmpleados);
+	Aeropuerto* aeropuerto = new Aeropuerto("Aeropuerto Tilin", "11114-2314", "9861-4673", *contAviones, *contContratos, *contEmpleados); // eso tilin 
 
 	
 	int opcionPrincipal,d,m,a;
@@ -173,7 +173,7 @@ int main() {
 						}
 						case 2:
 						{
-							InterfazAvion::ingresaInfoAvionMilitar(*contAviones);
+							InterfazAvion::ingresaInfoAvionMilitar(*aeropuerto);
 							break;
 						}
 						case 3:
@@ -261,7 +261,7 @@ int main() {
 
 							cout << "------------------PLAZO FIJO------------------" << endl;
 							cout << "Digite el codigo del Contrato: "; cin >> codContrato;
-							if (!contContratos.buscaContrato(codContrato)) {
+							if (!aeropuerto.getListaContratos()->buscaContrato(codContrato)) {
 								cin.ignore();
 								cout << "Digite la descripcion del puesto: "; getline(cin, descPuesto);
 								cout << "Digite el salario del contrato: "; cin >> salario;
@@ -286,7 +286,7 @@ int main() {
 
 									//(bool ele, string cContra, string dPuesto, double sal, Fecha& ingreso, Fecha& culmen)
 									contratoPF = new PlazoFijo(elegible, codContrato, descPuesto, salario, *ingreso, *culminacion);
-									contContratos.ingresaUltimo(*contratoPF);
+									aeropuerto.ingresaContrato(*contratoPF);
 									MensajesGenerales::IngresoExitoso();
 								}
 								else {
