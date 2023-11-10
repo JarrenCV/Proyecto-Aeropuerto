@@ -63,17 +63,17 @@ int main() {
 
 								switch (terOpcion) {
 								case 1: {
-									InterfazEmpleado::ingresaInfoPiloto(*contEmpleados);
+									InterfazEmpleado::ingresaInfoPiloto(*aeropuerto);
 									break;
 								}
 
 								case 2: {
-									InterfazEmpleado::ingresaInfoCopiloto(*contEmpleados);
+									InterfazEmpleado::ingresaInfoCopiloto(*aeropuerto);
 									break;
 								}
 								case 3:
 								{
-									InterfazEmpleado::ingresaInfoAzafata(*contEmpleados);
+									InterfazEmpleado::ingresaInfoAzafata(*aeropuerto);
 									break;
 								}
 								case 4:
@@ -99,11 +99,11 @@ int main() {
 
 								switch (cuartOpcion) {
 								case 1: {
-									InterfazEmpleado::ingresaInfoAdministrativo(*contEmpleados);
+									InterfazEmpleado::ingresaInfoAdministrativo(*aeropuerto);
 									break;
 								}
 								case 2: {
-									InterfazEmpleado::ingresaInfoMiscelaneo(*contEmpleados);
+									InterfazEmpleado::ingresaInfoMiscelaneo(*aeropuerto);
 									break;
 								}
 								case 3:
@@ -148,12 +148,12 @@ int main() {
 								{
 								case 1:
 								{
-									InterfazAvion::ingresaInfoAvionComercial(*contAviones);
+									InterfazAvion::ingresaInfoAvionComercial(*aeropuerto);
 									break;
 								}
 								case 2:
 								{
-									InterfazAvion::ingresaInfoAvionDeCarga(*contAviones);
+									InterfazAvion::ingresaInfoAvionDeCarga(*aeropuerto);
 									break;
 								}
 								case 3:
