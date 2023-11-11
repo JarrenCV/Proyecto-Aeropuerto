@@ -39,6 +39,24 @@ string ServicioProfesional::getTipoServicio()
     return tipoServicio;
 }
 
+void ServicioProfesional::setPlaza(Plaza& s)
+{
+}
+
+Plaza* ServicioProfesional::getPlaza()
+{
+    return NULL;
+}
+
+void ServicioProfesional::setElegible(bool s)
+{
+}
+
+bool ServicioProfesional::getElegible()
+{
+    return false;
+}
+
 string ServicioProfesional::toString()
 {
     stringstream s;

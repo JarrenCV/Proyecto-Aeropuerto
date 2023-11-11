@@ -13,7 +13,7 @@ public:
 	static int menuContrato();
 	//---------------------------------------------------------------------------
 	static void ingresaServiciosProfesionales(Aeropuerto&);
-	static void ingresaPlazoFijo(Aeropuerto&);
+	static void ingresaPlazoFijo(Aeropuerto&, Fecha&);
 	static void ingresaTiempoIndefinido(Aeropuerto&);
 };
 

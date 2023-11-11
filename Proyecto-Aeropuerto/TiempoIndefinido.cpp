@@ -25,6 +25,33 @@ Plaza* TiempoIndefinido::getPlaza()
     return plaza;
 }
 
+void TiempoIndefinido::setElegible(bool s)
+{
+}
+
+bool TiempoIndefinido::getElegible()
+{
+    return false;
+}
+
+void TiempoIndefinido::setHorario(string s)
+{
+}
+
+void TiempoIndefinido::setTipoServicio(string s)
+{
+}
+
+string TiempoIndefinido::getHorario()
+{
+    return "-1";
+}
+
+string TiempoIndefinido::getTipoServicio()
+{
+    return "-1";
+}
+
 string TiempoIndefinido::toString()
 {
     stringstream s;

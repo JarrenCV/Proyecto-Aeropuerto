@@ -1,7 +1,7 @@
 #pragma once
 #include"Empleado.h"
 #include"Fecha.h"
-
+#include"Plaza.h"
 class Contrato {
 
 protected:
@@ -37,5 +37,18 @@ public:
 	Fecha* getFechaCulminacion(); 
 	Empleado* getEmpleadoContratado();
 //--------------------------------------
+
+	//----------SERVICIOS PROFESIONALES-------
+	virtual void setHorario(string) = 0;
+	virtual void setTipoServicio(string) = 0;
+	virtual string getHorario() = 0;
+	virtual string getTipoServicio() = 0;
+	//-----PLAZO FIJO----
+	virtual void setElegible(bool) = 0;
+	virtual bool getElegible() = 0;
+	//-----TIEMPO INDEFINIDO----
+	virtual void setPlaza(Plaza&) = 0;
+	virtual Plaza* getPlaza() = 0;
+	//------toString-----
 	virtual string toString() = 0;
 };

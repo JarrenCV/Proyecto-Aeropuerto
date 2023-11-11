@@ -10,6 +10,8 @@ public:
 	static void msjRegreso();
 	static void msjErrorCedula();
 	static void msjErrorCodigo();
+	static void msjErrorPlazasLlenas();
+	static void msjErrorCodPlaza();
 	static void msjErrorFechaIngCul();
 	static void msjErrorRango();
 };

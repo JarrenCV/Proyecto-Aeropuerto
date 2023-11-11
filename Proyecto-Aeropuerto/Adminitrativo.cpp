@@ -24,6 +24,51 @@ string Adminitrativo::getTituloUniversitario()
     return tituloUniversitario;
 }
 
+void Adminitrativo::setAniosExperiencia(int s)
+{
+}
+
+int Adminitrativo::getAniosExperiencia()
+{
+    return -1;
+}
+
+void Adminitrativo::setTelefono(string s)
+{
+}
+
+string Adminitrativo::getTelefono()
+{
+    return "-1";
+}
+
+void Adminitrativo::setNacionalidad(string s)
+{
+}
+
+string Adminitrativo::getNacionalidad()
+{
+    return "-1";
+}
+
+void Adminitrativo::setLabor(string s)
+{
+}
+
+string Adminitrativo::getLabor()
+{
+    return "-1";
+}
+
+void Adminitrativo::setGradoEscolaridad(string s)
+{
+}
+
+string Adminitrativo::getGradoEscolaridad()
+{
+    return "-1";
+}
+
 string Adminitrativo::toString()
 {
     stringstream s;

@@ -24,6 +24,51 @@ int Piloto::getAniosExperiencia()
     return aniosExperiencia;
 }
 
+void Piloto::setTelefono(string s)
+{
+}
+
+string Piloto::getTelefono()
+{
+    return "-1";
+}
+
+void Piloto::setNacionalidad(string s)
+{
+}
+
+string Piloto::getNacionalidad()
+{
+    return "-1";
+}
+
+void Piloto::setLabor(string s)
+{
+}
+
+string Piloto::getLabor()
+{
+    return "-1";
+}
+
+void Piloto::setTituloUniversitario(string)
+{
+}
+
+string Piloto::getTituloUniversitario()
+{
+    return "-1";
+}
+
+void Piloto::setGradoEscolaridad(string)
+{
+}
+
+string Piloto::getGradoEscolaridad()
+{
+    return "-1";
+}
+
 string Piloto::toString()
 {
     stringstream s;

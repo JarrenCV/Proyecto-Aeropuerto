@@ -13,6 +13,33 @@ AvionComercial::~AvionComercial()
 {
 }
 
+void AvionComercial::setAlturaPuerta(double s)
+{
+}
+
+void AvionComercial::setAnchuraPuerta(double s)
+{
+}
+
+double AvionComercial::getAlturaPuerta()
+{
+    return -1;
+}
+
+double AvionComercial::getAnchuraPuerta()
+{
+    return -1;
+}
+
+void AvionComercial::setVelocidadMaxima(double s)
+{
+}
+
+double AvionComercial::getVelocidadMaxima()
+{
+    return -1;
+}
+
 string AvionComercial::toString()
 {
     stringstream s;
@@ -31,15 +58,12 @@ string AvionComercial::toString()
     s << "Numero de placa: " << getNumeroPlaca() << endl;
     s << "Tipo de avion: " << getTipoAvion() << endl;
     s << "Distancia recorrida: " << distanciaRecorrida << "Km" << endl;
-    
-    
    /* 
    s << "Nombre del avion: " << TablaAComercial::nombre(categoria);
    s << "Capacidad de pasajeros: " << TablaAComercial::pasajeros(categoria);
    
    Preguntar si imprimir toda la info del avion
     */
-
 
     return s.str();
 }

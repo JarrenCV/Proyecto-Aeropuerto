@@ -27,6 +27,33 @@ double AviacionMilitar::getVelocidadMaxima()
     return velocidadMaxima;
 }
 
+void AviacionMilitar::setNumeroPlaca(string s)
+{
+}
+
+string AviacionMilitar::getNumeroPlaca()
+{
+    return "-1";
+}
+
+void AviacionMilitar::setAlturaPuerta(double s)
+{
+}
+
+void AviacionMilitar::setAnchuraPuerta(double s)
+{
+}
+
+double AviacionMilitar::getAlturaPuerta()
+{
+    return -1;
+}
+
+double AviacionMilitar::getAnchuraPuerta()
+{
+    return -1;
+}
+
 string AviacionMilitar::toString()
 {
     stringstream s;

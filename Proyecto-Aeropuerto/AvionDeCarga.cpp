@@ -37,6 +37,15 @@ double AvionDeCarga::getAnchuraPuerta()
     return anchuraPuerta;
 }
 
+void AvionDeCarga::setVelocidadMaxima(double s)
+{
+}
+
+double AvionDeCarga::getVelocidadMaxima()
+{
+    return -1;
+}
+
 string AvionDeCarga::toString()
 {
     stringstream s;

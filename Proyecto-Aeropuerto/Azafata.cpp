@@ -24,6 +24,51 @@ string Azafata::getNacionalidad()
     return nacionalidad;
 }
 
+void Azafata::setAniosExperiencia(int s)
+{
+}
+
+int Azafata::getAniosExperiencia()
+{
+    return -1;
+}
+
+void Azafata::setTelefono(string s)
+{
+}
+
+string Azafata::getTelefono()
+{
+    return "-1";
+}
+
+void Azafata::setLabor(string s)
+{
+}
+
+string Azafata::getLabor()
+{
+    return "-1";
+}
+
+void Azafata::setTituloUniversitario(string s)
+{
+}
+
+string Azafata::getTituloUniversitario()
+{
+    return "-1";
+}
+
+void Azafata::setGradoEscolaridad(string s)
+{
+}
+
+string Azafata::getGradoEscolaridad()
+{
+    return "-1";
+}
+
 string Azafata::toString()
 {
     stringstream s;

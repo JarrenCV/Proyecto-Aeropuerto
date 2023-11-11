@@ -14,14 +14,18 @@ public:
 
 	virtual ~ServicioProfesional();
 
-//-------------- set´s ------------------
 
+	//----------SERVICIOS PROFESIONALES-------
 	void setHorario(string);
 	void setTipoServicio(string);
-
-//-------------- get´s ------------------
-
 	string getHorario();
 	string getTipoServicio();
+	//-----TIEMPO INDEFINIDO----
+	void setPlaza(Plaza&);
+	Plaza* getPlaza();
+	//-----PLAZO FIJO----
+	void setElegible(bool);
+	bool getElegible();
+	
 	string toString();
 };

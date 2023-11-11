@@ -27,6 +27,16 @@ void MensajesGenerales::msjErrorCodigo()
 	cout << "ERROR: El codigo del contrato ya existe en el sistema" << endl;
 }
 
+void MensajesGenerales::msjErrorPlazasLlenas()
+{
+	cout << "ERROR: El contenedor de plazas esta lleno." << endl;
+}
+
+void MensajesGenerales::msjErrorCodPlaza()
+{
+	cout << "ERROR: El codigo de la plaza ya existe en el sistema" << endl;
+}
+
 void MensajesGenerales::msjErrorFechaIngCul()
 {
 	cout << "ERROR: La fecha de ingreso no puede ser despues de la fehca de culminacion." << endl;

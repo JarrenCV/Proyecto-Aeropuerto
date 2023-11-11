@@ -13,13 +13,40 @@ PlazoFijo::~PlazoFijo()
 {
 }
 
-void PlazoFijo::setElegible(bool)
+void PlazoFijo::setElegible(bool s)
 {
 }
 
 bool PlazoFijo::getElegible()
 {
     return false;
+}
+
+void PlazoFijo::setHorario(string s)
+{
+}
+
+void PlazoFijo::setTipoServicio(string s)
+{
+}
+
+string PlazoFijo::getHorario()
+{
+    return "-1";
+}
+
+string PlazoFijo::getTipoServicio()
+{
+    return "-1";
+}
+
+void PlazoFijo::setPlaza(Plaza& s)
+{
+}
+
+Plaza* PlazoFijo::getPlaza()
+{
+    return NULL;
 }
 
 string PlazoFijo::toString()

@@ -24,6 +24,51 @@ string Miscelaneo::getGradoEscolaridad()
     return gradoEscolaridad;
 }
 
+void Miscelaneo::setAniosExperiencia(int s)
+{
+}
+
+int Miscelaneo::getAniosExperiencia()
+{
+    return -1;
+}
+
+void Miscelaneo::setTelefono(string s)
+{
+}
+
+string Miscelaneo::getTelefono()
+{
+    return "-1";
+}
+
+void Miscelaneo::setNacionalidad(string s)
+{
+}
+
+string Miscelaneo::getNacionalidad()
+{
+    return "-1";
+}
+
+void Miscelaneo::setLabor(string s)
+{
+}
+
+string Miscelaneo::getLabor()
+{
+    return "-1";
+}
+
+void Miscelaneo::setTituloUniversitario(string s)
+{
+}
+
+string Miscelaneo::getTituloUniversitario()
+{
+    return "-1";
+}
+
 string Miscelaneo::toString()
 {
     stringstream s;

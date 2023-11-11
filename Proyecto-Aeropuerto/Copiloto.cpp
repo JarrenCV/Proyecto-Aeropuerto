@@ -24,6 +24,51 @@ string Copiloto::getTelefono()
     return telefono;
 }
 
+void Copiloto::setNacionalidad(string s)
+{
+}
+
+string Copiloto::getNacionalidad()
+{
+    return "-1";
+}
+
+void Copiloto::setAniosExperiencia(int s)
+{
+}
+
+int Copiloto::getAniosExperiencia()
+{
+    return -1;
+}
+
+void Copiloto::setLabor(string s)
+{
+}
+
+string Copiloto::getLabor()
+{
+    return "-1";
+}
+
+void Copiloto::setTituloUniversitario(string s)
+{
+}
+
+string Copiloto::getTituloUniversitario()
+{
+    return "-1";
+}
+
+void Copiloto::setGradoEscolaridad(string s)
+{
+}
+
+string Copiloto::getGradoEscolaridad()
+{
+    return "-1";
+}
+
 string Copiloto::toString()
 {
     stringstream s;

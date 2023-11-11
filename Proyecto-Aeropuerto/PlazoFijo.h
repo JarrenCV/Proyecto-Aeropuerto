@@ -12,9 +12,17 @@ public:
 
 	virtual ~PlazoFijo();
 
+	//-----PLAZO FIJO----
 	void setElegible(bool);
-
 	bool getElegible();
+	//----------SERVICIOS PROFESIONALES-------
+	void setHorario(string);
+	void setTipoServicio(string);
+	string getHorario();
+	string getTipoServicio();
+	//-----TIEMPO INDEFINIDO----
+	void setPlaza(Plaza&);
+	Plaza* getPlaza();
 
 	string toString();
 };

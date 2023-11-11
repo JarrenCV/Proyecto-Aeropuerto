@@ -17,6 +17,7 @@ int main() {
 	ListaEmpleados* contEmpleados = new ListaEmpleados();
 	ListaAviones* contAviones = new ListaAviones();
 	ListaContratos* contContratos = new ListaContratos();
+	ListaPlaza* contPlazas = new ListaPlaza();
 
 	//(string nomE, string cedJur, string numTelf, ListaAviones& contAvion, ListaContratos& contContrato, ListaEmpleados& contEmpleado)
 	Aeropuerto* aeropuerto = new Aeropuerto("Aeropuerto Tilin", "11114-2314", "9861-4673", *contAviones, *contContratos, *contEmpleados); // eso tilin 
@@ -200,107 +201,169 @@ int main() {
 						switch (opCase3) {
 						case 1:
 						{
-							string codContrato, descPuesto, horario, tipoServicio;
-							double salario;
-							int dia1, mes1, anio1, dia2, mes2, anio2;
-							Fecha* ingreso;
-							Fecha* culminacion;
-							Contrato* contratoSP;
+							InterfazContrato::ingresaServiciosProfesionales(*aeropuerto);
+							//string codContrato, descPuesto, horario, tipoServicio;
+							//double salario;
+							//int dia1, mes1, anio1, dia2, mes2, anio2;
+							//Fecha* ingreso;
+							//Fecha* culminacion;
+							//Contrato* contratoSP;
 
-							cout << "------------------SERVICIOS PROFESIONALES------------------" << endl;
-							cout << "Digite el codigo del Contrato: "; cin >> codContrato;
-							if (!aeropuerto.getListaContratos()->buscaContrato(codContrato)) {
-								cin.ignore();
-								cout << "Digite la descripcion del puesto: "; getline(cin, descPuesto);
-								cout << "Digite el salario del contrato: "; cin >> salario;
+							//cout << "------------------SERVICIOS PROFESIONALES------------------" << endl;
+							//cout << "Digite el codigo del Contrato: "; cin >> codContrato;
+							//if (!aeropuerto.getListaContratos()->buscaContrato(codContrato)) {
+							//	cin.ignore();
+							//	cout << "Digite la descripcion del puesto: "; getline(cin, descPuesto);
+							//	cout << "Digite el salario del contrato: "; cin >> salario;
 
-								cout << "Digite la fecha de ingreso: " << endl;
-								cout << "Dia: "; cin >> dia1;
-								cout << "Mes: "; cin >> mes1;
-								cout << "Anio: "; cin >> anio1;
-								ingreso = new Fecha(dia1,mes1,anio1);
+							//	cout << "Digite la fecha de ingreso: " << endl;
+							//	cout << "Dia: "; cin >> dia1;
+							//	cout << "Mes: "; cin >> mes1;
+							//	cout << "Anio: "; cin >> anio1;
+							//	ingreso = new Fecha(dia1,mes1,anio1);
 
-								cout << "Digite la fecha de culminacion: " << endl;
-								cout << "Dia: "; cin >> dia2;
-								cout << "Mes: "; cin >> mes2;
-								cout << "Anio: "; cin >> anio2;
-								culminacion = new Fecha(dia2, mes2, anio2);
-								
-								if (ingreso->esMenorQue(*culminacion)) {
-									
-									cin.ignore();
-									cout << "Digite el horario del Contrato: "; getline(cin, horario);
-									
-									cin.ignore();
-									cout << "Digite el Tipo de Servicio del Contrato: "; getline(cin, tipoServicio);
+							//	cout << "Digite la fecha de culminacion: " << endl;
+							//	cout << "Dia: "; cin >> dia2;
+							//	cout << "Mes: "; cin >> mes2;
+							//	cout << "Anio: "; cin >> anio2;
+							//	culminacion = new Fecha(dia2, mes2, anio2);
+							//	
+							//	if (ingreso->esMenorQue(*culminacion)) {
+							//		
+							//		cin.ignore();
+							//		cout << "Digite el horario del Contrato: "; getline(cin, horario);
+							//		
+							//		cin.ignore();
+							//		cout << "Digite el Tipo de Servicio del Contrato: "; getline(cin, tipoServicio);
 
 
-									//string h, string tS, string cContra, string dPuesto, double sal, Fecha& ingreso, Fecha& culmen
-									contratoSP = new ServicioProfesional(horario,tipoServicio,codContrato,descPuesto,salario,*ingreso,*culminacion);
-									aeropuerto.ingresaContrato(*contratoSP);
-									MensajesGenerales::IngresoExitoso();
-								}
-								else {
-									MensajesGenerales::msjErrorFechaIngCul();
-								}
-							}
-							else {
-								MensajesGenerales::msjErrorCodigo();
-							}
+							//		//string h, string tS, string cContra, string dPuesto, double sal, Fecha& ingreso, Fecha& culmen
+							//		contratoSP = new ServicioProfesional(horario,tipoServicio,codContrato,descPuesto,salario,*ingreso,*culminacion);
+							//		aeropuerto.ingresaContrato(*contratoSP);
+							//		MensajesGenerales::IngresoExitoso();
+							//	}
+							//	else {
+							//		MensajesGenerales::msjErrorFechaIngCul();
+							//	}
+							//}
+							//else {
+							//	MensajesGenerales::msjErrorCodigo();
+							//}
 							break;
 						}
 						case 2:
 						{
-							string codContrato, descPuesto;
-							double salario;
-							int dia1, mes1, anio1, dia2, mes2, anio2;
-							bool elegible = false;
-							Fecha* ingreso;
-							Fecha* culminacion;
-							Contrato* contratoPF;
+							InterfazContrato::ingresaPlazoFijo(*aeropuerto, *actual);
+							//string codContrato, descPuesto;
+							//double salario;
+							//int dia1, mes1, anio1, dia2, mes2, anio2;
+							//bool elegible = false;
+							//Fecha* ingreso;
+							//Fecha* culminacion;
+							//Contrato* contratoPF;
 
-							cout << "------------------PLAZO FIJO------------------" << endl;
-							cout << "Digite el codigo del Contrato: "; cin >> codContrato;
-							if (!aeropuerto.getListaContratos()->buscaContrato(codContrato)) {
-								cin.ignore();
-								cout << "Digite la descripcion del puesto: "; getline(cin, descPuesto);
-								cout << "Digite el salario del contrato: "; cin >> salario;
+							//cout << "------------------PLAZO FIJO------------------" << endl;
+							//cout << "Digite el codigo del Contrato: "; cin >> codContrato;
+							//if (!aeropuerto.getListaContratos()->buscaContrato(codContrato)) {
+							//	cin.ignore();
+							//	cout << "Digite la descripcion del puesto: "; getline(cin, descPuesto);
+							//	cout << "Digite el salario del contrato: "; cin >> salario;
 
-								cout << "Digite la fecha de ingreso: " << endl;
-								cout << "Dia: "; cin >> dia1;
-								cout << "Mes: "; cin >> mes1;
-								cout << "Anio: "; cin >> anio1;
-								ingreso = new Fecha(dia1, mes1, anio1);
+							//	cout << "Digite la fecha de ingreso: " << endl;
+							//	cout << "Dia: "; cin >> dia1;
+							//	cout << "Mes: "; cin >> mes1;
+							//	cout << "Anio: "; cin >> anio1;
+							//	ingreso = new Fecha(dia1, mes1, anio1);
 
-								cout << "Digite la fecha de culminacion: " << endl;
-								cout << "Dia: "; cin >> dia2;
-								cout << "Mes: "; cin >> mes2;
-								cout << "Anio: "; cin >> anio2;
-								culminacion = new Fecha(dia2, mes2, anio2);
+							//	cout << "Digite la fecha de culminacion: " << endl;
+							//	cout << "Dia: "; cin >> dia2;
+							//	cout << "Mes: "; cin >> mes2;
+							//	cout << "Anio: "; cin >> anio2;
+							//	culminacion = new Fecha(dia2, mes2, anio2);
 
-								if (ingreso->esMenorQue(*culminacion)) {
-									if (ingreso->diferenciaAnios(*actual, *culminacion))
-										elegible = true;
-									
+							//	if (ingreso->esMenorQue(*culminacion)) {
+							//		if (ingreso->diferenciaAnios(*actual, *culminacion)) {
+							//			elegible = true;
+							//		}
 
 
-									//(bool ele, string cContra, string dPuesto, double sal, Fecha& ingreso, Fecha& culmen)
-									contratoPF = new PlazoFijo(elegible, codContrato, descPuesto, salario, *ingreso, *culminacion);
-									aeropuerto.ingresaContrato(*contratoPF);
-									MensajesGenerales::IngresoExitoso();
-								}
-								else {
-									MensajesGenerales::msjErrorFechaIngCul();
-								}
-							}
-							else {
-								MensajesGenerales::msjErrorCodigo();
-							}
+							//		//(bool ele, string cContra, string dPuesto, double sal, Fecha& ingreso, Fecha& culmen)
+							//		contratoPF = new PlazoFijo(elegible, codContrato, descPuesto, salario, *ingreso, *culminacion);
+							//		aeropuerto.ingresaContrato(*contratoPF);
+							//		MensajesGenerales::IngresoExitoso();
+							//	}
+							//	else {
+							//		MensajesGenerales::msjErrorFechaIngCul();
+							//	}
+							//}
+							//else {
+							//	MensajesGenerales::msjErrorCodigo();
+							//}
 							break;
 						}
 						case 3:
 						{
+							InterfazContrato::ingresaTiempoIndefinido(*aeropuerto);
+							//string codContrato, descPuesto, codigoPlaza, nombrePuesto;
+							//double salario;
+							//int dia1, mes1, anio1, dia2, mes2, anio2;
+							//Fecha* ingreso;
+							//Fecha* culminacion;
+							//Plaza* plaza;
+							//Contrato* contratoTI;
 
+							//cout << "------------------TIEMPO INDEFINIDO------------------" << endl;
+							//cout << "Digite el codigo del Contrato: "; cin >> codContrato;
+							//if (!aeropuerto.getListaContratos()->buscaContrato(codContrato)) {
+							//	cin.ignore();
+							//	cout << "Digite la descripcion del puesto: "; getline(cin, descPuesto);
+							//	cout << "Digite el salario del contrato: "; cin >> salario;
+
+							//	cout << "Digite la fecha de ingreso: " << endl;
+							//	cout << "Dia: "; cin >> dia1;
+							//	cout << "Mes: "; cin >> mes1;
+							//	cout << "Anio: "; cin >> anio1;
+							//	ingreso = new Fecha(dia1, mes1, anio1);
+
+							//	cout << "Digite la fecha de culminacion: " << endl;
+							//	cout << "Dia: "; cin >> dia2;
+							//	cout << "Mes: "; cin >> mes2;
+							//	cout << "Anio: "; cin >> anio2;
+							//	culminacion = new Fecha(dia2, mes2, anio2);
+
+							//	if (ingreso->esMenorQue(*culminacion)) {
+							//		
+							//		if(aeropuerto.getListaPlaza()->cantidadNodos() <= 5){
+							//			cout << "Digite el codigo de la plaza asignada a este contrato: "; cin >> codigoPlaza;
+
+							//			if (!aeropuerto.getListaPlaza()->buscaPlaza(codigoPlaza)) {
+							//				cout << "Digite el nombre del puesto de este contrato: "; cin >> nombrePuesto;
+							//				plaza = new Plaza(codigoPlaza, nombrePuesto);
+
+							//				//(Plaza& p, string cContra, string dPuesto, double sal, Fecha& ingreso, Fecha& culmen)
+							//				contratoTI = new TiempoIndefinido(*plaza, codContrato, descPuesto, salario, *ingreso, *culminacion);
+							//				
+							//				aeropuerto.ingresaContrato(*contratoTI);
+							//				aeropuerto.ingresaPlaza(*plaza);
+							//				MensajesGenerales::IngresoExitoso();
+
+							//			}
+							//			else {
+							//				MensajesGenerales::msjErrorCodPlaza();
+							//			}
+
+							//		}
+							//		else {
+							//			MensajesGenerales::msjErrorPlazasLlenas();
+							//		}
+							//	}
+							//	else {
+							//		MensajesGenerales::msjErrorFechaIngCul();
+							//	}
+							//}
+							//else {
+							//	MensajesGenerales::msjErrorCodigo();
+							//}
 							break;
 						}
 						case 4:
