@@ -52,8 +52,20 @@ Plaza* PlazoFijo::getPlaza()
 string PlazoFijo::toString()
 {
     stringstream s;
-    s << "CONTRATO DE PLAZO FIJO " << endl;
+    s << "CONTRATO DE PLAZO FIJO " << endl
+    << "-----------------------------" << endl;
+    s << "Codigo de contrato: " << codigoContrato << endl
+        << "Descripcion de puesto: " << descripcionPuesto << endl
+        << "Salario" << salario << endl
+        << "Ingreso laboral: ";
+    s << ingresoLaboral->toString() << endl;
+    s << "Culminacion laboral" << endl;
+    s << culminacionLaboral->toString() << endl;
     s << empContratado->toString() << endl;
-
+    s << "Es elegible: ";
+    if (elegible == true)
+        s << "Si" << endl;
+    else
+        s << "No" << endl;
     return s.str();
 }

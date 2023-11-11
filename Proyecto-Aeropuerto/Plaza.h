@@ -8,15 +8,19 @@ class Plaza {
 private:
 	string codigoPlaza;
 	string nombrePuesto;
+	bool tomada;
 public:
 	Plaza();
-	Plaza(string, string);
+	Plaza(string, string, bool);
 
 	virtual ~Plaza();
 
 	void setCodigoPlaza(string);
 	void setNombrePuesto(string);
+	string getCodPlaza();
 	
 	string getCodigoPlaza();
 	string getNombrePuesto();
+
+	string toString();
 };

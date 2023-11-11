@@ -8,6 +8,7 @@
 #include"InterfazAvion.h"
 #include"InterfazContrato.h"
 #include"Fecha.h"
+#include"ListaPlaza.h"
 
 #include"ServicioProfesional.h"
 
@@ -372,6 +373,8 @@ int main() {
 							break;
 						}
 						}
+						cin.get();
+						cin.get();
 					} while (opCase3 != 4);
 					break;
 				}
@@ -395,6 +398,7 @@ int main() {
 		}
 		case 2:
 		{
+
 			break;
 		}
 		case 3: 
@@ -402,6 +406,10 @@ int main() {
 			break;
 		}
 		case 4: 
+		{
+			break;
+		}
+		case 5: 
 		{
 			MensajesGenerales::msjSalirSistema();
 			break;
@@ -416,7 +424,7 @@ int main() {
 		cin.get();
 		cin.get();	// system("pause") mas fino.
 		system("cls");
-	}while (opcionPrincipal != 4);
+	}while (opcionPrincipal != 5);
 
 
 

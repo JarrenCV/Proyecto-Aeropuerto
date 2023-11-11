@@ -55,8 +55,18 @@ string TiempoIndefinido::getTipoServicio()
 string TiempoIndefinido::toString()
 {
     stringstream s;
-    s << "CONTRATO DE TIEMPO INDEFINIDO" << endl;
+
+    s << "CONTRATO DE TIEMPO INDEFINIDO" << endl
+        << "-----------------------------" << endl;
+    s << "Codigo de contrato: " << codigoContrato << endl
+        << "Descripcion de puesto: " << descripcionPuesto << endl
+        << "Salario" << salario << endl
+        << "Ingreso laboral: ";
+    s << ingresoLaboral->toString()<<endl;
+    s << "Culminacion laboral" << endl;
+    s << culminacionLaboral->toString() << endl;
     s << empContratado->toString() << endl;
+    s << plaza->toString() << endl;
 
     return s.str();
 }

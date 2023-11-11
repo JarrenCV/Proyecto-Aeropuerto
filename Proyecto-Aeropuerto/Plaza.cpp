@@ -4,12 +4,14 @@ Plaza::Plaza()
 {
     codigoPlaza = "0000";
     nombrePuesto = "Sin definir";
+    tomada = false;
 }
 
-Plaza::Plaza(string cP, string nP)
+Plaza::Plaza(string cP, string nP,bool tm)
 {
     codigoPlaza = cP;
     nombrePuesto = nP;
+    tomada = tm;
 }
 
 Plaza::~Plaza()
@@ -26,6 +28,11 @@ void Plaza::setNombrePuesto(string nP)
     nombrePuesto = nP;
 }
 
+string Plaza::getCodPlaza()
+{
+    return codigoPlaza;
+}
+
 string Plaza::getCodigoPlaza()
 {
     return codigoPlaza;
@@ -34,4 +41,18 @@ string Plaza::getCodigoPlaza()
 string Plaza::getNombrePuesto()
 {
     return nombrePuesto;
+}
+
+string Plaza::toString()
+{
+    stringstream s;
+    s << "Plaza: " << codigoPlaza << endl
+        << "Nombre de puesto: " << nombrePuesto << endl
+        << "Disponibilidad de plaza: ";
+    if (tomada == false)
+        s << "Ocupada" << endl;
+    else
+        s << "Disponible" << endl;
+
+    return s.str();
 }

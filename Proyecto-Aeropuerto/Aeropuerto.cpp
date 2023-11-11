@@ -32,6 +32,11 @@ ListaEmpleados* Aeropuerto::getListaEmpleados()
 	return contenedorEmpleados;
 }
 
+ListaPlaza* Aeropuerto::getListaPlaza()
+{
+	return contenedorPlazas;
+}
+
 bool Aeropuerto::ingresaEmpleado(Empleado& emp)
 {
 	contenedorEmpleados->ingresaUltimo(emp);
@@ -55,4 +60,10 @@ bool Aeropuerto::ingresaContrato(Contrato& contrat)
 	}
 	else
 		return false;
+}
+
+bool Aeropuerto::ingresaPlaza(Plaza& placita)
+{
+	contenedorPlazas->ingresaUltimo(placita);
+	return true;
 }

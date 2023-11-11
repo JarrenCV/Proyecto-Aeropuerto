@@ -61,7 +61,15 @@ string ServicioProfesional::toString()
 {
     stringstream s;
     s << "CONTRATO DE SERVICIO PROFESIONAL" << endl
-        << empContratado->toString() << endl
+        << "-----------------------------" << endl;
+    s << "Codigo de contrato: " << codigoContrato << endl
+        << "Descripcion de puesto: " << descripcionPuesto << endl
+        << "Salario" << salario << endl
+        << "Ingreso laboral: ";
+    s << ingresoLaboral->toString() << endl;
+    s << "Culminacion laboral" << endl;
+    s << culminacionLaboral->toString() << endl;
+    s << empContratado->toString() << endl
         << "Horario: " << horario << endl
         << "Tipo de servicio: " << tipoServicio << endl;
 
