@@ -213,10 +213,10 @@ Contrato* Aeropuerto::buscaContratoDeEmpleado(string ced)
 	return contenedorContratos->buscaContratoPorCedula(ced);
 }
 
-string Aeropuerto::consultaTrabajador()
+string Aeropuerto::consultaTrabajador(string ced)
 {
 	stringstream s;
-	s << contenedorEmpleados->consultaTrabajador();
+	s << contenedorEmpleados->consultaTrabajador(ced);
 	return s.str();
 }
 

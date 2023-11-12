@@ -16,7 +16,6 @@ public:
 	void ingresaUltimo(Empleado&);
 	string reportePilotos();
 	bool buscaCedula(string ced);//Este metodo verifica que no haya una cedula repetida al ingresar en el contenedor
-	bool buscaCedula(string ced);//Este metodo verifica que no haya una cedula repetida al ingresar en el contenedor
 	Empleado* buscaEmpleado(string);
 
 	bool esPiloto(string);
@@ -35,6 +34,6 @@ public:
 	void editaGradoEscolaridad(string, string); // Miscelaneo
 	
 	string toString();
-	string consultaTrabajador();
+	string consultaTrabajador(string);
 };
 

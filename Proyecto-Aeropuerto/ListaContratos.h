@@ -33,7 +33,6 @@ public:
 	string reporteServiciosProfecionales();
 	string reportePlazoFijo();
 	string reporteTiempoIndefinido();
-	bool buscaContrato(string);
 
 
 	string toString();

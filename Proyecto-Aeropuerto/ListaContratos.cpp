@@ -96,7 +96,6 @@ string ListaContratos::reporteTiempoIndefinido()
     return s.str();
 }
 
-bool ListaContratos::buscaContrato(string contrat)
 bool ListaContratos::buscaCodigo(string cod)
 {
     NodoContrato* PE = ppio;
