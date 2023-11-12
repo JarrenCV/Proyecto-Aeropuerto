@@ -2,6 +2,9 @@
 #include"Empleado.h"
 #include"Fecha.h"
 #include"Plaza.h"
+// Nombre de estudiantes:
+// Lesber Huerta Cornejo 
+// Jarren Chaves Vizcaíno
 class Contrato {
 
 protected:
@@ -30,20 +33,23 @@ public:
 
 	void setEmpleadoContratado(Empleado*);
 //-------------- get´s ------------------
-	string getCodigoContrato();                      // los get´s deberían de ser virtuales? a parte de su toString ya que es una clase virtual y tal
+	string getCodigoContrato();                      
 	string getDescripcionPuesto();
 	double getSalario();
 	Fecha* getFechaIngreso();
 	Fecha* getFechaCulminacion(); 
 	Empleado* getEmpleadoContratado();
 //--------------------------------------
-
+	virtual string reporteServiciosProfecionales() = 0;
+	virtual string reportePlazoFijo() = 0;
+	virtual string reporteTiempoIndefinido() = 0;
 	//----------SERVICIOS PROFESIONALES-------
 	virtual void setHorario(string) = 0;
 	virtual void setTipoServicio(string) = 0;
 	virtual string getHorario() = 0;
 	virtual string getTipoServicio() = 0;
 	//-----PLAZO FIJO----
+	virtual string reportePlazoFijoMas2Anios() = 0;
 	virtual void setElegible(bool) = 0;
 	virtual bool getElegible() = 0;
 	//-----TIEMPO INDEFINIDO----

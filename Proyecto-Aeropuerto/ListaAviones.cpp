@@ -119,13 +119,63 @@ void ListaAviones::cambiaDistanciaRecorrida(string numP, double distanciaR)
     buscaAvionPlaca(numP)->setDistanciaRecorrida(distanciaR);
 }
 
+Avion* ListaAviones::avionCargaMayorArea()
+{   
+   NodoAvion* PE = ppio;
+   double areaMayor = PE->getAvion()->getAreaCarga();
+   Avion* avionMayor = PE->getAvion();
+   while (PE != NULL)
+   {
+       PE->getAvion()->getAreaCarga();
+       if (PE->getAvion()->getAreaCarga() > areaMayor) 
+       {
+           areaMayor = PE->getAvion()->getAreaCarga();
+           avionMayor = PE->getAvion();
+       }
+       PE = PE->getSigNodo();
+   }
+   return avionMayor;
+}
+
+string ListaAviones::tripulacionDeAvionComercial()
+{
+    stringstream s;
+    NodoAvion* PE = ppio;
+
+    s << "--------------------LISTADO DE TRIPULACION DE AVION COMERCIAL--------------------" << endl;
+    while (PE != NULL)
+    {
+        s << PE->getAvion()->tripulacionDeAvionComercial() << endl;
+        PE = PE->getSigNodo();
+    }
+    s << "----------------------------------------------------------------------------------" << endl;
+
+    return s.str();
+}
+
+string ListaAviones::avionesMas20(Fecha& f)
+{
+    stringstream s;
+    NodoAvion* PE = ppio;
+
+    s << "--------------------LISTADO DE AVIONES DE MAS DE 20 ANIOS--------------------" << endl;
+    while (PE != NULL)
+    {
+        s << PE->getAvion()->reporteAvionMas20(f) << endl;
+        PE = PE->getSigNodo();
+    }
+    s << "------------------------------------------------------------------------------" << endl;
+    return s.str();
+}
+
 string ListaAviones::toString()
 {
     stringstream s;
     NodoAvion* PE = ppio;
     
     s << "--------------------LISTADO DE AVIONES--------------------" << endl;
-    while (PE != NULL) {
+    while (PE != NULL) 
+    {
        s << PE->getAvion()->toString() << endl;
        PE = PE->getSigNodo();
     }

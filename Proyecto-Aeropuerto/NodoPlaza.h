@@ -1,5 +1,8 @@
 #pragma once
 #include"Plaza.h"
+// Nombre de estudiantes:
+// Lesber Huerta Cornejo 
+// Jarren Chaves Vizcaíno
 
 class NodoPlaza
 {

@@ -1,5 +1,9 @@
 #pragma once
 #include"NodoAvion.h"
+// Nombre de estudiantes:
+// Lesber Huerta Cornejo 
+// Jarren Chaves Vizcaíno
+
 #include"Piloto.h"
 class ListaAviones{
 private:
@@ -23,7 +27,9 @@ public:
 	void cambiaAltura(string, double);
 	void cambiaDistanciaRecorrida(string, double);
 
-
+	Avion* avionCargaMayorArea();
+	string tripulacionDeAvionComercial();
+	string avionesMas20(Fecha&);
 	string toString();
 };
 

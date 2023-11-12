@@ -1,5 +1,8 @@
 #pragma once
 #include"Contrato.h"
+// Nombre de estudiantes:
+// Lesber Huerta Cornejo 
+// Jarren Chaves Vizcaíno
 
 class ServicioProfesional : public Contrato {
 private:
@@ -24,8 +27,13 @@ public:
 	void setPlaza(Plaza&);
 	Plaza* getPlaza();
 	//-----PLAZO FIJO----
+	string reportePlazoFijoMas2Anios();
 	void setElegible(bool);
 	bool getElegible();
 	
+
+	string reporteServiciosProfecionales();
+	string reportePlazoFijo();
+	string reporteTiempoIndefinido();
 	string toString();
 };

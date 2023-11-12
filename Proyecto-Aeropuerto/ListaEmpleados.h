@@ -1,5 +1,8 @@
 #pragma once
 #include"NodoEmpleado.h"
+// Nombre de estudiantes:
+// Lesber Huerta Cornejo 
+// Jarren Chaves Vizcaíno
 
 class ListaEmpleados {
 private:
@@ -11,6 +14,8 @@ public:
 
 	void ingresaPrimero(Empleado&);
 	void ingresaUltimo(Empleado&);
+	string reportePilotos();
+	bool buscaCedula(string ced);//Este metodo verifica que no haya una cedula repetida al ingresar en el contenedor
 	bool buscaCedula(string ced);//Este metodo verifica que no haya una cedula repetida al ingresar en el contenedor
 	Empleado* buscaEmpleado(string);
 
@@ -30,5 +35,6 @@ public:
 	void editaGradoEscolaridad(string, string); // Miscelaneo
 	
 	string toString();
+	string consultaTrabajador();
 };
 

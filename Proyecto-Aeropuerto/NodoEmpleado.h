@@ -1,5 +1,8 @@
 #pragma once
 #include"Empleado.h"
+// Nombre de estudiantes:
+// Lesber Huerta Cornejo 
+// Jarren Chaves Vizcaíno
 
 class NodoEmpleado {
 private:

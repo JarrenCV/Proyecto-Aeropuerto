@@ -33,6 +33,12 @@ string Copiloto::getNacionalidad()
     return "-1";
 }
 
+string Copiloto::reportePilotos()
+{
+    cout << "Aquí no hay pilotos";
+    return "";
+}
+
 void Copiloto::setAniosExperiencia(int s)
 {
 }

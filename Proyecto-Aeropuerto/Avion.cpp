@@ -101,3 +101,16 @@ Empleado* Avion::getAzafata()
 {
     return azafata;
 }
+
+bool Avion::edadAvion(Fecha& actual)
+{
+    if (fechaCreacion->esMenorQue(actual)) {
+        int anios = actual.getAnio() - fechaCreacion->getAnio();
+        if(anios >= 20)
+        {
+            return true;
+        }
+        else return false;
+    }
+    return false;
+}

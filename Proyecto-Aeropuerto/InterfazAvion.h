@@ -5,6 +5,9 @@
 #include"AvionComercial.h"
 #include"MensajesGenerales.h"
 #include"Aeropuerto.h"
+// Nombre de estudiantes:
+// Lesber Huerta Cornejo 
+// Jarren Chaves Vizcaíno
 
 class InterfazAvion{
 public:

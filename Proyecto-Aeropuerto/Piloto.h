@@ -1,5 +1,9 @@
 #pragma once
 #include"Tripulacion.h"
+// Nombre de estudiantes:
+// Lesber Huerta Cornejo 
+// Jarren Chaves Vizcaíno
+
 class Piloto : public Tripulacion
 {
 private:
@@ -10,6 +14,7 @@ public:
 	virtual ~Piloto();
 
 	//--------PILOTO---------
+	string reportePilotos();
 	void setAniosExperiencia(int);
 	int getAniosExperiencia();
 	//--------COPILOTO-------

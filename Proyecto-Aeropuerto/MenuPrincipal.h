@@ -1,6 +1,9 @@
 #pragma once
 #include<iostream>
 #include<sstream>
+// Nombre de estudiantes:
+// Lesber Huerta Cornejo 
+// Jarren Chaves Vizcaíno
 
 using namespace std;
 

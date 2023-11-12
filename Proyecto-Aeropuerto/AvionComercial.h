@@ -1,15 +1,19 @@
 #pragma once
 #include"AviacionCivil.h"
-
+// Nombre de estudiantes:
+// Lesber Huerta Cornejo 
+// Jarren Chaves Vizcaíno
 class AvionComercial:public AviacionCivil{
-private:
+
 	//Queda sin atributos porque asi dijo el profe
+
 public:
 	AvionComercial();
 	AvionComercial(Fecha&,double,string,string);
 	virtual ~AvionComercial();
 
 	//----------AVION DE CARGA-------
+	double getAreaCarga();
 	void setAlturaPuerta(double);
 	void setAnchuraPuerta(double);
 	double getAlturaPuerta();
@@ -18,6 +22,9 @@ public:
 	void setVelocidadMaxima(double);
 	double getVelocidadMaxima();
 
+	string tripulacionDeAvionComercial();
+	string reporteAvionMas20(Fecha&);
+	string reporteSoloAviacion();
 	string toString();
 };
 

@@ -14,6 +14,18 @@ Piloto::~Piloto()
 {
 }
 
+string Piloto::reportePilotos()
+{
+    stringstream s;
+    s << "-----------------PILOTO-----------------" << endl;
+    s << "Cedula: " << cedula << endl;
+    s << "Nombre: " << nombre << endl;
+    s << "Edad: " << edad << endl;
+    s << "Anios de experiencia: " << aniosExperiencia << endl;
+
+    return s.str();
+}
+
 void Piloto::setAniosExperiencia(int aniosExp)
 {
     aniosExperiencia = aniosExp;

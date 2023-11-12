@@ -1,5 +1,8 @@
 #pragma once
 #include "Empleado.h"
+// Nombre de estudiantes:
+// Lesber Huerta Cornejo 
+// Jarren Chaves Vizcaíno
 
 class Planta : public Empleado
 {
@@ -12,6 +15,17 @@ public:
 
 	void setLabor(string);
 	string getLabor();
+
+	//----------PILOTO-------
+	virtual string reportePilotos() = 0;
+	virtual void setAniosExperiencia(int) = 0;
+	virtual int getAniosExperiencia() = 0;
+	//--------COPILOTO-------
+	virtual void setTelefono(string) = 0;
+	virtual string getTelefono() = 0;
+	//--------AZAFATA--------
+	virtual void setNacionalidad(string) = 0;
+	virtual string getNacionalidad() = 0;
 	//-----ADMINISTRATIVO----
 	virtual void setTituloUniversitario(string) = 0;
 	virtual string getTituloUniversitario() = 0;

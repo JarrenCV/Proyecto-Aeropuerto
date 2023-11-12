@@ -27,6 +27,11 @@ double AviacionMilitar::getVelocidadMaxima()
     return velocidadMaxima;
 }
 
+string AviacionMilitar::tripulacionDeAvionComercial()
+{
+    return "";
+}
+
 void AviacionMilitar::setNumeroPlaca(string s)
 {
 }
@@ -34,6 +39,11 @@ void AviacionMilitar::setNumeroPlaca(string s)
 string AviacionMilitar::getNumeroPlaca()
 {
     return "-1";
+}
+
+double AviacionMilitar::getAreaCarga()
+{
+    return 0.0;
 }
 
 void AviacionMilitar::setAlturaPuerta(double s)
@@ -54,6 +64,43 @@ double AviacionMilitar::getAnchuraPuerta()
     return -1;
 }
 
+string AviacionMilitar::reporteAvionMas20(Fecha& f)
+{
+    stringstream s;
+    if (edadAvion(f))
+    {
+        if (piloto != NULL) {
+            cout << "----------------Informacion de la tripulaicion----------------" << endl;
+            cout << piloto->toString();
+        }
+        s << "---------------AVION MILITAR---------------" << endl;
+        s << "Nombre del avion: " << TablaAviones::nombre(categoria);
+        s << "Categoria: " << categoria << endl;
+        s << "Fecha de creacion: " << fechaCreacion->toString() << endl;
+        s << "Tipo de avion: " << tipoAvion << endl;
+        s << "Distancia recorrida: " << distanciaRecorrida << " Km" << endl;
+        s << "Velocidad maxima: " << velocidadMaxima << " Km/h" << endl;
+        s << "Capacidad de pasajeros: " << TablaAviones::pasajeros(categoria) << endl;
+    }
+    return s.str();
+}
+
+string AviacionMilitar::reporteSoloAviacion()
+{
+    stringstream s;
+
+    s << "---------------AVION MILITAR---------------" << endl;
+    s << "Nombre del avion: " << TablaAviones::nombre(categoria);
+    s << "Categoria: " << categoria << endl;
+    s << "Fecha de creacion: " << fechaCreacion->toString() << endl;
+    s << "Tipo de avion: " << tipoAvion << endl;
+    s << "Distancia recorrida: " << distanciaRecorrida << " Km" << endl;
+    s << "Velocidad maxima: " << velocidadMaxima << " Km/h" << endl;
+    s << "Capacidad de pasajeros: " << TablaAviones::pasajeros(categoria) << endl;
+
+    return s.str();
+}
+
 string AviacionMilitar::toString()
 {
     stringstream s;
@@ -62,18 +109,15 @@ string AviacionMilitar::toString()
         cout << "----------------Informacion de la tripulaicion----------------" << endl;
         cout << piloto->toString();
     }
+    s << "---------------AVION MILITAR---------------" << endl;
+    s << "Nombre del avion: " << TablaAviones::nombre(categoria);
     s << "Categoria: " << categoria << endl;
     s << "Fecha de creacion: " << fechaCreacion->toString() << endl;
     s << "Tipo de avion: " << tipoAvion << endl;
     s << "Distancia recorrida: " << distanciaRecorrida <<" Km" << endl;
     s << "Velocidad maxima: " << velocidadMaxima <<" Km/h" << endl;
 
-    /*
-   s << "Nombre del avion: " << TablaAComercial::nombre(categoria);
-   s << "Capacidad de pasajeros: " << TablaAComercial::pasajeros(categoria);
-
-   Preguntar si imprimir toda la info del avion
-    */
+    s << "Capacidad de pasajeros: " << TablaAviones::pasajeros(categoria) << endl;
 
     return s.str();
 }

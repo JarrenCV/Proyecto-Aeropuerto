@@ -1,6 +1,8 @@
 #pragma once
 #include "Tripulacion.h"
-
+// Nombre de estudiantes:
+// Lesber Huerta Cornejo 
+// Jarren Chaves Vizcaíno
 class Azafata : public Tripulacion
 {
 private:
@@ -14,6 +16,7 @@ public:
 	void setNacionalidad(string);
 	string getNacionalidad();
 	//--------PILOTO---------
+	string reportePilotos();
 	void setAniosExperiencia(int);
 	int getAniosExperiencia();
 	//--------COPILOTO-------

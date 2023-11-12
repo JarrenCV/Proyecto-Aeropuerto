@@ -48,6 +48,11 @@ Plaza* ServicioProfesional::getPlaza()
     return NULL;
 }
 
+string ServicioProfesional::reportePlazoFijoMas2Anios()
+{
+    return "";
+}
+
 void ServicioProfesional::setElegible(bool s)
 {
 }
@@ -57,9 +62,41 @@ bool ServicioProfesional::getElegible()
     return false;
 }
 
+string ServicioProfesional::reporteServiciosProfecionales()
+{
+    stringstream s;
+
+    if (empContratado != NULL) {
+        s << "CONTRATO DE SERVICIO PROFESIONAL" << endl
+            << "-----------------------------" << endl;
+        s << "Codigo de contrato: " << codigoContrato << endl
+            << "Descripcion de puesto: " << descripcionPuesto << endl
+            << "Salario" << salario << endl
+            << "Ingreso laboral: ";
+        s << ingresoLaboral->toString() << endl;
+        s << "Culminacion laboral" << endl;
+        s << culminacionLaboral->toString() << endl;
+        s << empContratado->toString() << endl
+            << "Horario: " << horario << endl
+            << "Tipo de servicio: " << tipoServicio << endl;
+    }
+    return s.str();
+}
+
+string ServicioProfesional::reportePlazoFijo()
+{
+    return "";
+}
+
+string ServicioProfesional::reporteTiempoIndefinido()
+{
+    return "";
+}
+
 string ServicioProfesional::toString()
 {
     stringstream s;
+    if (empContratado != NULL) {
     s << "CONTRATO DE SERVICIO PROFESIONAL" << endl
         << "-----------------------------" << endl;
     s << "Codigo de contrato: " << codigoContrato << endl
@@ -69,9 +106,9 @@ string ServicioProfesional::toString()
     s << ingresoLaboral->toString() << endl;
     s << "Culminacion laboral" << endl;
     s << culminacionLaboral->toString() << endl;
-    s << empContratado->toString() << endl
-        << "Horario: " << horario << endl
-        << "Tipo de servicio: " << tipoServicio << endl;
-
+        s << empContratado->toString() << endl
+            << "Horario: " << horario << endl
+            << "Tipo de servicio: " << tipoServicio << endl;
+    }
     return s.str();
 }

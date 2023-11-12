@@ -1,5 +1,8 @@
 #pragma once
 #include"NodoContrato.h"
+// Nombre de estudiantes:
+// Lesber Huerta Cornejo 
+// Jarren Chaves Vizcaíno
 
 class ListaContratos
 {
@@ -26,6 +29,12 @@ public:
 	void cambiaHorario(string, string);
 	void cambiaTipoServicio(string, string);
 	void cambiaNombrePuestoPlaza(string, string);
+	string reportePlazoFijoMas2Anios();
+	string reporteServiciosProfecionales();
+	string reportePlazoFijo();
+	string reporteTiempoIndefinido();
+	bool buscaContrato(string);
+
 
 	string toString();
 };

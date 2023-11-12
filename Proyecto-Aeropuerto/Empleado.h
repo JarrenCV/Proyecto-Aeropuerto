@@ -2,6 +2,9 @@
 #include <iostream>
 #include<sstream>
 using namespace std;
+// Nombre de estudiantes:
+// Lesber Huerta Cornejo 
+// Jarren Chaves Vizcaíno
 
 class Empleado
 {
@@ -26,6 +29,7 @@ public:
 	
 	//-------------------TRIPULACION-------------------
 	//----------PILOTO-------
+	virtual string reportePilotos() = 0;
 	virtual void setAniosExperiencia(int) = 0;
 	virtual int getAniosExperiencia() = 0;
 	//--------COPILOTO-------
