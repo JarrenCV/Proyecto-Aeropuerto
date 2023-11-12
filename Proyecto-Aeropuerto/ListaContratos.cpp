@@ -189,6 +189,22 @@ void ListaContratos::cambiaNombrePuestoPlaza(string cod, string nomPuesto)
 {
     buscaContrato(cod)->getPlaza()->setNombrePuesto(nomPuesto);
 }
+string ListaContratos::consultaPorCodContrato(string cod)
+{
+    stringstream s;
+    NodoContrato* PE = ppio;
+
+    s << "--------------------TRAJADOR POR NUM DE CONTRATO--------------------" << endl;
+    while (PE != NULL) {
+        if (PE->getContrato()->getCodigoContrato() == cod) {
+            s << PE->getContrato()->toString() << endl;
+        }
+        PE = PE->getSigNodo();
+    }
+    s << "----------------------------------------------------------" << endl;
+
+    return s.str();
+}
 string ListaContratos::toString()
 {
     stringstream s;

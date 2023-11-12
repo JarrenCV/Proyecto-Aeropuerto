@@ -180,7 +180,7 @@ void Aeropuerto::cambiaDistanciaRecorrida(string placa, double distanciaR)
 	contenedorAviones->cambiaDistanciaRecorrida(placa, distanciaR);
 }
 // CONTRATOS
-bool Aeropuerto::buscaCodigoContrato(string cod)
+bool Aeropuerto::buscaCodigoContrato(string cod)   
 {
 	return contenedorContratos->buscaCodigo(cod);
 }
@@ -213,10 +213,24 @@ Contrato* Aeropuerto::buscaContratoDeEmpleado(string ced)
 	return contenedorContratos->buscaContratoPorCedula(ced);
 }
 
+string Aeropuerto::aviacionCivilPorPlaca(string pla)
+{
+	stringstream s;
+	s << contenedorAviones->consultaCivilPorPlaca(pla);
+	return s.str();
+}
+
+string Aeropuerto::consultaPorContrato(string cod)
+{
+	stringstream s;
+	s << contenedorContratos->consultaPorCodContrato(cod);
+	return string();
+}
+
 string Aeropuerto::consultaTrabajador(string ced)
 {
 	stringstream s;
-	s << contenedorEmpleados->consultaTrabajador(ced);
+	s << contenedorAviones->consultaTrabajador(ced);
 	return s.str();
 }
 

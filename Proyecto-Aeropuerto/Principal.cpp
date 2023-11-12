@@ -1,17 +1,10 @@
-#include"Aeropuerto.h"
 
-#include"ListaContratos.h"
-#include"ListaAviones.h"
-#include"ListaEmpleados.h"
 #include"InterfazEmpleado.h"
 #include"MenuPrincipal.h"
 #include"InterfazAvion.h"
 #include"InterfazContrato.h"
-#include"Fecha.h"
-#include"ListaPlaza.h"
 
-#include"ServicioProfesional.h"
-using namespace std;
+
 
 int main() {
 	ListaEmpleados* contEmpleados = new ListaEmpleados();
@@ -517,6 +510,45 @@ int main() {
 		}
 		case 4: 
 		{
+			int opcion4;
+			do
+			{
+				opcion4 = MenuPrincipal::menuReportes();
+				switch (opcion4)
+				{
+				case 1:
+				{
+					string ced;
+					cout << "Digite la cedula a consultar: "; cin >> ced;
+					aeropuerto->consultaTrabajador(ced);
+					break;
+				}
+				case 2:
+				{
+					string cod;
+					cout << "Digite el contrato a consultar: "; cin >> cod;
+					aeropuerto->consultaPorContrato(cod);
+					break;
+				}
+				case 3:
+				{
+					string pla;
+					cout << "Digite la placa a consultar: "; cin >> pla;
+					aeropuerto->aviacionCivilPorPlaca(pla);
+					break;
+				}
+				case 4:
+				{
+					MensajesGenerales::msjSalirSistema();
+					break;
+				}
+				default:
+					MensajesGenerales::msjErrorRango();
+				}
+				cin.get();
+				cin.get(); // system("pause") más fino
+				system("cls");
+			} while (opcion4 != 4);
 			break;
 		}
 		case 5: 

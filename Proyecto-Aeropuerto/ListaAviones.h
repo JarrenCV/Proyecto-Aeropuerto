@@ -26,7 +26,9 @@ public:
 	void cambiaAnchura(string, double);
 	void cambiaAltura(string, double);
 	void cambiaDistanciaRecorrida(string, double);
-
+	
+	string consultaCivilPorPlaca(string);
+	string consultaTrabajador(string);
 	Avion* avionCargaMayorArea();
 	string tripulacionDeAvionComercial();
 	string avionesMas20(Fecha&);

@@ -119,6 +119,42 @@ void ListaAviones::cambiaDistanciaRecorrida(string numP, double distanciaR)
     buscaAvionPlaca(numP)->setDistanciaRecorrida(distanciaR);
 }
 
+string ListaAviones::consultaCivilPorPlaca(string pla)
+{
+    stringstream s;
+    NodoAvion* PE = ppio;
+
+    s << "--------------------AVION CIVIL POR PLACA--------------------" << endl;
+    while (PE != NULL)
+    {
+        if (PE->getAvion()->getNumeroPlaca() == pla) {
+            s << PE->getAvion()->toString() << endl;
+            PE = PE->getSigNodo();
+        }
+    }
+    s << "----------------------------------------------------------" << endl;
+
+    return s.str();
+}
+
+string ListaAviones::consultaTrabajador(string ced)
+{
+    stringstream s;
+    NodoAvion* PE = ppio;
+
+    s << "--------------------TRABAJADOR POR CEDULA--------------------" << endl;
+    while (PE != NULL)
+    {
+        if (PE->getAvion()->getAzafata()->getCedula() == ced || PE->getAvion()->getCopiloto()->getCedula() == ced || PE->getAvion()->getPiloto()->getCedula() == ced) {
+            s << PE->getAvion()->toString() << endl;
+            PE = PE->getSigNodo();
+        }
+    }
+    s << "----------------------------------------------------------" << endl;
+
+    return s.str();
+}
+
 Avion* ListaAviones::avionCargaMayorArea()
 {   
    NodoAvion* PE = ppio;

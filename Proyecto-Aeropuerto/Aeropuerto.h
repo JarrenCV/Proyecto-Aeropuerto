@@ -76,6 +76,8 @@ public:
 	void cambiaTipoServicio(string, string);
 	void cambiaNombrePuestoPlaza(string, string);
 	
+	string aviacionCivilPorPlaca(string);
+	string consultaPorContrato(string);
 	string consultaTrabajador(string);
 	Avion* avionDeCargaMayorAreaDeAcceso();
 	string reportePlazoFijo2Anios();

@@ -174,20 +174,3 @@ string ListaEmpleados::toString()
 
     return s.str();
 }
-
-string ListaEmpleados::consultaTrabajador(string ced)
-{
-    stringstream s;
-    NodoEmpleado* PE = ppio;
-
-    s << "--------------------LISTADO DE EMPLEADOS--------------------" << endl;
-    while (PE != NULL) {
-        if (buscaCedula(ced)) {
-            s << PE->getEmpleado()->toString() << endl;
-            PE = PE->getSigNodo();
-        }
-    }
-    s << "----------------------------------------------------------" << endl;
-
-    return s.str();
-}

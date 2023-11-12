@@ -34,7 +34,7 @@ public:
 	string reportePlazoFijo();
 	string reporteTiempoIndefinido();
 
-
+	string consultaPorCodContrato(string);
 	string toString();
 };
 

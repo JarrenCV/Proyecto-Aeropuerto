@@ -33,15 +33,12 @@ public:
 	double getDistanciaRecorrida();
 	string getCategoria();
 	int getTipoAvion();
+	
 	Empleado* getPiloto();
 	Empleado* getCopiloto();
 	Empleado* getAzafata();
 
-
-	Empleado* setPiloto();
-	Empleado* setCopiloto();
-	Empleado* setAzafata();
-	bool edadAvion(Fecha&) ;
+	bool edadAvion(Fecha&);
 	
 	//-------------------AVIACION CIVIL-------------------
 	virtual string tripulacionDeAvionComercial() = 0;

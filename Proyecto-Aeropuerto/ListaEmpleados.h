@@ -34,6 +34,5 @@ public:
 	void editaGradoEscolaridad(string, string); // Miscelaneo
 	
 	string toString();
-	string consultaTrabajador(string);
 };
 
