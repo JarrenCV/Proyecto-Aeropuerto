@@ -12,8 +12,6 @@ public:
 	//----------------------------------------------------------------------------
 
 	static int menuAvion();
-
-
 	//----------------------------------------------------------------------------
 
 	static int menuAvionCivil();
@@ -24,8 +22,13 @@ public:
 	//----------------------------------------------------------------------------
 
 	static void ingresaInfoAvionMilitar(Aeropuerto&);
-	
-
 	//----------------------------------------------------------------------------
+	//-----------------------------------EDICION AVIONES-----------------------------------------
+	static int menuEdicionAvion();
+	static void eliminaAvion(Aeropuerto&);
+	static void editaPlacaAvionComercial(Aeropuerto&);
+	static void editaAnchuraPuerta(Aeropuerto&);
+	static void editaAlturaPuerta(Aeropuerto&);
+	static void editaDistanciaRecorrida(Aeropuerto&);
 };
 

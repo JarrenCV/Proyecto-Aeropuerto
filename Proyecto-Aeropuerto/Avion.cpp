@@ -52,19 +52,19 @@ void Avion::setTipoAvion(int tipoA)
     tipoAvion = tipoA;
 }
 
-void Avion::setPiloto(Empleado& pilot)
+void Avion::setPiloto(Empleado* pilot)
 {
-    piloto = (Empleado*)&pilot;
+    piloto = pilot;
 }
 
-void Avion::setCopiloto(Empleado& copi)
+void Avion::setCopiloto(Empleado* copi)
 {
-    copiloto = (Empleado*)&copi;
+    copiloto = copi;
 }
 
-void Avion::setAzafata(Empleado& azaf)
+void Avion::setAzafata(Empleado* azaf)
 {
-    azafata = (Empleado*)&azaf;
+    azafata = azaf;
 }
 
 Fecha* Avion::getFecha()
@@ -87,17 +87,17 @@ int Avion::getTipoAvion()
     return tipoAvion;
 }
 
-Empleado* Avion::setPiloto()
+Empleado* Avion::getPiloto()
 {
     return piloto;
 }
 
-Empleado* Avion::setCopiloto()
+Empleado* Avion::getCopiloto()
 {
     return copiloto;
 }
 
-Empleado* Avion::setAzafata()
+Empleado* Avion::getAzafata()
 {
     return azafata;
 }

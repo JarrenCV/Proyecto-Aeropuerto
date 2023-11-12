@@ -16,7 +16,7 @@ private:
 	ListaPlaza* contenedorPlazas;
 	
 public:
-	Aeropuerto(string, string, string, ListaAviones&, ListaContratos&, ListaEmpleados&);
+	Aeropuerto(string, string, string, ListaAviones&, ListaContratos&, ListaEmpleados&, ListaPlaza&);
 	virtual ~Aeropuerto();
 
 	ListaAviones* getListaAviones();
@@ -28,6 +28,49 @@ public:
 	bool ingresaAvion(Avion&);
 	bool ingresaContrato(Contrato&);
 	bool ingresaPlaza(Plaza&);
+	// ------------------------IDENTIFICACION DE CLASES----------------------
+	bool buscaCedula(string);
+	bool buscaPlaca(string);
+	// -----------------EMPLEADOS---------------
+	bool esPiloto(string);
+	bool esCopiloto(string);
+	bool esAzafata(string);
+	bool esPlanta(string);
+	bool esAdministrativo(string);
+	bool esMiscelaneo(string);
 
+	//--------------Contratos-------------------
+	bool esServicioProfesional(string);
+	bool esPlazoFijo(string);
+	bool esTiempoIndefinido(string);
+
+	// ------------------------CAMBIOS EN EMPLEADOS--------------------------
+	bool eliminaEmpleado(string);
+	void editaAniosExperiancia(string, int); // Piloto
+	void editaTelefono(string, string); // Copiloto
+	void editaNacionalidad(string, string); // Azafata
+	void editaLabor(string, string); // Planta
+	void editaTituloUniversitario(string, string); // Administrativo
+	void editaGradoEscolaridad(string, string); // Miscelaneo
+
+	// ------------------------CAMBIOS EN AVIONES--------------------------
+	void quitaPiloto(string);
+	void quitaCopiloto(string);
+	void quitaAzafata(string);
+	void cambiaPlacaAvion(string, string);
+	void cambiaAnchura(string, double);
+	void cambiaAltura(string, double);
+	void cambiaDistanciaRecorrida(string, double);
+
+
+	// ------------------------CAMBIOS EN CONTRATOS--------------------------
+	bool buscaCodigoContrato(string);
+	Contrato* buscaContratoDeEmpleado(string);
+	bool eliminaContratoPorCedula(string);
+	void cambiaDescripcionPuesto(string, string);
+	void cambiaSalario(string, double);
+	void cambiaHorario(string, string);
+	void cambiaTipoServicio(string, string);
+	void cambiaNombrePuestoPlaza(string, string);
 };
 

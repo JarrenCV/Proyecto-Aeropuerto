@@ -1,6 +1,6 @@
 #include "Aeropuerto.h"
 
-Aeropuerto::Aeropuerto(string nomE, string cedJur, string numTelf, ListaAviones& contAvion, ListaContratos& contContrato, ListaEmpleados& contEmpleado)
+Aeropuerto::Aeropuerto(string nomE, string cedJur, string numTelf, ListaAviones& contAvion, ListaContratos& contContrato, ListaEmpleados& contEmpleado,ListaPlaza& contPlazas)
 {
 	nombreEmpresa = nomE;
 	cedulaJuridica = cedJur;
@@ -8,6 +8,7 @@ Aeropuerto::Aeropuerto(string nomE, string cedJur, string numTelf, ListaAviones&
 	contenedorAviones = (ListaAviones*)&contAvion;
 	contenedorContratos = (ListaContratos*)&contContrato;
 	contenedorEmpleados = (ListaEmpleados*)&contEmpleado;
+	contenedorPlazas = (ListaPlaza*)&contPlazas;
 }
 
 Aeropuerto::~Aeropuerto()
@@ -66,4 +67,148 @@ bool Aeropuerto::ingresaPlaza(Plaza& placita)
 {
 	contenedorPlazas->ingresaUltimo(placita);
 	return true;
+}
+bool Aeropuerto::buscaCedula(string ced)
+{
+	return contenedorEmpleados->buscaCedula(ced);
+}
+bool Aeropuerto::buscaPlaca(string placa)
+{
+	return contenedorAviones->existeAvionConPlaca(placa);
+}
+// ------------------------IDENTIFICACION DE CLASES----------------------
+	// -----------------EMPLEADOS---------------
+bool Aeropuerto::esPiloto(string ced)
+{
+	return contenedorEmpleados->esPiloto(ced);
+}
+bool Aeropuerto::esCopiloto(string ced)
+{
+	return contenedorEmpleados->esCopiloto(ced);
+}
+bool Aeropuerto::esAzafata(string ced)
+{
+	return contenedorEmpleados->esAzafata(ced);
+}
+bool Aeropuerto::esPlanta(string ced)
+{
+	return contenedorEmpleados->esPlanta(ced);
+}
+bool Aeropuerto::esAdministrativo(string ced)
+{
+	return contenedorEmpleados->esAdministrativo(ced);
+}
+bool Aeropuerto::esMiscelaneo(string ced)
+{
+	return contenedorEmpleados->esMiscelaneo(ced);
+}
+bool Aeropuerto::esServicioProfesional(string cod)
+{
+	return contenedorContratos->esServicioProfesional(cod);
+}
+bool Aeropuerto::esPlazoFijo(string cod)
+{
+	return contenedorContratos->esPlazoFijo(cod);
+}
+bool Aeropuerto::esTiempoIndefinido(string cod)
+{
+	return contenedorContratos->esTiempoIndefinido(cod);
+}
+// ------------------------CAMBIOS EN EMPLEADOS--------------------------
+bool Aeropuerto::eliminaEmpleado(string ced)
+{
+	return contenedorEmpleados->eliminaEmpleado(ced);
+}
+
+void Aeropuerto::editaAniosExperiancia(string ced, int anios)
+{
+	contenedorEmpleados->editaAniosExperiancia(ced, anios);
+}
+
+void Aeropuerto::editaTelefono(string ced, string telefono)
+{
+	contenedorEmpleados->editaTelefono(ced, telefono);
+}
+
+void Aeropuerto::editaNacionalidad(string ced, string nacionalidad)
+{
+	contenedorEmpleados->editaNacionalidad(ced, nacionalidad);
+}
+
+void Aeropuerto::editaLabor(string ced, string labor)
+{
+	contenedorEmpleados->editaLabor(ced, labor);
+}
+
+void Aeropuerto::editaTituloUniversitario(string ced, string titulo)
+{
+	contenedorEmpleados->editaTituloUniversitario(ced, titulo);
+}
+
+void Aeropuerto::editaGradoEscolaridad(string ced, string gradoEsc)
+{
+	contenedorEmpleados->editaGradoEscolaridad(ced, gradoEsc);
+}
+// AVIONES
+void Aeropuerto::quitaPiloto(string ced)
+{
+	contenedorAviones->quitaPiloto(ced);
+}
+void Aeropuerto::quitaCopiloto(string ced)
+{
+	contenedorAviones->quitaCopiloto(ced);
+}
+void Aeropuerto::quitaAzafata(string ced)
+{
+	contenedorAviones->quitaAzafata(ced);
+}
+void Aeropuerto::cambiaPlacaAvion(string placa, string nuevaPlaca)
+{
+	contenedorAviones->cambiaPlaca(placa, nuevaPlaca);
+}
+void Aeropuerto::cambiaAnchura(string placa, double anch)
+{
+	contenedorAviones->cambiaAnchura(placa, anch);
+}
+void Aeropuerto::cambiaAltura(string placa, double alt)
+{
+	contenedorAviones->cambiaAltura(placa, alt);
+
+}
+void Aeropuerto::cambiaDistanciaRecorrida(string placa, double distanciaR)
+{
+	contenedorAviones->cambiaDistanciaRecorrida(placa, distanciaR);
+}
+// CONTRATOS
+bool Aeropuerto::buscaCodigoContrato(string cod)
+{
+	return contenedorContratos->buscaCodigo(cod);
+}
+bool Aeropuerto::eliminaContratoPorCedula(string ced)
+{
+	return contenedorContratos->eliminaContratoPorCedula(ced);
+}
+void Aeropuerto::cambiaDescripcionPuesto(string cod, string descripcion)
+{
+	contenedorContratos->cambiaDescripcionPuesto(cod, descripcion);
+}
+void Aeropuerto::cambiaSalario(string cod, double sal)
+{
+	contenedorContratos->cambiaSalario(cod, sal);
+}
+void Aeropuerto::cambiaHorario(string cod, string horario)
+{
+	contenedorContratos->cambiaHorario(cod, horario);
+}
+void Aeropuerto::cambiaTipoServicio(string cod, string tipoServicio)
+{
+	contenedorContratos->cambiaTipoServicio(cod, tipoServicio);
+}
+void Aeropuerto::cambiaNombrePuestoPlaza(string cod, string nombrePuesto)
+{
+	contenedorContratos->cambiaNombrePuestoPlaza(cod, nombrePuesto);
+}
+Contrato* Aeropuerto::buscaContratoDeEmpleado(string ced)
+{
+	return contenedorContratos->buscaContratoPorCedula(ced);
 }

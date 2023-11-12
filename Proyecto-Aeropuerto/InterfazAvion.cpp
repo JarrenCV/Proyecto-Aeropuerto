@@ -13,9 +13,6 @@ int InterfazAvion::menuAvion()
 	cout << "Digite la opcion: "; cin >> opcion;
 	return opcion;
 }
-
-
-
 //----------------------------------------------------------------------------
 
 int InterfazAvion::menuAvionCivil()
@@ -117,5 +114,82 @@ void InterfazAvion::ingresaInfoAvionMilitar(Aeropuerto& aeropuerto)
 	MensajesGenerales::IngresoExitoso();
 }
 
+int InterfazAvion::menuEdicionAvion()
+{
+	int opcion;
+	system("cls");
+	cout << "------------------MENU EDICION DE AVIONES------------------" << endl;
+	cout << "Digite (1)				Elimina Avion" << endl;
+	cout << "Digite (2)				Editar Placa Avion Comercial" << endl;
+	cout << "Digite (3)				Editar anchura de puerta" << endl;
+	cout << "Digite (4)				Editar altura de puerta" << endl;
+	cout << "Digite (5)				Editar distancia recorrida de Avion Comercial" << endl;
+	cout << "Digite (6)				Cancelar" << endl;
+	cout << "--------------------------------------------------" << endl;
+	cout << "Digite la opcion: "; cin >> opcion;
+	return opcion;
+}
+void InterfazAvion::eliminaAvion(Aeropuerto& aeropuerto)
+{
 
+}
+void InterfazAvion::editaPlacaAvionComercial(Aeropuerto& aeropuerto)
+{
+	string placa, placaNueva;
+	cout << "----------------EDITAR PLACA DE AVION CIVIL-----------" << endl;
+	cout << "Digite la placa del avion que desea editar: "; cin >> placa;
+	if (aeropuerto.buscaPlaca(placa)) {
+		cout << "Digite la nueva placa del avion: "; cin >> placaNueva;
+		aeropuerto.cambiaPlacaAvion(placa, placaNueva);
+		MensajesGenerales::msjEdicionExitosa();
+	}
+	else {
+		MensajesGenerales::msjErrorPlacaNoExiste();
+	}
+}
+void InterfazAvion::editaAnchuraPuerta(Aeropuerto& aeropuerto)
+{
+	string placa;
+	double anchura;
+	cout << "----------------EDITAR ANCHURA DE PUERTA AVION DE CARGA-----------" << endl;
+	cout << "Digite la placa del avion que desea editar: "; cin >> placa;
+	if (aeropuerto.buscaPlaca(placa)) {
+		cout << "Digite la nueva anchura de la puerta del avion: "; cin >> anchura;
+		aeropuerto.cambiaAnchura(placa, anchura);
+		MensajesGenerales::msjEdicionExitosa();
+	}
+	else {
+		MensajesGenerales::msjErrorPlacaNoExiste();
+	}
+}
+void InterfazAvion::editaAlturaPuerta(Aeropuerto& aeropuerto)
+{
+	string placa;
+	double altura;
+	cout << "----------------EDITAR ALTURA DE PUERTA AVION DE CARGA-----------" << endl;
+	cout << "Digite la placa del avion que desea editar: "; cin >> placa;
+	if (aeropuerto.buscaPlaca(placa)) {
+		cout << "Digite la nueva altura de la puerta del avion: "; cin >> altura;
+		aeropuerto.cambiaAltura(placa, altura);
+		MensajesGenerales::msjEdicionExitosa();
+	}
+	else {
+		MensajesGenerales::msjErrorPlacaNoExiste();
+	}
+}
+void InterfazAvion::editaDistanciaRecorrida(Aeropuerto& aeropuerto)
+{
+	string placa;
+	double distanciaRecorrida;
+	cout << "----------------EDITAR DISTANCIA RECORRIDA DE AVION CIVIL-----------" << endl;
+	cout << "Digite la placa del avion que desea editar: "; cin >> placa;
+	if (aeropuerto.buscaPlaca(placa)) {
+		cout << "Digite la nueva distancia recorrida del avion: "; cin >> distanciaRecorrida;
+		aeropuerto.cambiaDistanciaRecorrida(placa, distanciaRecorrida);
+		MensajesGenerales::msjEdicionExitosa();
+	}
+	else {
+		MensajesGenerales::msjErrorPlacaNoExiste();
+	}
+}
 //----------------------------------------------------------------------------

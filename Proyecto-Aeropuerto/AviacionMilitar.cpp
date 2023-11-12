@@ -57,11 +57,11 @@ double AviacionMilitar::getAnchuraPuerta()
 string AviacionMilitar::toString()
 {
     stringstream s;
+    s << "---------------AVION MILITAR---------------" << endl;
     if (piloto != NULL) {
         cout << "----------------Informacion de la tripulaicion----------------" << endl;
         cout << piloto->toString();
     }
-    s << "---------------AVION MILITAR---------------" << endl;
     s << "Categoria: " << categoria << endl;
     s << "Fecha de creacion: " << fechaCreacion->toString() << endl;
     s << "Tipo de avion: " << tipoAvion << endl;

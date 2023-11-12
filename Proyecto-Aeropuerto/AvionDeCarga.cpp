@@ -49,6 +49,7 @@ double AvionDeCarga::getVelocidadMaxima()
 string AvionDeCarga::toString()
 {
     stringstream s;
+    s << "---------------AVION DE CARGA---------------" << endl;
     if (piloto != NULL || copiloto != NULL) {
         cout << "----------------Informacion de la tripulaicion----------------" << endl;
         if (piloto != NULL)
@@ -56,7 +57,6 @@ string AvionDeCarga::toString()
         if (copiloto != NULL)
             cout << copiloto->toString();
     }
-    s << "---------------AVION DE CARGA---------------" << endl;
     s << "Categoria: " << categoria << endl;
     s << "Fecha de creacion: " << fechaCreacion->toString() << endl;
     s << "Numero de placa: " << getNumeroPlaca() << endl;

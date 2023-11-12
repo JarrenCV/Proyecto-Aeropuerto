@@ -11,7 +11,6 @@
 #include"ListaPlaza.h"
 
 #include"ServicioProfesional.h"
-
 using namespace std;
 
 int main() {
@@ -21,7 +20,7 @@ int main() {
 	ListaPlaza* contPlazas = new ListaPlaza();
 
 	//(string nomE, string cedJur, string numTelf, ListaAviones& contAvion, ListaContratos& contContrato, ListaEmpleados& contEmpleado)
-	Aeropuerto* aeropuerto = new Aeropuerto("Aeropuerto Tilin", "11114-2314", "9861-4673", *contAviones, *contContratos, *contEmpleados); // eso tilin 
+	Aeropuerto* aeropuerto = new Aeropuerto("Aeropuerto Tilin", "11114-2314", "9861-4673", *contAviones, *contContratos, *contEmpleados,*contPlazas); // eso tilin 
 
 	
 	int opcionPrincipal,d,m,a;
@@ -122,6 +121,11 @@ int main() {
 							} while (cuartOpcion != 3);
 							break;
 						}
+						case 3: 
+						{
+							MensajesGenerales::msjRegreso();
+							break;
+						}
 						default:
 							MensajesGenerales::msjErrorRango();
 
@@ -131,7 +135,7 @@ int main() {
 						cin.get();	// system("pause") mas fino.
 						system("cls");
 					} while (segOpcion != 3);
-
+					break;
 				}
 				case 2:
 				{
@@ -192,179 +196,24 @@ int main() {
 					int opCase3;
 					do {
 						opCase3 = InterfazContrato::menuContrato();
-						/*cout << "------------------MENU CONTRATOS------------------" << endl;
-						cout << "Digite (1)				Crear contrato por servicios profesionales" << endl;
-						cout << "Digite (2)				Crear contrato Plazo fijo" << endl;
-						cout << "Digite (3)             Crear contrato de Tiempo indefinido" << endl;
-						cout << "Digite (4)             Salir" << endl;
-						cout << "--------------------------------------------------" << endl;
-						cout << "Digite la opcion: "; cin >> opCase3;*/
+						
 						switch (opCase3) {
 						case 1:
 						{
 							InterfazContrato::ingresaServiciosProfesionales(*aeropuerto);
-							//string codContrato, descPuesto, horario, tipoServicio;
-							//double salario;
-							//int dia1, mes1, anio1, dia2, mes2, anio2;
-							//Fecha* ingreso;
-							//Fecha* culminacion;
-							//Contrato* contratoSP;
-
-							//cout << "------------------SERVICIOS PROFESIONALES------------------" << endl;
-							//cout << "Digite el codigo del Contrato: "; cin >> codContrato;
-							//if (!aeropuerto.getListaContratos()->buscaContrato(codContrato)) {
-							//	cin.ignore();
-							//	cout << "Digite la descripcion del puesto: "; getline(cin, descPuesto);
-							//	cout << "Digite el salario del contrato: "; cin >> salario;
-
-							//	cout << "Digite la fecha de ingreso: " << endl;
-							//	cout << "Dia: "; cin >> dia1;
-							//	cout << "Mes: "; cin >> mes1;
-							//	cout << "Anio: "; cin >> anio1;
-							//	ingreso = new Fecha(dia1,mes1,anio1);
-
-							//	cout << "Digite la fecha de culminacion: " << endl;
-							//	cout << "Dia: "; cin >> dia2;
-							//	cout << "Mes: "; cin >> mes2;
-							//	cout << "Anio: "; cin >> anio2;
-							//	culminacion = new Fecha(dia2, mes2, anio2);
-							//	
-							//	if (ingreso->esMenorQue(*culminacion)) {
-							//		
-							//		cin.ignore();
-							//		cout << "Digite el horario del Contrato: "; getline(cin, horario);
-							//		
-							//		cin.ignore();
-							//		cout << "Digite el Tipo de Servicio del Contrato: "; getline(cin, tipoServicio);
-
-
-							//		//string h, string tS, string cContra, string dPuesto, double sal, Fecha& ingreso, Fecha& culmen
-							//		contratoSP = new ServicioProfesional(horario,tipoServicio,codContrato,descPuesto,salario,*ingreso,*culminacion);
-							//		aeropuerto.ingresaContrato(*contratoSP);
-							//		MensajesGenerales::IngresoExitoso();
-							//	}
-							//	else {
-							//		MensajesGenerales::msjErrorFechaIngCul();
-							//	}
-							//}
-							//else {
-							//	MensajesGenerales::msjErrorCodigo();
-							//}
+							
 							break;
 						}
 						case 2:
 						{
 							InterfazContrato::ingresaPlazoFijo(*aeropuerto, *actual);
-							//string codContrato, descPuesto;
-							//double salario;
-							//int dia1, mes1, anio1, dia2, mes2, anio2;
-							//bool elegible = false;
-							//Fecha* ingreso;
-							//Fecha* culminacion;
-							//Contrato* contratoPF;
-
-							//cout << "------------------PLAZO FIJO------------------" << endl;
-							//cout << "Digite el codigo del Contrato: "; cin >> codContrato;
-							//if (!aeropuerto.getListaContratos()->buscaContrato(codContrato)) {
-							//	cin.ignore();
-							//	cout << "Digite la descripcion del puesto: "; getline(cin, descPuesto);
-							//	cout << "Digite el salario del contrato: "; cin >> salario;
-
-							//	cout << "Digite la fecha de ingreso: " << endl;
-							//	cout << "Dia: "; cin >> dia1;
-							//	cout << "Mes: "; cin >> mes1;
-							//	cout << "Anio: "; cin >> anio1;
-							//	ingreso = new Fecha(dia1, mes1, anio1);
-
-							//	cout << "Digite la fecha de culminacion: " << endl;
-							//	cout << "Dia: "; cin >> dia2;
-							//	cout << "Mes: "; cin >> mes2;
-							//	cout << "Anio: "; cin >> anio2;
-							//	culminacion = new Fecha(dia2, mes2, anio2);
-
-							//	if (ingreso->esMenorQue(*culminacion)) {
-							//		if (ingreso->diferenciaAnios(*actual, *culminacion)) {
-							//			elegible = true;
-							//		}
-
-
-							//		//(bool ele, string cContra, string dPuesto, double sal, Fecha& ingreso, Fecha& culmen)
-							//		contratoPF = new PlazoFijo(elegible, codContrato, descPuesto, salario, *ingreso, *culminacion);
-							//		aeropuerto.ingresaContrato(*contratoPF);
-							//		MensajesGenerales::IngresoExitoso();
-							//	}
-							//	else {
-							//		MensajesGenerales::msjErrorFechaIngCul();
-							//	}
-							//}
-							//else {
-							//	MensajesGenerales::msjErrorCodigo();
-							//}
+							
 							break;
 						}
 						case 3:
 						{
 							InterfazContrato::ingresaTiempoIndefinido(*aeropuerto);
-							//string codContrato, descPuesto, codigoPlaza, nombrePuesto;
-							//double salario;
-							//int dia1, mes1, anio1, dia2, mes2, anio2;
-							//Fecha* ingreso;
-							//Fecha* culminacion;
-							//Plaza* plaza;
-							//Contrato* contratoTI;
-
-							//cout << "------------------TIEMPO INDEFINIDO------------------" << endl;
-							//cout << "Digite el codigo del Contrato: "; cin >> codContrato;
-							//if (!aeropuerto.getListaContratos()->buscaContrato(codContrato)) {
-							//	cin.ignore();
-							//	cout << "Digite la descripcion del puesto: "; getline(cin, descPuesto);
-							//	cout << "Digite el salario del contrato: "; cin >> salario;
-
-							//	cout << "Digite la fecha de ingreso: " << endl;
-							//	cout << "Dia: "; cin >> dia1;
-							//	cout << "Mes: "; cin >> mes1;
-							//	cout << "Anio: "; cin >> anio1;
-							//	ingreso = new Fecha(dia1, mes1, anio1);
-
-							//	cout << "Digite la fecha de culminacion: " << endl;
-							//	cout << "Dia: "; cin >> dia2;
-							//	cout << "Mes: "; cin >> mes2;
-							//	cout << "Anio: "; cin >> anio2;
-							//	culminacion = new Fecha(dia2, mes2, anio2);
-
-							//	if (ingreso->esMenorQue(*culminacion)) {
-							//		
-							//		if(aeropuerto.getListaPlaza()->cantidadNodos() <= 5){
-							//			cout << "Digite el codigo de la plaza asignada a este contrato: "; cin >> codigoPlaza;
-
-							//			if (!aeropuerto.getListaPlaza()->buscaPlaza(codigoPlaza)) {
-							//				cout << "Digite el nombre del puesto de este contrato: "; cin >> nombrePuesto;
-							//				plaza = new Plaza(codigoPlaza, nombrePuesto);
-
-							//				//(Plaza& p, string cContra, string dPuesto, double sal, Fecha& ingreso, Fecha& culmen)
-							//				contratoTI = new TiempoIndefinido(*plaza, codContrato, descPuesto, salario, *ingreso, *culminacion);
-							//				
-							//				aeropuerto.ingresaContrato(*contratoTI);
-							//				aeropuerto.ingresaPlaza(*plaza);
-							//				MensajesGenerales::IngresoExitoso();
-
-							//			}
-							//			else {
-							//				MensajesGenerales::msjErrorCodPlaza();
-							//			}
-
-							//		}
-							//		else {
-							//			MensajesGenerales::msjErrorPlazasLlenas();
-							//		}
-							//	}
-							//	else {
-							//		MensajesGenerales::msjErrorFechaIngCul();
-							//	}
-							//}
-							//else {
-							//	MensajesGenerales::msjErrorCodigo();
-							//}
+							
 							break;
 						}
 						case 4:
@@ -373,8 +222,10 @@ int main() {
 							break;
 						}
 						}
+
 						cin.get();
-						cin.get();
+						cin.get(); // system("pause") mas fino.
+						system("cls");
 					} while (opCase3 != 4);
 					break;
 				}
@@ -398,7 +249,187 @@ int main() {
 		}
 		case 2:
 		{
+			int opEdicion;
+			do {
+				opEdicion = MenuPrincipal::menuMantenimiento();
+				
+				switch (opEdicion){
+				case 1: 
+				{
+					int opEdicionEmp;
+					do {
+						opEdicionEmp = InterfazEmpleado::menuEdicionEmpleado();
 
+						switch (opEdicionEmp) {
+						case 1: 
+						{
+							InterfazEmpleado::eliminaEmpleado(*aeropuerto);
+							break;
+						}
+						case 2:
+						{
+							InterfazEmpleado::cambiaAniosExperiencia(*aeropuerto);
+							break;
+						}
+						case 3:
+						{
+							InterfazEmpleado::cambiaTelefono(*aeropuerto);
+							break;
+						}
+						case 4:
+						{
+							InterfazEmpleado::cambiaNacionalidad(*aeropuerto);
+							break;
+						}
+						case 5:
+						{
+							InterfazEmpleado::cambiaLabor(*aeropuerto);
+							break;
+						}
+						case 6:
+						{
+							InterfazEmpleado::cambiaTituloU(*aeropuerto);
+							break;
+						}
+						case 7:
+						{
+							InterfazEmpleado::cambiaGradoEsc(*aeropuerto);
+							break;
+						}
+						case 8: 
+						{
+							MensajesGenerales::msjRegreso();
+						}
+						default:
+							MensajesGenerales::msjErrorRango();
+						}// fin del switch
+					
+						cin.get();
+						cin.get();
+						system("cls");
+					} while (opEdicionEmp != 8);
+					break;
+				}
+				case 2:
+				{
+					// MANTENIMIENTO AVIONES
+					int opEdicionAvi;
+					do {
+						opEdicionAvi = InterfazAvion::menuEdicionAvion();
+
+						switch (opEdicionAvi) {
+						case 1:
+						{
+							//LESBER LO HACE ...................................... LESBER LO HACE ................. LESBER LO HACE .................. LESBER LO HACE ...
+							string cedula;
+							cout << "----------------ELIMINAR UN AVION-------------" << endl;
+							cout << "Digite la cedula del Empleado que desea eliminar: "; cin >> cedula;
+							
+							
+							
+							
+							
+							
+							break;
+						}
+						case 2:
+						{
+							InterfazAvion::editaPlacaAvionComercial(*aeropuerto);
+							break;
+						}
+						case 3:
+						{
+							InterfazAvion::editaAnchuraPuerta(*aeropuerto);
+							break;
+						}
+						case 4:
+						{
+							InterfazAvion::editaAlturaPuerta(*aeropuerto);
+							break;
+						}
+						case 5:
+						{
+							InterfazAvion::editaDistanciaRecorrida(*aeropuerto);
+							break;
+						}
+						case 6:
+						{
+							MensajesGenerales::msjRegreso();
+							break;
+						}
+						default:
+							MensajesGenerales::msjErrorRango();
+							break;
+						}
+
+						cin.get();
+						cin.get();
+						system("cls");
+					} while (opEdicionAvi != 6);
+
+					break;
+				}
+				case 3:
+				{
+					int opEdicionCont = 0;
+					do {
+						int opEdicionCont = InterfazContrato::menuEdicionContrato();
+						switch (opEdicionCont) {
+						case 1:
+						{
+							InterfazContrato::cambiaDescripcionPuesto(*aeropuerto); 
+							break;
+						}
+						case 2:
+						{
+							InterfazContrato::cambiaSalario(*aeropuerto);
+							break;
+						}
+						case 3:
+						{
+							InterfazContrato::cambiaHorario(*aeropuerto);
+							break;
+						}
+						case 4:
+						{
+							InterfazContrato::cambiaTipoServicio(*aeropuerto);
+							break;
+						}
+						case 5:
+						{
+							InterfazContrato::cambiaPuestoPlaza(*aeropuerto);
+							break;
+						}
+						case 6:
+						{
+							MensajesGenerales::msjRegreso();
+						}
+						default: 
+							MensajesGenerales::msjErrorRango();
+						}
+
+						cin.get();
+						cin.get();
+						system("cls");
+					} while (opEdicionCont);
+					break;
+				}
+				case 4:
+				{
+					MensajesGenerales::msjRegreso();
+					break;
+				}
+				default:
+				{
+					MensajesGenerales::msjErrorRango();
+					break; 
+				}
+				}
+				
+				
+				cin.get();
+				cin.get();
+			} while (opEdicion!=4);
 			break;
 		}
 		case 3: 

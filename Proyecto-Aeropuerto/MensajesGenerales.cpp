@@ -16,15 +16,45 @@ void MensajesGenerales::msjRegreso()
 
 }
 
+void MensajesGenerales::msjEdicionExitosa() 
+{
+	cout << ">>LISTO<< Los cambios se hicieron correctamente." << endl;
+}
+
+void MensajesGenerales::msjEliminacion() 
+{
+	cout << ">>LISTO<< Eliminacion exitosa." << endl;
+}
+
 void MensajesGenerales::msjErrorCedula()
 {
 	cout << "ERROR: El numero de cedula ya existe en el sistema" << endl;
 
 }
 
+void MensajesGenerales::msjErrorCedulaNoExiste()
+{
+	cout << "ERROR: El numero de cedula NO existe en el sistema" << endl;
+}
+
+void MensajesGenerales::msjErrorPlacaNoExiste()
+{
+	cout << "ERROR: El numero de placa NO existe en el sistema" << endl;
+}
+
+void MensajesGenerales::msjErrorEmpCategoria()
+{
+	cout << "ERROR: El empleado no es de la categoria seleccionada" << endl;
+}
+
+void MensajesGenerales::msjErrorContratoCategoria()
+{
+	cout << "ERROR: El contrato no es de la categoria seleccionada" << endl;
+}
+
 void MensajesGenerales::msjErrorCodigo()
 {
-	cout << "ERROR: El codigo del contrato ya existe en el sistema" << endl;
+	cout << "ERROR: El codigo del contrato NO ya existe en el sistema" << endl;
 }
 
 void MensajesGenerales::msjErrorPlazasLlenas()

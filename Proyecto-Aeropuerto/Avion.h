@@ -21,17 +21,17 @@ public:
 	void setDistanciaRecorrida(double);
 	void setCategoria(string);
 	void setTipoAvion(int);
-	void setPiloto(Empleado&);
-	void setCopiloto(Empleado&);
-	void setAzafata(Empleado&);
+	void setPiloto(Empleado*);
+	void setCopiloto(Empleado*);
+	void setAzafata(Empleado*);
 
 	Fecha* getFecha();
 	double getDistanciaRecorrida();
 	string getCategoria();
 	int getTipoAvion();
-	Empleado* setPiloto();
-	Empleado* setCopiloto();
-	Empleado* setAzafata();
+	Empleado* getPiloto();
+	Empleado* getCopiloto();
+	Empleado* getAzafata();
 
 
 	//-------------------AVIACION CIVIL-------------------

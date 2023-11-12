@@ -15,5 +15,12 @@ public:
 	static void ingresaServiciosProfesionales(Aeropuerto&);
 	static void ingresaPlazoFijo(Aeropuerto&, Fecha&);
 	static void ingresaTiempoIndefinido(Aeropuerto&);
+	//---------------------------------------------------------------------------
+	static int menuEdicionContrato();
+	static void cambiaDescripcionPuesto(Aeropuerto&);
+	static void cambiaSalario(Aeropuerto&);
+	static void cambiaHorario(Aeropuerto&);
+	static void cambiaTipoServicio(Aeropuerto&);
+	static void cambiaPuestoPlaza(Aeropuerto&);
 };
 

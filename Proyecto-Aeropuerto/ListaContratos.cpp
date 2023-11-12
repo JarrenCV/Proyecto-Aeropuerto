@@ -36,18 +36,99 @@ void ListaContratos::ingresaUltimo(Contrato& contrat)
     }
 }
 
-bool ListaContratos::buscaContrato(string contrat)
+bool ListaContratos::buscaCodigo(string cod)
 {
     NodoContrato* PE = ppio;
 
     while (PE != NULL) {
-        if (PE->getContrato()->getCodigoContrato() == contrat) {
+        if (PE->getContrato()->getCodigoContrato() == cod) {
             return true;
         }
+        PE = PE->getSigNodo();
     }
     return false;
 }
 
+Contrato* ListaContratos::buscaContrato(string cod)
+{
+    NodoContrato* PE = ppio;
+
+    while (PE != NULL) {
+        if (PE->getContrato()->getCodigoContrato() == cod) {
+            return PE->getContrato();
+        }
+        PE = PE->getSigNodo();
+    }
+    return NULL;
+}
+
+Contrato* ListaContratos::buscaContratoPorCedula(string ced)
+{
+    NodoContrato* PE = ppio;
+
+    while (PE != NULL) {
+        if (PE->getContrato()->getEmpleadoContratado()->getCedula() == ced) {
+            return PE->getContrato();
+        }
+        PE = PE->getSigNodo();
+    }
+    return NULL;
+}
+
+bool ListaContratos::eliminaContratoPorCedula(string ced)
+{
+    NodoContrato* PE = ppio;
+    NodoContrato* elimina = NULL;
+
+    if (PE->getContrato()->getEmpleadoContratado()->getCedula() == ced) {
+        elimina = PE;
+        ppio->setSigNodo(elimina->getSigNodo());
+        delete elimina;
+        return true;
+    }
+    while (PE->getSigNodo() != NULL) {
+        if (PE->getSigNodo()->getContrato()->getEmpleadoContratado()->getCedula() == ced) {
+            elimina = PE->getSigNodo();
+            PE->setSigNodo(elimina->getSigNodo());
+            delete elimina;
+            return true;
+        }
+        PE = PE->getSigNodo();
+    }
+    return false;
+}
+bool ListaContratos::esServicioProfesional(string cod)
+{
+    return buscaContrato(cod)->getHorario() != "-1";
+}
+bool ListaContratos::esPlazoFijo(string cod)
+{
+    return buscaContrato(cod)->getHorario() == "-1" && buscaContrato(cod)->getPlaza() == NULL;
+}
+bool ListaContratos::esTiempoIndefinido(string cod)
+{
+    return buscaContrato(cod)->getPlaza() != NULL;
+}
+void ListaContratos::cambiaDescripcionPuesto(string cod, string descripcion)
+{
+    buscaContrato(cod)->setDescripcionPuesto(descripcion);
+}
+void ListaContratos::cambiaSalario(string cod, double sal)
+{
+    buscaContrato(cod)->setSalario(sal);
+}
+void ListaContratos::cambiaHorario(string cod, string horario)
+{
+    buscaContrato(cod)->setHorario(horario);
+}
+void ListaContratos::cambiaTipoServicio(string cod, string tipoS)
+{
+    buscaContrato(cod)->setTipoServicio(tipoS);
+}
+void ListaContratos::cambiaNombrePuestoPlaza(string cod, string nomPuesto)
+{
+    buscaContrato(cod)->getPlaza()->setNombrePuesto(nomPuesto);
+}
 string ListaContratos::toString()
 {
     stringstream s;

@@ -178,3 +178,115 @@ void InterfazContrato::ingresaTiempoIndefinido(Aeropuerto& aeropuerto)
 		MensajesGenerales::msjErrorCodigo();
 	}
 }
+
+int InterfazContrato::menuEdicionContrato()
+{
+	int opcion;
+	system("cls");
+	cout << "------------------MENU EDICION DE CONTRATOS------------------" << endl;
+	cout << "Digite (1)				Editar descripcion del puesto" << endl;
+	cout << "Digite (2)				Editar salario del contrato" << endl;
+	cout << "Digite (3)				Editar horario de contrato por servicios profesionales" << endl;
+	cout << "Digite (4)				Editar tipo de servicio de contrato por servicios profesionales" << endl;
+	cout << "Digite (5)				Editar nombre del puesto de la plaza en un contrato de tiempo indefinido" << endl;
+	cout << "Digite (6)				Cancelar" << endl;
+	cout << "--------------------------------------------------" << endl;
+	cout << "Digite la opcion: "; cin >> opcion;
+	return opcion;
+}
+
+void InterfazContrato::cambiaDescripcionPuesto(Aeropuerto& aeropuerto)
+{
+	string codigo, descripcionPuesto;
+	cout << "------------------EDITAR DESCRIPCION DEL PUESTO------------------" << endl;
+	cout << "Digite el codigo del contrato que desea editar: "; cin >> codigo;
+	if (aeropuerto.buscaCodigoContrato(codigo)) {
+		cout << "Digite la nueva descripcion del puesto que desea editar: "; cin >> descripcionPuesto;
+
+		aeropuerto.cambiaDescripcionPuesto(codigo, descripcionPuesto);
+		MensajesGenerales::msjEdicionExitosa();
+	}
+	else {
+		MensajesGenerales::msjErrorCodigo();
+	}
+}
+
+void InterfazContrato::cambiaSalario(Aeropuerto& aeropuerto)
+{
+	string codigo;
+	double salario;
+	cout << "------------------EDITAR SALARIO DEL CONTRATO------------------" << endl;
+	cout << "Digite el codigo del contrato que desea editar: "; cin >> codigo;
+	if (aeropuerto.buscaCodigoContrato(codigo)) {
+		cout << "Digite el nuevo salario del contrato: "; cin >> salario;
+
+		aeropuerto.cambiaSalario(codigo, salario);
+		MensajesGenerales::msjEdicionExitosa();
+	}
+	else {
+		MensajesGenerales::msjErrorCodigo();
+	}
+}
+
+void InterfazContrato::cambiaHorario(Aeropuerto& aeropuerto)
+{
+	string codigo, horario;
+	cout << "------------------EDITAR HORARIO DEL CONTRATO------------------" << endl;
+	cout << "Digite el codigo del contrato que desea editar: "; cin >> codigo;
+	if (aeropuerto.buscaCodigoContrato(codigo)) {
+		if (aeropuerto.esServicioProfesional(codigo)) {
+			cout << "Digite el nuevo horario del contrato: "; cin >> horario;
+
+			aeropuerto.cambiaHorario(codigo, horario);
+			MensajesGenerales::msjEdicionExitosa();
+		}
+		else {
+			MensajesGenerales::msjErrorContratoCategoria();
+		}
+	}
+	else {
+		MensajesGenerales::msjErrorCodigo();
+	}
+}
+
+void InterfazContrato::cambiaTipoServicio(Aeropuerto& aeropuerto)
+{
+	string codigo, tipoServicio;
+	cout << "------------------EDITAR TIPO DE SERVICIO------------------" << endl;
+	cout << "Digite el codigo del contrato que desea editar: "; cin >> codigo;
+	if (aeropuerto.buscaCodigoContrato(codigo)) {
+		if (aeropuerto.esTiempoIndefinido(codigo)) {
+
+			cout << "Digite el nuevo tipo de servicio del contrato por servicios profesionales: "; cin >> tipoServicio;
+			aeropuerto.cambiaTipoServicio(codigo, tipoServicio);
+			MensajesGenerales::msjEdicionExitosa();
+		}
+		else {
+			MensajesGenerales::msjErrorContratoCategoria();
+		}
+	}
+	else {
+		MensajesGenerales::msjErrorCodigo();
+	}
+}
+
+void InterfazContrato::cambiaPuestoPlaza(Aeropuerto& aeropuerto)
+{
+	string codigo, nombrePuesto;
+	cout << "------------------EDITAR NOMBRE DEL PUESTO EN PLAZA ASIGNADA------------------" << endl;
+	cout << "Digite el codigo del contrato que desea editar: "; cin >> codigo;
+	if (aeropuerto.buscaCodigoContrato(codigo)) {
+		if (aeropuerto.esTiempoIndefinido(codigo)) {
+
+			cout << "Digite el nuevo nombre del puesto de la plaza asignada al contrato por tiempo indefinido: "; cin >> nombrePuesto;
+			aeropuerto.cambiaTipoServicio(codigo, nombrePuesto);
+			MensajesGenerales::msjEdicionExitosa();
+		}
+		else {
+			MensajesGenerales::msjErrorContratoCategoria();
+		}
+	}
+	else {
+		MensajesGenerales::msjErrorCodigo();
+	}
+}
