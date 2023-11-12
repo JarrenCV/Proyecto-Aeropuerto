@@ -17,6 +17,16 @@ AvionDeCarga::~AvionDeCarga()
 {
 }
 
+double AvionDeCarga::getAreaCarga()
+{
+    return alturaPuerta*anchuraPuerta;
+}
+
+string AvionDeCarga::tripulacionDeAvionComercial()
+{
+    return "";
+}
+
 void AvionDeCarga::setAlturaPuerta(double altP)
 {
     alturaPuerta = altP;
@@ -46,6 +56,48 @@ double AvionDeCarga::getVelocidadMaxima()
     return -1;
 }
 
+string AvionDeCarga::reporteAvionMas20(Fecha& f)
+{ 
+    stringstream s;
+    if (edadAvion(f))
+    {
+        if (piloto != NULL || copiloto != NULL) {
+            cout << "----------------Informacion de la tripulaicion----------------" << endl;
+            if (piloto != NULL)
+                cout << piloto->toString();
+            if (copiloto != NULL)
+                cout << copiloto->toString();
+        }
+        s << "---------------AVION DE CARGA---------------" << endl;
+        s << "Nombre del avion: " << TablaAviones::nombre(categoria);
+        s << "Categoria: " << categoria << endl;
+        s << "Fecha de creacion: " << fechaCreacion->toString() << endl;
+        s << "Numero de placa: " << getNumeroPlaca() << endl;
+        s << "Tipo de avion: " << tipoAvion << endl;
+        s << "Distancia recorrida: " << distanciaRecorrida << " Km" << endl;
+        s << "Altura de la puerta: " << alturaPuerta << " metros" << endl;
+        s << "Anchura de la puerta: " << anchuraPuerta << " metros" << endl;
+        s << "Capacidad de pasajeros: " << TablaAviones::pasajeros(categoria);
+    }
+    return s.str();
+}
+
+string AvionDeCarga::reporteSoloAviacion()
+{
+    stringstream s;
+    s << "---------------AVION DE CARGA---------------" << endl;
+    s << "Nombre del avion: " << TablaAviones::nombre(categoria);
+    s << "Categoria: " << categoria << endl;
+    s << "Fecha de creacion: " << fechaCreacion->toString() << endl;
+    s << "Numero de placa: " << getNumeroPlaca() << endl;
+    s << "Tipo de avion: " << tipoAvion << endl;
+    s << "Distancia recorrida: " << distanciaRecorrida << " Km" << endl;
+    s << "Altura de la puerta: " << alturaPuerta << " metros" << endl;
+    s << "Anchura de la puerta: " << anchuraPuerta << " metros" << endl;
+    s << "Capacidad de pasajeros: " << TablaAviones::pasajeros(categoria);
+    return s.str();
+}
+
 string AvionDeCarga::toString()
 {
     stringstream s;
@@ -57,6 +109,7 @@ string AvionDeCarga::toString()
             cout << copiloto->toString();
     }
     s << "---------------AVION DE CARGA---------------" << endl;
+    s << "Nombre del avion: " << TablaAviones::nombre(categoria);
     s << "Categoria: " << categoria << endl;
     s << "Fecha de creacion: " << fechaCreacion->toString() << endl;
     s << "Numero de placa: " << getNumeroPlaca() << endl;
@@ -64,14 +117,7 @@ string AvionDeCarga::toString()
     s << "Distancia recorrida: " << distanciaRecorrida << " Km" << endl;
     s << "Altura de la puerta: " << alturaPuerta << " metros" << endl;
     s << "Anchura de la puerta: " << anchuraPuerta << " metros" << endl;
-    
-
-    /*
-    s << "Nombre del avion: " << TablaAComercial::nombre(categoria);
-    s << "Capacidad de pasajeros: " << TablaAComercial::pasajeros(categoria);
-
-    Preguntar si imprimir toda la info del avion
-     */
+    s << "Capacidad de pasajeros: " << TablaAviones::pasajeros(categoria); 
 
     return s.str();
 }

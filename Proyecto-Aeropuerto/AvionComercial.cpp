@@ -13,6 +13,11 @@ AvionComercial::~AvionComercial()
 {
 }
 
+double AvionComercial::getAreaCarga()
+{
+    return 0.0;
+}
+
 void AvionComercial::setAlturaPuerta(double s)
 {
 }
@@ -40,30 +45,86 @@ double AvionComercial::getVelocidadMaxima()
     return -1;
 }
 
-string AvionComercial::toString()
+string AvionComercial::tripulacionDeAvionComercial()
 {
     stringstream s;
-    if (piloto != NULL|| copiloto != NULL || azafata != NULL) {
-        cout << "----------------Informacion de la tripulaicion----------------" << endl;
-        if(piloto != NULL)
-            cout << piloto->toString();
-        if (copiloto != NULL)
-            cout << copiloto->toString();
-        if (azafata != NULL)
-            cout << azafata->toString();
+
+        if (piloto != NULL || copiloto != NULL || azafata != NULL) {
+            s << "----------------Informacion de la tripulaicion----------------" << endl;
+            if (piloto != NULL)
+                s << piloto->toString();
+            if (copiloto != NULL)
+                s << copiloto->toString();
+            if (azafata != NULL)
+                s << azafata->toString();
+        }
+ 
+    return s.str();
+}
+
+string AvionComercial::reporteAvionMas20(Fecha& f)
+{
+    stringstream s;
+    if (edadAvion(f)) {
+        if (piloto != NULL || copiloto != NULL || azafata != NULL) {
+            s << "----------------Informacion de la tripulaicion----------------" << endl;
+            if (piloto != NULL)
+                s << piloto->toString();
+            if (copiloto != NULL)
+                s << copiloto->toString();
+            if (azafata != NULL)
+                s << azafata->toString();
+        }
+        s << "---------------AVION COMERCIAL---------------" << endl;
+        s << "Nombre del avion: " << TablaAviones::nombre(categoria);
+        s << "Categoria: " << categoria << endl;
+        s << "Fecha de creacion: " << fechaCreacion->toString() << endl;
+        s << "Numero de placa: " << getNumeroPlaca() << endl;
+        s << "Tipo de avion: " << getTipoAvion() << endl;
+        s << "Distancia recorrida: " << distanciaRecorrida << " Km" << endl;
+        s << "Capacidad de pasajeros: " << TablaAviones::pasajeros(categoria);
+
+        return s.str();
     }
+    return s.str();
+}
+
+string AvionComercial::reporteSoloAviacion()
+{
+    stringstream s;
+
     s << "---------------AVION COMERCIAL---------------" << endl;
+    s << "Nombre del avion: " << TablaAviones::nombre(categoria);
     s << "Categoria: " << categoria << endl;
     s << "Fecha de creacion: " << fechaCreacion->toString() << endl;
     s << "Numero de placa: " << getNumeroPlaca() << endl;
     s << "Tipo de avion: " << getTipoAvion() << endl;
-    s << "Distancia recorrida: " << distanciaRecorrida << "Km" << endl;
-   /* 
-   s << "Nombre del avion: " << TablaAComercial::nombre(categoria);
-   s << "Capacidad de pasajeros: " << TablaAComercial::pasajeros(categoria);
-   
-   Preguntar si imprimir toda la info del avion
-    */
+    s << "Distancia recorrida: " << distanciaRecorrida << " Km" << endl;
+    s << "Capacidad de pasajeros: " << TablaAviones::pasajeros(categoria);
 
+    return s.str();
+}
+
+string AvionComercial::toString()
+{
+    stringstream s;
+    if (piloto != NULL|| copiloto != NULL || azafata != NULL) {
+        s << "----------------Informacion de la tripulaicion----------------" << endl;
+        if(piloto != NULL)
+            s << piloto->toString();
+        if (copiloto != NULL)
+            s << copiloto->toString();
+        if (azafata != NULL)
+            s << azafata->toString();
+    }
+    s << "---------------AVION COMERCIAL---------------" << endl;
+    s << "Nombre del avion: " << TablaAviones::nombre(categoria);
+    s << "Categoria: " << categoria << endl;
+    s << "Fecha de creacion: " << fechaCreacion->toString() << endl;
+    s << "Numero de placa: " << getNumeroPlaca() << endl;
+    s << "Tipo de avion: " << getTipoAvion() << endl;
+    s << "Distancia recorrida: " << distanciaRecorrida << " Km" << endl;
+    s << "Capacidad de pasajeros: " << TablaAviones::pasajeros(categoria);
+   
     return s.str();
 }

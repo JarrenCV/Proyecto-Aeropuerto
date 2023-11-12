@@ -2,6 +2,9 @@
 #include<iostream>
 #include<sstream>
 using namespace std;
+// Nombre de estudiantes:
+// Lesber Huerta Cornejo 
+// Jarren Chaves Vizcaíno
 
 class Fecha{
 private:

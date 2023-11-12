@@ -6,6 +6,9 @@
 #include"Azafata.h"
 #include"MensajesGenerales.h"
 #include"Aeropuerto.h"
+// Nombre de estudiantes:
+// Lesber Huerta Cornejo 
+// Jarren Chaves Vizcaíno
 
 class InterfazEmpleado
 {

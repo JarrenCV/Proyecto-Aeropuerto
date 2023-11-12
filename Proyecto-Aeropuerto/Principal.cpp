@@ -398,11 +398,90 @@ int main() {
 		}
 		case 2:
 		{
-
+			
 			break;
 		}
 		case 3: 
 		{
+			int opcion3;
+			do
+			{
+				opcion3 = MenuPrincipal::menuReportes();
+				switch (opcion3)
+				{
+				case 1:
+				{
+					cout << aeropuerto->reporteContratosConEmpleado() << endl;
+					break;
+				}
+				case 2:
+				{
+					cout << aeropuerto->reporteAeronaveConTripulacion() << endl;
+					break;
+				}
+				case 3:
+				{
+					cout << aeropuerto->reporteSoloAeronaves() << endl;
+					break;
+				}
+				case 4:
+				{
+					cout << aeropuerto->reporteContratosConEmpleado() << endl;
+					break;
+				}
+				case 5:
+				{
+					cout << aeropuerto->reportePilotosAvionesCarga() << endl;
+					break;
+				}
+				case 6:
+				{
+					cout << aeropuerto->reporteAvionesMas20(*actual) << endl;
+					break;
+				}
+				case 7:
+				{
+					cout << aeropuerto->reporteServiciosProfecionales() << endl;
+					break;
+				}
+				case 8:
+				{
+					cout << aeropuerto->reportePlazoFijo() << endl;
+					break;
+				}
+				case 9:
+				{
+					cout << aeropuerto->reporteTiempoIndefinido() << endl;
+					break;
+				}
+				case 10:
+				{
+					cout << aeropuerto->reporteTripulacionAvionComercial() << endl;
+					break;
+				}
+				case 11:
+				{
+					cout << aeropuerto->reportePlazoFijo2Anios() << endl;
+					break;
+				}
+				case 12:
+				{
+					cout << aeropuerto->avionDeCargaMayorAreaDeAcceso() << endl;
+					break;
+				}
+				case 13:
+				{
+					MensajesGenerales::msjSalirSistema();
+					break;
+				}
+				default:
+					MensajesGenerales::msjErrorRango();
+				}
+				cin.get();
+				cin.get(); // system("pause") más fino
+				system("cls");
+			} while (opcion3 != 13);
+	
 			break;
 		}
 		case 4: 

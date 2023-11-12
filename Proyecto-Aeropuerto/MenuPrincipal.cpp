@@ -64,6 +64,7 @@ int MenuPrincipal::menuReportes()
 	cout << "Digite (10)		    Reporte de todas las tripulaciones de aviones comerciales" << endl;
 	cout << "Digite (11)		    Reporte de contratos de plazo fijo que excedieron 2 años" << endl;
 	cout << "Digite (12)			Reporte del avión de carga con la puerta lateral o trasera más grande que se tenga" << endl;
+	cout << "Digite (13)            Salir de reportes" << endl;
 
 	cout << "--------------------------------------------------" << endl;
 	cout << "Digite la opcion: "; cin >> opcion;

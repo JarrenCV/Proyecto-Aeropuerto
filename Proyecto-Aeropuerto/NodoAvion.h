@@ -1,5 +1,8 @@
 #pragma once
 #include"Avion.h"
+// Nombre de estudiantes:
+// Lesber Huerta Cornejo 
+// Jarren Chaves Vizcaíno
 
 class NodoAvion{
 private:

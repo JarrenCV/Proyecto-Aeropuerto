@@ -1,5 +1,8 @@
 #pragma once
 #include"Contrato.h"
+// Nombre de estudiantes:
+// Lesber Huerta Cornejo 
+// Jarren Chaves Vizcaíno
 
 class NodoContrato
 {

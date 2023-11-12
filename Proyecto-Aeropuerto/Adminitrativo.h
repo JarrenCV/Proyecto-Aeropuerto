@@ -1,6 +1,8 @@
 #pragma once
 #include "Planta.h"
-
+// Nombre de estudiantes:
+// Lesber Huerta Cornejo 
+// Jarren Chaves Vizcaíno
 class Adminitrativo : public Planta
 {
 private:
@@ -16,6 +18,7 @@ public:
 	string getTituloUniversitario();
 	//-------------------TRIPULACION-------------------
 	//----------PILOTO-------
+	string reportePilotos();
 	void setAniosExperiencia(int);
 	int getAniosExperiencia();
 	//--------COPILOTO-------
@@ -31,7 +34,7 @@ public:
 	void setGradoEscolaridad(string);
 	string getGradoEscolaridad();
 
-	
+
 
 	string toString();
 };

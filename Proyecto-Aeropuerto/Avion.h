@@ -2,6 +2,10 @@
 #include"Fecha.h"
 #include"TablaAviones.h"
 #include"Empleado.h"
+// Nombre de estudiantes:
+// Lesber Huerta Cornejo 
+// Jarren Chaves Vizcaíno
+
 class Avion{
 protected:
 	Fecha* fechaCreacion;
@@ -32,12 +36,14 @@ public:
 	Empleado* setPiloto();
 	Empleado* setCopiloto();
 	Empleado* setAzafata();
-
-
+	bool edadAvion(Fecha&) ;
+	
 	//-------------------AVIACION CIVIL-------------------
+	virtual string tripulacionDeAvionComercial() = 0;
 	virtual void setNumeroPlaca(string) = 0;
 	virtual string getNumeroPlaca() = 0;
 	//----------AVION DE CARGA-------
+	virtual double getAreaCarga() = 0;
 	virtual void setAlturaPuerta(double) = 0;
 	virtual void setAnchuraPuerta(double) = 0;
 	virtual double getAlturaPuerta() = 0;
@@ -46,6 +52,8 @@ public:
 	virtual void setVelocidadMaxima(double) = 0;
 	virtual double getVelocidadMaxima() = 0;
 	//------toString-----
+	virtual string reporteAvionMas20(Fecha&) = 0;
+	virtual string reporteSoloAviacion() = 0;
 	virtual string toString() = 0;
 };
 

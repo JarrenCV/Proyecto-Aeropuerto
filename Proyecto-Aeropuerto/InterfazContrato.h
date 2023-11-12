@@ -6,6 +6,9 @@
 #include"ServicioProfesional.h"
 #include"MensajesGenerales.h"
 #include"Plaza.h"
+// Nombre de estudiantes:
+// Lesber Huerta Cornejo 
+// Jarren Chaves Vizcaíno
 
 class InterfazContrato
 {

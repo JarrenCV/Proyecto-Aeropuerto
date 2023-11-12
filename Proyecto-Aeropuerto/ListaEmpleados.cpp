@@ -36,6 +36,21 @@ void ListaEmpleados::ingresaUltimo(Empleado& emp)
     }
 }
 
+string ListaEmpleados::reportePilotos()
+{
+    stringstream s;
+    NodoEmpleado* PE = ppio;
+
+    s << "--------------------LISTADO DE PILOTOS--------------------" << endl;
+    while (PE != NULL) {
+        s << PE->getEmpleado()->reportePilotos() << endl;
+        PE = PE->getSigNodo();
+    }
+    s << "----------------------------------------------------------" << endl;
+
+    return s.str();
+}
+
 bool ListaEmpleados::buscaCedula(string ced) 
 {
     NodoEmpleado* PE = ppio;
@@ -54,10 +69,27 @@ string ListaEmpleados::toString()
     stringstream s;
     NodoEmpleado* PE = ppio;
 
-    s << "--------------------LISTADO DE AVIONES--------------------" << endl;
+    s << "--------------------LISTADO DE EMPLEADOS--------------------" << endl;
     while (PE != NULL) {
         s << PE->getEmpleado()->toString() << endl;
         PE = PE->getSigNodo();
+    }
+    s << "----------------------------------------------------------" << endl;
+
+    return s.str();
+}
+
+string ListaEmpleados::consultaTrabajador()
+{
+    stringstream s;
+    NodoEmpleado* PE = ppio;
+
+    s << "--------------------LISTADO DE EMPLEADOS--------------------" << endl;
+    while (PE != NULL) {
+        if (buscaCedula) {
+            s << PE->getEmpleado()->toString() << endl;
+            PE = PE->getSigNodo();
+        }
     }
     s << "----------------------------------------------------------" << endl;
 
