@@ -117,6 +117,9 @@
     <ClInclude Include="ListaPlaza.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="InterfazReporteConsulta.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TablaAviones.cpp">
@@ -222,6 +225,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ListaPlaza.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InterfazReporteConsulta.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -12,9 +12,9 @@ public:
 	ListaEmpleados();
 	virtual ~ListaEmpleados();
 
+	NodoEmpleado* getPpio();
 	void ingresaPrimero(Empleado&);
 	void ingresaUltimo(Empleado&);
-	string reportePilotos();
 	bool buscaCedula(string ced);//Este metodo verifica que no haya una cedula repetida al ingresar en el contenedor
 	Empleado* buscaEmpleado(string);
 

@@ -14,6 +14,10 @@ ListaContratos::~ListaContratos()
         delete PE;
     }
 }
+NodoContrato* ListaContratos::getPpio() {
+
+    return ppio;
+}
 
 void ListaContratos::ingresaPrimero(Contrato& contrat)
 {
@@ -41,12 +45,22 @@ string ListaContratos::reportePlazoFijoMas2Anios()
     stringstream s;
     NodoContrato* PE = ppio;
 
-    s << "--------------------LISTADO DE CONTRATOS DE SERVICIOS PROFECIONALES--------------------" << endl;
+    s << "--------------------LISTADO DE CONTRATOS DE PLAZO FIJO CON 2 O MAS ANIOS--------------------" << endl;
     while (PE != NULL) {
-        s << PE->getContrato()->reportePlazoFijoMas2Anios() << endl;
-        PE = PE->getSigNodo();
+        if (PE->getContrato()->getHorario() == "-1" && PE->getContrato()->getPlaza() == NULL) {
+            if (PE->getContrato()->getElegible()) {
+                s << PE->getContrato()->toString() << endl; // Arreglar estos metodos ya que se llaman asi mismos y no tienen nada
+                PE = PE->getSigNodo();
+            }
+            else {
+                PE = PE->getSigNodo();
+            }
+        }
+        else {
+            PE = PE->getSigNodo();
+        }
     }
-    s << "----------------------------------------------------------" << endl;
+    s << "---------------------------------------------------------------------------------------------" << endl;
 
     return s.str();
 }
@@ -56,12 +70,17 @@ string ListaContratos::reporteServiciosProfecionales()
     stringstream s;
     NodoContrato* PE = ppio;
 
-    s << "--------------------LISTADO DE CONTRATOS DE SERVICIOS PROFECIONALES--------------------" << endl;
+    s << "--------------------LISTADO DE CONTRATOS DE SERVICIOS PROFESIONALES--------------------" << endl;
     while (PE != NULL) {
-        s << PE->getContrato()->reporteServiciosProfecionales() << endl;
-        PE = PE->getSigNodo();
+        if (PE->getContrato()->getHorario() != "-1") {
+            s << PE->getContrato()->toString() << endl;// Arreglar estos metodos ya que se llaman asi mismos y no tienen nada
+            PE = PE->getSigNodo();
+        }
+        else {
+            PE = PE->getSigNodo();
+        }
     }
-    s << "----------------------------------------------------------" << endl;
+    s << "---------------------------------------------------------------------------------------" << endl;
 
     return s.str();
 }
@@ -73,10 +92,17 @@ string ListaContratos::reportePlazoFijo()
 
     s << "--------------------LISTADO DE CONTRATOS DE PLAZO FIJO--------------------" << endl;
     while (PE != NULL) {
-        s << PE->getContrato()->reportePlazoFijo() << endl;
-        PE = PE->getSigNodo();
+        if (PE->getContrato()->getPlaza() != NULL) {
+            s << PE->getContrato()->toString() << endl;// Arreglar estos metodos ya que se llaman asi mismos y no tienen nada
+            PE = PE->getSigNodo();
+        
+        }
+        else {
+            PE = PE->getSigNodo();
+        }
+        
     }
-    s << "----------------------------------------------------------" << endl;
+    s << "--------------------------------------------------------------------------" << endl;
 
     return s.str();
 }
@@ -88,10 +114,10 @@ string ListaContratos::reporteTiempoIndefinido()
 
     s << "--------------------LISTADO DE CONTRATOS DE TIEMPO INDEFINIDO--------------------" << endl;
     while (PE != NULL) {
-        s << PE->getContrato()->reporteTiempoIndefinido() << endl;
+        s << PE->getContrato()->reporteTiempoIndefinido() << endl;// Arreglar estos metodos ya que se llaman asi mismos y no tienen nada
         PE = PE->getSigNodo();
     }
-    s << "----------------------------------------------------------" << endl;
+    s << "---------------------------------------------------------------------------------" << endl;
 
     return s.str();
 }

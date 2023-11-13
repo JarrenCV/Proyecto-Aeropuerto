@@ -3,7 +3,7 @@
 #include"MenuPrincipal.h"
 #include"InterfazAvion.h"
 #include"InterfazContrato.h"
-
+#include"InterfazReporteConsulta.h"
 
 
 int main() {
@@ -435,62 +435,63 @@ int main() {
 				{
 				case 1:
 				{
-					cout << aeropuerto->reporteContratosConEmpleado() << endl;
+					InterfazReporteConsulta::reporteContratoEmpleado(*aeropuerto);
 					break;
 				}
 				case 2:
 				{
-					cout << aeropuerto->reporteAeronaveConTripulacion() << endl;
+					InterfazReporteConsulta::reporteAeronaveTripulacion(*aeropuerto);
 					break;
 				}
 				case 3:
 				{
-					cout << aeropuerto->reporteSoloAeronaves() << endl;
+					InterfazReporteConsulta::reporteAeronave(*aeropuerto);
 					break;
 				}
 				case 4:
 				{
-					cout << aeropuerto->reporteContratosConEmpleado() << endl;
+					//Personas Contratadas
+					InterfazReporteConsulta::reporteContratoEmpleado(*aeropuerto);
 					break;
 				}
 				case 5:
 				{
-					cout << aeropuerto->reportePilotosAvionesCarga() << endl;
+					InterfazReporteConsulta::reportePilotosAvionesDeCarga(*aeropuerto);
 					break;
 				}
 				case 6:
 				{
-					cout << aeropuerto->reporteAvionesMas20(*actual) << endl;
+					InterfazReporteConsulta::reporteAvionMas20Anios(*aeropuerto, *actual);
 					break;
 				}
 				case 7:
 				{
-					cout << aeropuerto->reporteServiciosProfecionales() << endl;
+					InterfazReporteConsulta::reporteServiciosProfesionales(*aeropuerto);
 					break;
 				}
 				case 8:
 				{
-					cout << aeropuerto->reportePlazoFijo() << endl;
+					InterfazReporteConsulta::reportePlazoFijo(*aeropuerto);
 					break;
 				}
 				case 9:
 				{
-					cout << aeropuerto->reporteTiempoIndefinido() << endl;
+					InterfazReporteConsulta::reporteTiempoIndefinido(*aeropuerto);
 					break;
 				}
 				case 10:
 				{
-					cout << aeropuerto->reporteTripulacionAvionComercial() << endl;
+					InterfazReporteConsulta::reporteTripulacionAvionComercial(*aeropuerto);
 					break;
 				}
 				case 11:
 				{
-					cout << aeropuerto->reportePlazoFijo2Anios() << endl;
+					InterfazReporteConsulta::reportePlazoFijo2Anios(*aeropuerto);
 					break;
 				}
 				case 12:
 				{
-					cout << aeropuerto->avionDeCargaMayorAreaDeAcceso() << endl;
+					InterfazReporteConsulta::reporteAvionDeCargaMayorAreaAcceso(*aeropuerto);
 					break;
 				}
 				case 13:
@@ -513,33 +514,27 @@ int main() {
 			int opcion4;
 			do
 			{
-				opcion4 = MenuPrincipal::menuReportes();
+				opcion4 = MenuPrincipal::menuConsultas();
 				switch (opcion4)
 				{
 				case 1:
 				{
-					string ced;
-					cout << "Digite la cedula a consultar: "; cin >> ced;
-					aeropuerto->consultaTrabajador(ced);
+					InterfazReporteConsulta::consultaEmpleado(*aeropuerto);
 					break;
 				}
 				case 2:
 				{
-					string cod;
-					cout << "Digite el contrato a consultar: "; cin >> cod;
-					aeropuerto->consultaPorContrato(cod);
+					InterfazReporteConsulta::consultaContrato(*aeropuerto);
 					break;
 				}
 				case 3:
 				{
-					string pla;
-					cout << "Digite la placa a consultar: "; cin >> pla;
-					aeropuerto->aviacionCivilPorPlaca(pla);
+					InterfazReporteConsulta::consultaAvion(*aeropuerto);
 					break;
 				}
 				case 4:
 				{
-					MensajesGenerales::msjSalirSistema();
+					MensajesGenerales::msjRegreso();
 					break;
 				}
 				default:
@@ -561,14 +556,10 @@ int main() {
 			MensajesGenerales::msjErrorRango();
 		}
 		}
-
-
 		cin.get();
 		cin.get();	// system("pause") mas fino.
 		system("cls");
 	}while (opcionPrincipal != 5);
-
-
 
 	system("pause");
 	return 0;

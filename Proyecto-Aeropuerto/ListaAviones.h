@@ -13,6 +13,7 @@ public:
 	ListaAviones();
 	virtual ~ListaAviones();
 
+	NodoAvion* getPpio();
 	void ingresaPrimero(Avion&);
 	void ingresaUltimo(Avion&);
 	bool existeAvionConPlaca(string);
@@ -26,7 +27,8 @@ public:
 	void cambiaAnchura(string, double);
 	void cambiaAltura(string, double);
 	void cambiaDistanciaRecorrida(string, double);
-	
+
+	string reportePilotosCarga();
 	string consultaCivilPorPlaca(string);
 	string consultaTrabajador(string);
 	Avion* avionCargaMayorArea();

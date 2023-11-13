@@ -277,21 +277,39 @@ string Aeropuerto::reporteTiempoIndefinido()
 string Aeropuerto::reporteAvionesMas20(Fecha& f)
 {
 	stringstream s;
-	s << contenedorAviones->avionesMas20(f);
+	if (contenedorAviones->getPpio() != NULL) {
+		s << contenedorAviones->avionesMas20(f);
+	}
+	else {
+		s << "No hay aviones registrados." << endl;
+	}
 	return s.str();
 }
 
 string Aeropuerto::reportePilotosAvionesCarga()
 {
 	stringstream s;
-	s << contenedorEmpleados->reportePilotos();
-	return string();
+	if (contenedorAviones->getPpio() != NULL) {
+		s << "-----------------------REPORTE PILOTOS DE AVIONES DE CARGA----------------" << endl;
+		s << contenedorAviones->reportePilotosCarga();
+	}
+	else {
+		s << "No hay aviones registrados." << endl;
+	}
+	
+	return s.str();
 }
 
 string Aeropuerto::reporteContratosConEmpleado()
 {
 	stringstream s;
-	s << contenedorContratos->toString();
+	if (contenedorContratos->getPpio() != NULL) {
+		s << contenedorContratos->toString();
+	}
+	else {
+		s << "No hay contratos registrados." << endl;
+	}
+	
 	return s.str();
 }
 
@@ -306,6 +324,11 @@ string Aeropuerto::reporteAeronaveConTripulacion()
 string Aeropuerto::reporteSoloAeronaves()
 {
 	stringstream s;
-	s << contenedorAviones->toString();
+	if (contenedorAviones->getPpio() != NULL) {
+		s << contenedorAviones->toString();
+	}
+	else {
+		s << "No hay aeronaves registradas." << endl;
+	}
 	return s.str();
 }

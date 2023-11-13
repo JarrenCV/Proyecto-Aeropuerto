@@ -15,6 +15,11 @@ ListaAviones::~ListaAviones()
     }
 }
 
+NodoAvion* ListaAviones::getPpio()
+{
+    return ppio;
+}
+
 void ListaAviones::ingresaPrimero(Avion& avi)
 {
     ppio = new NodoAvion(avi, ppio);
@@ -119,6 +124,25 @@ void ListaAviones::cambiaDistanciaRecorrida(string numP, double distanciaR)
     buscaAvionPlaca(numP)->setDistanciaRecorrida(distanciaR);
 }
 
+string ListaAviones::reportePilotosCarga() 
+{
+    stringstream s;
+    NodoAvion* PE = ppio;
+
+    while(PE != NULL){
+        if (PE->getAvion()->getTipoAvion() == 2) {
+            if(PE->getAvion()->getPiloto() != NULL){
+                s << PE->getAvion()->getPiloto()->toString();
+                PE = PE->getSigNodo();
+            }
+            else {
+                PE = PE->getSigNodo();
+            }
+        }
+    }
+    return s.str();
+}
+
 string ListaAviones::consultaCivilPorPlaca(string pla)
 {
     stringstream s;
@@ -157,20 +181,24 @@ string ListaAviones::consultaTrabajador(string ced)
 
 Avion* ListaAviones::avionCargaMayorArea()
 {   
-   NodoAvion* PE = ppio;
-   double areaMayor = PE->getAvion()->getAreaCarga();
-   Avion* avionMayor = PE->getAvion();
-   while (PE != NULL)
-   {
-       PE->getAvion()->getAreaCarga();
-       if (PE->getAvion()->getAreaCarga() > areaMayor) 
-       {
-           areaMayor = PE->getAvion()->getAreaCarga();
-           avionMayor = PE->getAvion();
+   if(ppio != NULL){
+       NodoAvion* PE = ppio->getSigNodo();
+       double areaMayor = ppio->getAvion()->getAreaCarga();
+       Avion* avionMayor = ppio->getAvion();
+       while (PE != NULL) {
+           PE->getAvion()->getAreaCarga();
+           if (PE->getAvion()->getAreaCarga() > areaMayor)
+           {
+               areaMayor = PE->getAvion()->getAreaCarga();
+               avionMayor = PE->getAvion();
+           }
+           PE = PE->getSigNodo();
        }
-       PE = PE->getSigNodo();
+       return avionMayor;
    }
-   return avionMayor;
+   else {
+       return NULL;
+   }
 }
 
 string ListaAviones::tripulacionDeAvionComercial()

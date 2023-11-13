@@ -13,6 +13,7 @@ public:
 	ListaContratos();
 	virtual ~ListaContratos();
 
+	NodoContrato* getPpio();
 	void ingresaPrimero(Contrato&);
 	void ingresaUltimo(Contrato&);
 	bool buscaCodigo(string);

@@ -15,6 +15,12 @@ ListaEmpleados::~ListaEmpleados()
     }
 }
 
+
+NodoEmpleado* ListaEmpleados::getPpio()
+{
+    return ppio;
+}
+
 void ListaEmpleados::ingresaPrimero(Empleado& emp)
 {
     ppio = new NodoEmpleado(emp, ppio);
@@ -34,21 +40,6 @@ void ListaEmpleados::ingresaUltimo(Empleado& emp)
         nuevo = new NodoEmpleado(emp, NULL);
         PE->setSigNodo(nuevo);
     }
-}
-
-string ListaEmpleados::reportePilotos()
-{
-    stringstream s;
-    NodoEmpleado* PE = ppio;
-
-    s << "--------------------LISTADO DE PILOTOS--------------------" << endl;
-    while (PE != NULL) {
-        s << PE->getEmpleado()->reportePilotos() << endl;
-        PE = PE->getSigNodo();
-    }
-    s << "----------------------------------------------------------" << endl;
-
-    return s.str();
 }
 
 bool ListaEmpleados::buscaCedula(string ced) 
