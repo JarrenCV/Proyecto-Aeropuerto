@@ -17,6 +17,7 @@ public:
 
 	virtual ~ServicioProfesional();
 
+	int getTipoContrato();
 
 	//----------SERVICIOS PROFESIONALES-------
 	void setHorario(string);

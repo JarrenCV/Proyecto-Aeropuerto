@@ -16,6 +16,8 @@ public:
 	void setLabor(string);
 	string getLabor();
 
+	virtual int getTipoEmpleado() = 0;
+
 	//----------PILOTO-------
 	virtual string reportePilotos() = 0;
 	virtual void setAniosExperiencia(int) = 0;

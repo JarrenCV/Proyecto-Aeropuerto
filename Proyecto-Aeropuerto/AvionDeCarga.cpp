@@ -17,6 +17,11 @@ AvionDeCarga::~AvionDeCarga()
 {
 }
 
+int AvionDeCarga::getTipoAvion()
+{
+    return 2;
+}
+
 double AvionDeCarga::getAreaCarga()
 {
     return alturaPuerta*anchuraPuerta;

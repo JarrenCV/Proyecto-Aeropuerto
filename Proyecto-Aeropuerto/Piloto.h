@@ -13,6 +13,8 @@ public:
 	Piloto(string, string, int, int);
 	virtual ~Piloto();
 
+	int getTipoEmpleado();
+
 	//--------PILOTO---------
 	string reportePilotos();
 	void setAniosExperiencia(int);

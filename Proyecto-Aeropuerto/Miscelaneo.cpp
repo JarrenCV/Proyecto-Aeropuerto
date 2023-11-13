@@ -14,6 +14,11 @@ Miscelaneo::~Miscelaneo()
 {
 }
 
+int Miscelaneo::getTipoEmpleado()
+{
+    return 5;
+}
+
 void Miscelaneo::setGradoEscolaridad(string gradoEsc)
 {
     gradoEscolaridad = gradoEsc;

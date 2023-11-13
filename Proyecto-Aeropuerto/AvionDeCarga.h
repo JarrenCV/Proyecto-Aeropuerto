@@ -12,6 +12,8 @@ public:
 	AvionDeCarga(Fecha&, double, string, string, double, double);
 	virtual ~AvionDeCarga();
 
+	int getTipoAvion();
+
 	//-----AVION DE CARGA----
 	double getAreaCarga();
 	string tripulacionDeAvionComercial();

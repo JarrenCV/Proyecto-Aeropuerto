@@ -16,7 +16,8 @@ public:
 	
 	virtual ~TiempoIndefinido();
 
-	;
+	int getTipoContrato();
+
 	//-----TIEMPO INDEFINIDO----
 	string reporteTiempoIndefinido();
 	void setPlaza(Plaza&);

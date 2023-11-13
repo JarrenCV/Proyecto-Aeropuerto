@@ -14,6 +14,11 @@ Azafata::~Azafata()
 {
 }
 
+int Azafata::getTipoEmpleado()
+{
+    return 3;
+}
+
 void Azafata::setNacionalidad(string nacionali)
 {
     nacionalidad = nacionali;

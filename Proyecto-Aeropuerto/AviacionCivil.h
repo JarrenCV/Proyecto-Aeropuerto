@@ -13,6 +13,8 @@ public:
 	AviacionCivil(Fecha&, double, string, string);
 	virtual ~AviacionCivil();
 
+	virtual int getTipoAvion() = 0;
+
 	void setNumeroPlaca(string);
 	string getNumeroPlaca();
 	//----------AVION DE CARGA-------

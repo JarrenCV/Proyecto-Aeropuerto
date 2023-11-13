@@ -14,6 +14,7 @@ public:
 	Tripulacion(string, string, int);
 	virtual ~Tripulacion();
 
+	virtual int getTipoEmpleado() = 0;
 
 	//----------PILOTO-------
 	virtual string reportePilotos() = 0;

@@ -32,14 +32,15 @@ public:
 	Fecha* getFecha();
 	double getDistanciaRecorrida();
 	string getCategoria();
-	int getTipoAvion();
+
+	virtual int getTipoAvion() = 0;
 	
 	Empleado* getPiloto();
 	Empleado* getCopiloto();
 	Empleado* getAzafata();
 
 	bool edadAvion(Fecha&);
-	
+	virtual int getTipo() = 0;
 	//-------------------AVIACION CIVIL-------------------
 	virtual string tripulacionDeAvionComercial() = 0;
 	virtual void setNumeroPlaca(string) = 0;

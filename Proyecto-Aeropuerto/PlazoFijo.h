@@ -15,6 +15,8 @@ public:
 
 	virtual ~PlazoFijo();
 
+	int getTipoContrato();
+
 	//-----PLAZO FIJO----
 	void setElegible(bool);
 	bool getElegible();

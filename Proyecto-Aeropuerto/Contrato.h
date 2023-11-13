@@ -11,6 +11,7 @@ protected:
 	string codigoContrato;
 	string descripcionPuesto;
 	double salario;
+	int tipoContrato;
 	Fecha* ingresoLaboral;
 	Fecha* culminacionLaboral;
 	Empleado* empContratado;
@@ -33,6 +34,7 @@ public:
 
 	void setEmpleadoContratado(Empleado*);
 //-------------- get´s ------------------
+	virtual int getTipoContrato() = 0;
 	string getCodigoContrato();                      
 	string getDescripcionPuesto();
 	double getSalario();

@@ -19,6 +19,11 @@ ServicioProfesional::~ServicioProfesional()
     if (culminacionLaboral != NULL) delete culminacionLaboral;
 }
 
+int ServicioProfesional::getTipoContrato()
+{
+    return 1;
+}
+
 void ServicioProfesional::setHorario(string h)
 {  
     horario = h;

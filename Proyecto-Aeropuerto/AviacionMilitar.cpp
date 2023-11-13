@@ -17,6 +17,11 @@ AviacionMilitar::~AviacionMilitar()
 {
 }
 
+int AviacionMilitar::getTipoAvion()
+{
+    return 3;
+}
+
 void AviacionMilitar::setVelocidadMaxima(double vMax)
 {
     velocidadMaxima = vMax;

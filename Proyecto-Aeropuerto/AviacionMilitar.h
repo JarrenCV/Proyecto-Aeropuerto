@@ -12,6 +12,8 @@ public:
 	AviacionMilitar(Fecha&, double, string, double);
 	virtual ~AviacionMilitar();
 	
+	int getTipoAvion();
+
 	//------AVION MILITAR--------
 	void setVelocidadMaxima(double);
 	double getVelocidadMaxima();

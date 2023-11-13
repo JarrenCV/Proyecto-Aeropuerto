@@ -14,6 +14,11 @@ Adminitrativo::~Adminitrativo()
 {
 }
 
+int Adminitrativo::getTipoEmpleado()
+{
+    return 4;
+}
+
 void Adminitrativo::setTituloUniversitario(string tituloU)
 {
     tituloUniversitario = tituloU;

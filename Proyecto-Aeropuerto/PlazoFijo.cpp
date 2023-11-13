@@ -13,6 +13,11 @@ PlazoFijo::~PlazoFijo()
 {
 }
 
+int PlazoFijo::getTipoContrato()
+{
+    return 2;
+}
+
 void PlazoFijo::setElegible(bool s)
 {
 }

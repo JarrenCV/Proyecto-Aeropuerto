@@ -12,6 +12,8 @@ public:
 	AvionComercial(Fecha&,double,string,string);
 	virtual ~AvionComercial();
 
+	int getTipoAvion();
+
 	//----------AVION DE CARGA-------
 	double getAreaCarga();
 	void setAlturaPuerta(double);

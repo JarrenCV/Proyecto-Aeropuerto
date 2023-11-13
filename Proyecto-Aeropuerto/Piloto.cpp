@@ -14,6 +14,11 @@ Piloto::~Piloto()
 {
 }
 
+int Piloto::getTipoEmpleado()
+{
+    return 1;
+}
+
 string Piloto::reportePilotos()
 {
     stringstream s;

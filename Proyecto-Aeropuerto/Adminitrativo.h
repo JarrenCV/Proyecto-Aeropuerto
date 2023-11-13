@@ -12,6 +12,7 @@ public:
 	Adminitrativo(string, string, int, string, string);
 	virtual ~Adminitrativo();
 
+	int getTipoEmpleado();
 
 	//-----ADMINISTRATIVO----
 	void setTituloUniversitario(string);

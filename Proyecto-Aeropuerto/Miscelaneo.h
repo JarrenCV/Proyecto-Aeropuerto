@@ -12,6 +12,9 @@ public:
 	Miscelaneo();
 	Miscelaneo(string, string, int, string, string);
 	virtual ~Miscelaneo();
+
+	int getTipoEmpleado();
+
 	//-----MISCELANEO--------
 	void setGradoEscolaridad(string);
 	string getGradoEscolaridad();

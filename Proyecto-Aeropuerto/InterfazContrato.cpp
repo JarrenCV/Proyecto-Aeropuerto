@@ -44,7 +44,7 @@ void InterfazContrato::ingresaServiciosProfesionales(Aeropuerto& aeropuerto)
 		cout << "Anio: "; cin >> anio2;
 		culminacion = new Fecha(dia2, mes2, anio2);
 
-		if (!ingreso->esMenorQue(*culminacion)) {
+		if (ingreso->esMenorQue(*culminacion)) {
 
 			cin.ignore();
 			cout << "Digite el horario del Contrato: "; getline(cin, horario);

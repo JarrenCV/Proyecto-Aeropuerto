@@ -15,6 +15,11 @@ TiempoIndefinido::~TiempoIndefinido()
     if (plaza != NULL) delete plaza;
 }
 
+int TiempoIndefinido::getTipoContrato()
+{
+    return 3;
+}
+
 string TiempoIndefinido::reporteTiempoIndefinido()
 {
     stringstream s;

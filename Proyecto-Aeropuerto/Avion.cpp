@@ -82,11 +82,6 @@ string Avion::getCategoria()
     return categoria;
 }
 
-int Avion::getTipoAvion()
-{
-    return tipoAvion;
-}
-
 Empleado* Avion::getPiloto()
 {
     return piloto;

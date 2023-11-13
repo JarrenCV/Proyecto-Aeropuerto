@@ -11,6 +11,8 @@ public:
 	Copiloto();
 	Copiloto(string, string, int, string);
 	virtual ~Copiloto();
+	
+	int getTipoEmpleado();
 
 	//--------COPILOTO-------
 	void setTelefono(string);

@@ -14,6 +14,11 @@ Copiloto::~Copiloto()
 {
 }
 
+int Copiloto::getTipoEmpleado()
+{
+    return 2;
+}
+
 void Copiloto::setTelefono(string telef)
 {
     telefono = telef;

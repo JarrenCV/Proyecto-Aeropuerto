@@ -13,6 +13,11 @@ AvionComercial::~AvionComercial()
 {
 }
 
+int AvionComercial::getTipoAvion()
+{
+    return 1;
+}
+
 double AvionComercial::getAreaCarga()
 {
     return 0.0;

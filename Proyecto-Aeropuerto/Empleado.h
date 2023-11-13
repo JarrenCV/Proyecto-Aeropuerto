@@ -12,6 +12,7 @@ protected:
 	string cedula;
 	string nombre;
 	int edad;
+	int tipoEmpleado;
 
 public:
 	Empleado();
@@ -26,6 +27,7 @@ public:
 	string getNombre();
 	int getEdad();
 
+	virtual int getTipoEmpleado() = 0;
 	
 	//-------------------TRIPULACION-------------------
 	//----------PILOTO-------

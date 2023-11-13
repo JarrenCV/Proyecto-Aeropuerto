@@ -12,6 +12,8 @@ public:
 	Azafata(string, string, int, string);
 	virtual ~Azafata();
 
+	int getTipoEmpleado();
+
 	//--------AZAFATA--------
 	void setNacionalidad(string);
 	string getNacionalidad();
