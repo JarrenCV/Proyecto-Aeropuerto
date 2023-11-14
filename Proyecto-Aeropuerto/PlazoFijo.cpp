@@ -108,6 +108,35 @@ string PlazoFijo::reporteTiempoIndefinido()
     return "";
 }
 
+void PlazoFijo::save(ofstream& save)
+{
+    save << codigoContrato << "  " << descripcionPuesto << "  " << salario << "  " <<
+        ingresoLaboral->getDia() << "  " << ingresoLaboral->getMes() << "  " << ingresoLaboral->getAnio() << "  " <<
+        culminacionLaboral->getDia() << "  " << culminacionLaboral->getMes() << "  " << culminacionLaboral->getAnio() << "  " <<
+        tipoContrato << "  " << elegible;
+
+    if (empContratado != NULL) {
+        empContratado->save(save);
+    }
+    else {
+        save << endl;
+    }
+}
+
+void PlazoFijo::read(ifstream& read)
+{
+    int diaI, mesI, anioI, diaC, mesC, anioC;
+    Fecha* fechaI, *fechaC;
+
+    read >> codigoContrato >> descripcionPuesto >> salario >> diaI >> mesI >> anioI
+        >> diaC >> mesC >> anioC >> tipoContrato >> elegible;
+    
+    fechaI = new Fecha(diaI, mesI, anioI);
+    fechaC = new Fecha(diaC, mesC, anioC);
+    ingresoLaboral = fechaI;
+    culminacionLaboral = fechaC;
+}
+
 string PlazoFijo::toString()
 {
     stringstream s;

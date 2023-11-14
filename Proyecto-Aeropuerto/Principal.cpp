@@ -547,6 +547,14 @@ int main() {
 		}
 		case 5: 
 		{
+			// -----------MENU ENLACES---------------
+		}
+		case 6:
+		{
+			// -----------CARGA Y DESCARGA DE ARCHIVOS--------------
+		}
+		case 7:
+		{
 			MensajesGenerales::msjSalirSistema();
 			break;
 		}

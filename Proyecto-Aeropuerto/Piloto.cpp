@@ -86,6 +86,17 @@ string Piloto::getGradoEscolaridad()
     return "-1";
 }
 
+void Piloto::save(ofstream& save)
+{
+    save << tipoEmpleado << "  " <<  cedula << "  " << nombre << "  " <<
+        edad << "  " << aniosExperiencia << endl;
+}
+
+void Piloto::read(ifstream& read)
+{
+    read >> tipoEmpleado >> cedula >> nombre >> edad >> aniosExperiencia;
+}
+
 string Piloto::toString()
 {
     stringstream s;

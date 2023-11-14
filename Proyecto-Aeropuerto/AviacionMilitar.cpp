@@ -106,6 +106,22 @@ string AviacionMilitar::reporteSoloAviacion()
     return s.str();
 }
 
+void AviacionMilitar::save(ofstream& save)
+{
+    save << fechaCreacion->getDia() << " " << fechaCreacion->getMes() << " " << fechaCreacion->getAnio() << " " <<
+        distanciaRecorrida << " " << categoria << " " << tipoAvion << " " << velocidadMaxima << endl;
+}
+
+void AviacionMilitar::read(ifstream& read)
+{
+    int dia, mes, anio;
+    Fecha* fechaC;
+    read >> dia >> mes >> anio >> distanciaRecorrida >> categoria >> tipoAvion >> velocidadMaxima;
+
+    fechaC = new Fecha(dia, mes, anio);
+    this->fechaCreacion = fechaC;
+}
+
 string AviacionMilitar::toString()
 {
     stringstream s;

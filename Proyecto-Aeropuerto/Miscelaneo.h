@@ -35,7 +35,9 @@ public:
 	//-----ADMINISTRATIVO----
 	void setTituloUniversitario(string);
 	string getTituloUniversitario();
-	
+	// ----------------------ARCHIVOS---------------------
+	virtual void save(ofstream&);
+	virtual void read(ifstream&);
 
 	string toString();
 };

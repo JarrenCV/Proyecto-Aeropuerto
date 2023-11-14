@@ -27,6 +27,10 @@ public:
 	virtual string tripulacionDeAvionComercial() = 0;
 	virtual string reporteAvionMas20(Fecha&) = 0;
 	virtual string reporteSoloAviacion() = 0;
+	// ----------------------ARCHIVOS---------------------
+	virtual void save(ofstream&) = 0;
+	virtual void read(ifstream&) = 0;
+
 	virtual string toString() = 0;
 };
 

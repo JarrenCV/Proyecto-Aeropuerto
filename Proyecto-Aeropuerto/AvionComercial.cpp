@@ -110,6 +110,24 @@ string AvionComercial::reporteSoloAviacion()
     return s.str();
 }
 
+void AvionComercial::save(ofstream& save)
+{
+    save << fechaCreacion->getDia() << " " << fechaCreacion->getMes() << " " << fechaCreacion->getAnio() << " " <<
+        distanciaRecorrida << " " << categoria << " " << tipoAvion << " " << getNumeroPlaca() << endl;
+}
+
+void AvionComercial::read(ifstream& read)
+{
+    int dia, mes, anio;
+    string numPlaca;
+    Fecha* fechaC;
+    read >> dia >> mes >> anio >> distanciaRecorrida >> categoria >> tipoAvion >> numPlaca;
+    
+    fechaC = new Fecha(dia, mes, anio);
+    this->fechaCreacion = fechaC;
+    setNumeroPlaca(numPlaca);
+}
+
 string AvionComercial::toString()
 {
     stringstream s;

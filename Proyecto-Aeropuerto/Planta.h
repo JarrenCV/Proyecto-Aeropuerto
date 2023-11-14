@@ -34,6 +34,9 @@ public:
 	//-----MISCELANEO--------
 	virtual void setGradoEscolaridad(string) = 0;
 	virtual string getGradoEscolaridad() = 0;
+	// ----------------------ARCHIVOS---------------------
+	virtual void save(ofstream&) = 0;
+	virtual void read(ifstream&) = 0;
 	//------toString-----
 	virtual string toString() = 0;
 };

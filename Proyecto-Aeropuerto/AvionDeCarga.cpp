@@ -102,7 +102,24 @@ string AvionDeCarga::reporteSoloAviacion()
     s << "Capacidad de pasajeros: " << TablaAviones::pasajeros(categoria);
     return s.str();
 }
+void AvionDeCarga::save(ofstream& save)
+{
+    save << fechaCreacion->getDia() << " " << fechaCreacion->getMes() << " " << fechaCreacion->getAnio() << " " <<
+        distanciaRecorrida << " " << categoria << " " << tipoAvion << " " << getNumeroPlaca() << " " << 
+        alturaPuerta << " " << anchuraPuerta << endl;
+}
 
+void AvionDeCarga::read(ifstream& read)
+{
+    int dia, mes, anio;
+    string numPlaca;
+    Fecha* fechaC;
+    read >> dia >> mes >> anio >> distanciaRecorrida >> categoria >> tipoAvion >> numPlaca >> alturaPuerta >> anchuraPuerta;
+
+    fechaC = new Fecha(dia, mes, anio);
+    this->fechaCreacion = fechaC;
+    setNumeroPlaca(numPlaca);
+}
 string AvionDeCarga::toString()
 {
     stringstream s;
