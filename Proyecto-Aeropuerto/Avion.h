@@ -40,7 +40,7 @@ public:
 	Empleado* getAzafata();
 
 	bool edadAvion(Fecha&);
-	virtual int getTipo() = 0;
+
 	//-------------------AVIACION CIVIL-------------------
 	virtual string tripulacionDeAvionComercial() = 0;
 	virtual void setNumeroPlaca(string) = 0;

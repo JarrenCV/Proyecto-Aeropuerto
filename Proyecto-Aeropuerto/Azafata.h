@@ -18,7 +18,6 @@ public:
 	void setNacionalidad(string);
 	string getNacionalidad();
 	//--------PILOTO---------
-	string reportePilotos();
 	void setAniosExperiencia(int);
 	int getAniosExperiencia();
 	//--------COPILOTO-------

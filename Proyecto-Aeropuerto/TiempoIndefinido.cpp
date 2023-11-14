@@ -20,29 +20,6 @@ int TiempoIndefinido::getTipoContrato()
     return 3;
 }
 
-string TiempoIndefinido::reporteTiempoIndefinido()
-{
-    stringstream s;
-
-    s << "CONTRATO DE TIEMPO INDEFINIDO" << endl
-        << "-----------------------------" << endl;
-    s << "Codigo de contrato: " << codigoContrato << endl
-        << "Descripcion de puesto: " << descripcionPuesto << endl
-        << "Salario" << salario << endl
-        << "Ingreso laboral: ";
-    s << ingresoLaboral->toString() << endl;
-    s << "Culminacion laboral" << endl;
-    s << culminacionLaboral->toString() << endl;
-    if (empContratado != NULL) {
-        s << empContratado->toString() << endl;
-        s << plaza->toString() << endl;
-    }
-    else
-        s << "El contrato no tiene asociado un empleado" << endl;
-
-    return s.str();
-}
-
 void TiempoIndefinido::setPlaza(Plaza& p)
 {
     plaza = (Plaza*)&p;
@@ -53,11 +30,6 @@ Plaza* TiempoIndefinido::getPlaza()
     return plaza;
 }
 
-string TiempoIndefinido::reportePlazoFijo()
-{
-    return "";
-}
-
 void TiempoIndefinido::setElegible(bool s)
 {
 }
@@ -65,11 +37,6 @@ void TiempoIndefinido::setElegible(bool s)
 bool TiempoIndefinido::getElegible()
 {
     return false;
-}
-
-string TiempoIndefinido::reporteServiciosProfecionales()
-{
-    return "";
 }
 
 void TiempoIndefinido::setHorario(string s)
@@ -88,11 +55,6 @@ string TiempoIndefinido::getHorario()
 string TiempoIndefinido::getTipoServicio()
 {
     return "-1";
-}
-
-string TiempoIndefinido::reportePlazoFijoMas2Anios()
-{
-    return "";
 }
 
 string TiempoIndefinido::toString()

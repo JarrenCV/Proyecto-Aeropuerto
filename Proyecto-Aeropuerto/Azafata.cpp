@@ -29,12 +29,6 @@ string Azafata::getNacionalidad()
     return nacionalidad;
 }
 
-string Azafata::reportePilotos()
-{
-    cout << "Aquí no hay pilotos";
-    return "";
-}
-
 void Azafata::setAniosExperiencia(int s)
 {
 }

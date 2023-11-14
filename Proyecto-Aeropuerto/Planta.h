@@ -19,7 +19,6 @@ public:
 	virtual int getTipoEmpleado() = 0;
 
 	//----------PILOTO-------
-	virtual string reportePilotos() = 0;
 	virtual void setAniosExperiencia(int) = 0;
 	virtual int getAniosExperiencia() = 0;
 	//--------COPILOTO-------

@@ -29,11 +29,6 @@ string Adminitrativo::getTituloUniversitario()
     return tituloUniversitario;
 }
 
-string Adminitrativo::reportePilotos()
-{
-    return "";
-}
-
 void Adminitrativo::setAniosExperiencia(int s)
 {
 }

@@ -47,7 +47,7 @@ string ListaContratos::reportePlazoFijoMas2Anios()
 
     s << "--------------------LISTADO DE CONTRATOS DE PLAZO FIJO CON 2 O MAS ANIOS--------------------" << endl;
     while (PE != NULL) {
-        if (PE->getContrato()->getHorario() == "-1" && PE->getContrato()->getPlaza() == NULL) {
+        if (PE->getContrato()->getTipoContrato() == 2) {
             if (PE->getContrato()->getElegible()) {
                 s << PE->getContrato()->toString() << endl; // Arreglar estos metodos ya que se llaman asi mismos y no tienen nada
                 PE = PE->getSigNodo();
@@ -72,8 +72,8 @@ string ListaContratos::reporteServiciosProfecionales()
 
     s << "--------------------LISTADO DE CONTRATOS DE SERVICIOS PROFESIONALES--------------------" << endl;
     while (PE != NULL) {
-        if (PE->getContrato()->getHorario() != "-1") {
-            s << PE->getContrato()->toString() << endl;// Arreglar estos metodos ya que se llaman asi mismos y no tienen nada
+        if (PE->getContrato()->getTipoContrato() == 1) {
+            s << PE->getContrato()->toString() << endl;  // Arreglar estos metodos ya que se llaman asi mismos y no tienen nada
             PE = PE->getSigNodo();
         }
         else {
@@ -92,7 +92,7 @@ string ListaContratos::reportePlazoFijo()
 
     s << "--------------------LISTADO DE CONTRATOS DE PLAZO FIJO--------------------" << endl;
     while (PE != NULL) {
-        if (PE->getContrato()->getPlaza() != NULL) {
+        if (PE->getContrato()->getTipoContrato() == 2) {
             s << PE->getContrato()->toString() << endl;// Arreglar estos metodos ya que se llaman asi mismos y no tienen nada
             PE = PE->getSigNodo();
         
@@ -114,8 +114,11 @@ string ListaContratos::reporteTiempoIndefinido()
 
     s << "--------------------LISTADO DE CONTRATOS DE TIEMPO INDEFINIDO--------------------" << endl;
     while (PE != NULL) {
-        s << PE->getContrato()->reporteTiempoIndefinido() << endl;// Arreglar estos metodos ya que se llaman asi mismos y no tienen nada
-        PE = PE->getSigNodo();
+        if (PE->getContrato()->getTipoContrato() == 3) {
+            s << PE->getContrato()->toString() << endl;// Arreglar estos metodos ya que se llaman asi mismos y no tienen nada
+            PE = PE->getSigNodo();
+        }
+       
     }
     s << "---------------------------------------------------------------------------------" << endl;
 

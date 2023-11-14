@@ -101,7 +101,6 @@ void InterfazContrato::ingresaPlazoFijo(Aeropuerto& aeropuerto, Fecha& actual)
 				elegible = true;
 			}
 
-
 			//(bool ele, string cContra, string dPuesto, double sal, Fecha& ingreso, Fecha& culmen)
 			contratoPF = new PlazoFijo(elegible, codContrato, descPuesto, salario, *ingreso, *culminacion);
 			aeropuerto.ingresaContrato(*contratoPF);

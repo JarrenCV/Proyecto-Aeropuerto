@@ -40,10 +40,17 @@ int ListaPlaza::cantidadNodos()
 {
     int cont = 0;
     NodoPlaza* PE = ppio;
-    while (PE->getSigNodo() != NULL) {
-        PE = PE->getSigNodo();
-        cont++;
+
+    if (ppio == NULL) {
+        return cont;
     }
+    else {
+        while (PE->getSigNodo() != NULL) {
+            PE = PE->getSigNodo();
+            cont++;
+        }
+    }
+
     return cont;
 }
 
@@ -51,9 +58,14 @@ bool ListaPlaza::buscaPlaza(string nPlaza)
 {
     NodoPlaza* PE = ppio;
 
-    while (PE != NULL) {
-        if (PE->getPlaza()->getCodPlaza() == nPlaza) {
-            return true;
+    if (ppio == NULL) {
+        return false;
+    }
+    else {
+        while (PE->getSigNodo() != NULL) {
+            if (PE->getPlaza()->getCodigoPlaza() == nPlaza) {
+                return true;
+            }
         }
     }
     return false;

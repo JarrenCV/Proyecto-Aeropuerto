@@ -41,17 +41,13 @@ public:
 	Fecha* getFechaIngreso();
 	Fecha* getFechaCulminacion(); 
 	Empleado* getEmpleadoContratado();
-//--------------------------------------
-	virtual string reporteServiciosProfecionales() = 0;
-	virtual string reportePlazoFijo() = 0;
-	virtual string reporteTiempoIndefinido() = 0;
+//--------------------------------------------
 	//----------SERVICIOS PROFESIONALES-------
 	virtual void setHorario(string) = 0;
 	virtual void setTipoServicio(string) = 0;
 	virtual string getHorario() = 0;
 	virtual string getTipoServicio() = 0;
 	//-----PLAZO FIJO----
-	virtual string reportePlazoFijoMas2Anios() = 0;
 	virtual void setElegible(bool) = 0;
 	virtual bool getElegible() = 0;
 	//-----TIEMPO INDEFINIDO----

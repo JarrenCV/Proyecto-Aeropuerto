@@ -54,60 +54,6 @@ Plaza* PlazoFijo::getPlaza()
     return NULL;
 }
 
-string PlazoFijo::reportePlazoFijoMas2Anios()
-{
-    stringstream s;
-    if (elegible == true)
-    {
-        s << "CONTRATO DE PLAZO FIJO " << endl
-            << "-----------------------------" << endl;
-        s << "Codigo de contrato: " << codigoContrato << endl
-            << "Descripcion de puesto: " << descripcionPuesto << endl
-            << "Salario" << salario << endl
-            << "Ingreso laboral: ";
-        s << ingresoLaboral->toString() << endl;
-        s << "Culminacion laboral" << endl;
-        s << culminacionLaboral->toString() << endl;
-    }
-
-    return s.str();
-}
-
-string PlazoFijo::reporteServiciosProfecionales()
-{
-    return "";
-}
-
-string PlazoFijo::reportePlazoFijo()
-{
-    stringstream s;
-
-    s << "CONTRATO DE PLAZO FIJO " << endl
-        << "-----------------------------" << endl;
-    s << "Codigo de contrato: " << codigoContrato << endl
-        << "Descripcion de puesto: " << descripcionPuesto << endl
-        << "Salario" << salario << endl
-        << "Ingreso laboral: ";
-    s << ingresoLaboral->toString() << endl;
-    s << "Culminacion laboral" << endl;
-    s << culminacionLaboral->toString() << endl;
-    if (empContratado != NULL)
-        s << empContratado->toString() << endl;
-    else
-        s << "El contrato no tiene asociado un empleado" << endl;
-    s << "Es elegible: ";
-    if (elegible == true)
-        s << "Si" << endl;
-    else
-        s << "No" << endl;
-    return s.str();
-}
-
-string PlazoFijo::reporteTiempoIndefinido()
-{
-    return "";
-}
-
 string PlazoFijo::toString()
 {
     stringstream s;

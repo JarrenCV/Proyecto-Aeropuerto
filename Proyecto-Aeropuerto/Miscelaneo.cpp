@@ -29,11 +29,6 @@ string Miscelaneo::getGradoEscolaridad()
     return gradoEscolaridad;
 }
 
-string Miscelaneo::reportePilotos()
-{
-    return "";
-}
-
 void Miscelaneo::setAniosExperiencia(int s)
 {
 }

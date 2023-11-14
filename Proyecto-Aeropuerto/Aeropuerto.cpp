@@ -289,8 +289,8 @@ string Aeropuerto::reporteAvionesMas20(Fecha& f)
 string Aeropuerto::reportePilotosAvionesCarga()
 {
 	stringstream s;
+	s << "-----------------------REPORTE PILOTOS DE AVIONES DE CARGA----------------" << endl;
 	if (contenedorAviones->getPpio() != NULL) {
-		s << "-----------------------REPORTE PILOTOS DE AVIONES DE CARGA----------------" << endl;
 		s << contenedorAviones->reportePilotosCarga();
 	}
 	else {

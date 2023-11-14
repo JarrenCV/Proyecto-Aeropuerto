@@ -28,11 +28,6 @@ void Plaza::setNombrePuesto(string nP)
     nombrePuesto = nP;
 }
 
-string Plaza::getCodPlaza()
-{
-    return codigoPlaza;
-}
-
 string Plaza::getCodigoPlaza()
 {
     return codigoPlaza;

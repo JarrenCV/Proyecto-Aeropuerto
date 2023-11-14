@@ -20,7 +20,6 @@ public:
 	string getGradoEscolaridad();
 	//-------------------TRIPULACION-------------------
 	//----------PILOTO-------
-	string reportePilotos();
 	void setAniosExperiencia(int);
 	int getAniosExperiencia();
 	//--------COPILOTO-------

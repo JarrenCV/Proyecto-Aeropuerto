@@ -140,6 +140,7 @@
     <ClInclude Include="Empleado.h" />
     <ClInclude Include="Fecha.h" />
     <ClInclude Include="InterfazAvion.h" />
+    <ClInclude Include="InterfazCargaDescarga.h" />
     <ClInclude Include="InterfazContrato.h" />
     <ClInclude Include="InterfazEmpleado.h" />
     <ClInclude Include="InterfazReporteConsulta.h" />
@@ -162,6 +163,7 @@
     <ClInclude Include="TablaAviones.h" />
     <ClInclude Include="TiempoIndefinido.h" />
     <ClInclude Include="Tripulacion.h" />
+    <ClInclude Include="Vinculaciones.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Adminitrativo.cpp" />
@@ -177,6 +179,7 @@
     <ClCompile Include="Empleado.cpp" />
     <ClCompile Include="Fecha.cpp" />
     <ClCompile Include="InterfazAvion.cpp" />
+    <ClCompile Include="InterfazCargaDescarga.cpp" />
     <ClCompile Include="InterfazContrato.cpp" />
     <ClCompile Include="InterfazEmpleado.cpp" />
     <ClCompile Include="InterfazReporteConsulta.cpp" />

@@ -29,9 +29,6 @@ public:
 	;
 	void setPlaza(Plaza&);
 	Plaza* getPlaza();
-	string reportePlazoFijoMas2Anios();
-	string reporteServiciosProfecionales();
-	string reportePlazoFijo();
-	string reporteTiempoIndefinido();
+
 	string toString();
 };

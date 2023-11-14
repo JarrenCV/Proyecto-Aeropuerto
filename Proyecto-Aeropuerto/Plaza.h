@@ -19,7 +19,6 @@ public:
 
 	void setCodigoPlaza(string);
 	void setNombrePuesto(string);
-	string getCodPlaza();
 	
 	string getCodigoPlaza();
 	string getNombrePuesto();
