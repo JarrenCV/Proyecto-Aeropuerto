@@ -31,5 +31,13 @@ public:
 	void setElegible(bool);
 	bool getElegible();
 	
+
+	string reporteServiciosProfecionales();
+	string reportePlazoFijo();
+	string reporteTiempoIndefinido();
+	// ----------------------ARCHIVOS---------------------
+	virtual void save(ofstream&);
+	virtual void read(ifstream&);
+
 	string toString();
 };

@@ -1,5 +1,8 @@
 #pragma once
 #include"NodoContrato.h"
+#include"PlazoFijo.h"
+#include"TiempoIndefinido.h"
+#include"ServicioProfesional.h"
 // Nombre de estudiantes:
 // Lesber Huerta Cornejo 
 // Jarren Chaves Vizcaíno
@@ -34,8 +37,11 @@ public:
 	string reporteServiciosProfecionales();
 	string reportePlazoFijo();
 	string reporteTiempoIndefinido();
-
 	string consultaPorCodContrato(string);
+	// ------ARCHIVOS----------
+	void saveAll(ofstream&);
+	void readAll(ifstream&);
+
 	string toString();
 };
 

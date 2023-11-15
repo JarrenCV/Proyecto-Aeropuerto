@@ -29,6 +29,13 @@ public:
 	;
 	void setPlaza(Plaza&);
 	Plaza* getPlaza();
+	string reportePlazoFijoMas2Anios();
+	string reporteServiciosProfecionales();
+	string reportePlazoFijo();
+	string reporteTiempoIndefinido();
+	// ----------------------ARCHIVOS---------------------
+	virtual void save(ofstream&);
+	virtual void read(ifstream&);
 
 	string toString();
 };

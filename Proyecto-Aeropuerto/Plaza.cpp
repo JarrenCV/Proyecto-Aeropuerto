@@ -38,13 +38,28 @@ string Plaza::getNombrePuesto()
     return nombrePuesto;
 }
 
+bool Plaza::getTomada()
+{
+    return tomada;
+}
+
+void Plaza::save(ofstream& save)
+{
+    save << codigoPlaza << "  " << nombrePuesto << "  " << tomada << endl;
+}
+
+void Plaza::read(ifstream& read)
+{
+    read >> codigoPlaza >> nombrePuesto >> tomada;
+}
+
 string Plaza::toString()
 {
     stringstream s;
     s << "Plaza: " << codigoPlaza << endl
         << "Nombre de puesto: " << nombrePuesto << endl
         << "Disponibilidad de plaza: ";
-    if (tomada == false)
+    if (tomada == true)
         s << "Ocupada" << endl;
     else
         s << "Disponible" << endl;

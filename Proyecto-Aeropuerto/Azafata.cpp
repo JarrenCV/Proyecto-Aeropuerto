@@ -74,6 +74,17 @@ string Azafata::getGradoEscolaridad()
     return "-1";
 }
 
+void Azafata::save(ofstream& save)
+{
+    save << tipoEmpleado << "  " << cedula << "  " << nombre << "  " <<
+        edad << "  " << nacionalidad << endl;
+}
+
+void Azafata::read(ifstream& read)
+{
+    read >> tipoEmpleado >> cedula >> nombre >> edad >> nacionalidad;
+}
+
 string Azafata::toString()
 {
     stringstream s;

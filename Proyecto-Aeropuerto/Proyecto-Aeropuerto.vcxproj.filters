@@ -147,6 +147,12 @@
     <ClInclude Include="ControladoraConsultas.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="InterfazEnlace.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InterfazArchivo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TablaAviones.cpp">
@@ -279,6 +285,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ControladoraConsultas.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InterfazEnlace.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InterfazArchivo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

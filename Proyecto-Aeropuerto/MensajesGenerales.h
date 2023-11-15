@@ -17,6 +17,7 @@ public:
 	static void msjErrorCedula();
 	static void msjErrorCedulaNoExiste();
 	static void msjErrorPlacaNoExiste();
+	static void msjErrorVelocidadNoExiste();
 	static void msjErrorEmpCategoria();
 	static void msjErrorContratoCategoria();
 	static void msjErrorCodigo();

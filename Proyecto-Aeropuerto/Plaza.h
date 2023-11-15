@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include<sstream>
+#include<fstream>
 using namespace std;
 // Nombre de estudiantes:
 // Lesber Huerta Cornejo 
@@ -22,6 +23,10 @@ public:
 	
 	string getCodigoPlaza();
 	string getNombrePuesto();
+	bool getTomada();
+	// ----------------------ARCHIVOS---------------------
+	void save(ofstream&);
+	void read(ifstream&);
 
 	string toString();
 };

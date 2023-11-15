@@ -74,6 +74,19 @@ string Miscelaneo::getTituloUniversitario()
     return "-1";
 }
 
+void Miscelaneo::save(ofstream& save)
+{
+    save << tipoEmpleado << "  " << cedula << "  " << nombre << "  " <<
+        edad << "  " << getLabor() << "  " << gradoEscolaridad <<  endl;
+}
+
+void Miscelaneo::read(ifstream& read)
+{
+    string labor;
+    read >> tipoEmpleado >> cedula >> nombre >> edad >> labor >> gradoEscolaridad;
+    setLabor(labor);
+}
+
 string Miscelaneo::toString()
 {
     stringstream s;

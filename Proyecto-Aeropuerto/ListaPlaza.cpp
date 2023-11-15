@@ -15,6 +15,19 @@ ListaPlaza::~ListaPlaza()
     }
 }
 
+Plaza* ListaPlaza::buscaPlazaPlaza(string codPlaza)
+{
+    NodoPlaza* PE = ppio;
+
+    while (PE != NULL) {
+        if (PE->getPlaza()->getCodigoPlaza() == codPlaza) {
+            return PE->getPlaza();
+        }
+        PE = PE->getSigNodo();
+    }
+    return NULL;
+}
+
 void ListaPlaza::ingresaPrimero(Plaza& p)
 {
     ppio = new NodoPlaza(p, ppio);
@@ -69,6 +82,29 @@ bool ListaPlaza::buscaPlaza(string nPlaza)
         }
     }
     return false;
+}
+
+void ListaPlaza::saveAll(ofstream& save)
+{
+    NodoPlaza* PE = ppio;
+    while (PE != NULL) {
+        PE->getPlaza()->save(save);
+        PE = PE->getSigNodo();
+    }
+}
+
+void ListaPlaza::readAll(ifstream& read)
+{
+    while (!read.eof()) {
+        string codPlaza, nombrePuesto;
+        read >> codPlaza >> nombrePuesto;
+
+        bool tomada;
+        read >> tomada;
+
+        Plaza* pla = new Plaza(codPlaza, nombrePuesto, tomada);
+        ingresaUltimo(*pla);
+    }
 }
 
 string ListaPlaza::toString()

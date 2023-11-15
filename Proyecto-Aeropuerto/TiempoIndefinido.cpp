@@ -10,6 +10,12 @@ TiempoIndefinido::TiempoIndefinido(Plaza& p, string cContra, string dPuesto, dou
     plaza = (Plaza*)&p;
 }
 
+TiempoIndefinido::TiempoIndefinido(string codContrato, string descripcionPuesto, double salario, Fecha& ingreso, Fecha& culminacion)
+    :Contrato(codContrato, descripcionPuesto, salario, ingreso, culminacion)
+{
+    plaza = NULL;
+}
+
 TiempoIndefinido::~TiempoIndefinido()
 {
     if (plaza != NULL) delete plaza;
@@ -55,6 +61,33 @@ string TiempoIndefinido::getHorario()
 string TiempoIndefinido::getTipoServicio()
 {
     return "-1";
+}
+
+void TiempoIndefinido::save(ofstream& save)
+{
+    save << codigoContrato << "  " << descripcionPuesto << "  " << salario << "  " <<
+        ingresoLaboral->getDia() << "  " << ingresoLaboral->getMes() << "  " << ingresoLaboral->getAnio() << "  " <<
+        culminacionLaboral->getDia() << "  " << culminacionLaboral->getMes() << "  " << culminacionLaboral->getAnio() << "  " <<
+        tipoContrato << endl;
+}
+
+void TiempoIndefinido::read(ifstream& read)
+{
+    int diaI, mesI, anioI, diaC, mesC, anioC;
+    Fecha* fechaI, * fechaC;
+ 
+    read >> codigoContrato >> descripcionPuesto >> salario >> diaI >> mesI >> anioI
+        >> diaC >> mesC >> anioC >> tipoContrato;
+
+    fechaI = new Fecha(diaI, mesI, anioI);
+    fechaC = new Fecha(diaC, mesC, anioC);
+    ingresoLaboral = fechaI;
+    culminacionLaboral = fechaC;
+}
+
+string TiempoIndefinido::reportePlazoFijoMas2Anios()
+{
+    return "";
 }
 
 string TiempoIndefinido::toString()

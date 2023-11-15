@@ -33,8 +33,8 @@ public:
 	//-----MISCELANEO--------
 	void setGradoEscolaridad(string);
 	string getGradoEscolaridad();
-
-
-
+	// ----------------------ARCHIVOS--------------
+	void save(ofstream&);
+	void read(ifstream&);
 	string toString();
 };

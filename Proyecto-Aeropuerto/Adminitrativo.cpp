@@ -74,6 +74,19 @@ string Adminitrativo::getGradoEscolaridad()
     return "-1";
 }
 
+void Adminitrativo::save(ofstream& save)
+{
+    save << tipoEmpleado << "  " << cedula << "  " << "  " << nombre << "  " <<
+        edad << "  " << getLabor() << "  " << tituloUniversitario << endl;
+}
+
+void Adminitrativo::read(ifstream& read)
+{
+    string labor;
+    read >> tipoEmpleado >> cedula >> nombre >> edad >> labor >> tituloUniversitario;
+    setLabor(labor);
+}
+
 string Adminitrativo::toString()
 {
     stringstream s;

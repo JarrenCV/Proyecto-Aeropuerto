@@ -1,5 +1,9 @@
 #pragma once
-#include"Empleado.h"
+#include"Piloto.h"
+#include"Copiloto.h"
+#include"Azafata.h"
+#include"Adminitrativo.h"
+#include"Miscelaneo.h"
 #include"Fecha.h"
 #include"Plaza.h"
 // Nombre de estudiantes:
@@ -11,9 +15,9 @@ protected:
 	string codigoContrato;
 	string descripcionPuesto;
 	double salario;
-	int tipoContrato;
 	Fecha* ingresoLaboral;
 	Fecha* culminacionLaboral;
+	int tipoContrato;
 	Empleado* empContratado;
 
 public:
@@ -53,6 +57,9 @@ public:
 	//-----TIEMPO INDEFINIDO----
 	virtual void setPlaza(Plaza&) = 0;
 	virtual Plaza* getPlaza() = 0;
+	// ----------------------ARCHIVOS---------------------
+	virtual void save(ofstream&) = 0;
+	virtual void read(ifstream&) = 0;
 	//------toString-----
 	virtual string toString() = 0;
 };

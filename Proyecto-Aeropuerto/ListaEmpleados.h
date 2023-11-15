@@ -1,5 +1,10 @@
 #pragma once
 #include"NodoEmpleado.h"
+#include"Piloto.h"
+#include"Copiloto.h"
+#include"Azafata.h"
+#include"Adminitrativo.h"
+#include"Miscelaneo.h"
 // Nombre de estudiantes:
 // Lesber Huerta Cornejo 
 // Jarren Chaves Vizcaíno
@@ -32,7 +37,10 @@ public:
 	void editaLabor(string, string); // Planta
 	void editaTituloUniversitario(string, string); // Administrativo
 	void editaGradoEscolaridad(string, string); // Miscelaneo
-	
+	// ------ARCHIVOS----------
+	void saveAll(ofstream&);
+	void readAll(ifstream&);
+
 	string toString();
 };
 

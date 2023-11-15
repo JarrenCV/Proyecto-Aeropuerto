@@ -13,6 +13,7 @@ public:
 
 	TiempoIndefinido();
 	TiempoIndefinido(Plaza&, string, string , double, Fecha&, Fecha&);
+	TiempoIndefinido(string, string, double, Fecha&, Fecha&);
 	
 	virtual ~TiempoIndefinido();
 
@@ -29,6 +30,9 @@ public:
 	void setTipoServicio(string);
 	string getHorario();
 	string getTipoServicio();
-	
+	// ----------------------ARCHIVOS---------------------
+	virtual void save(ofstream&);
+	virtual void read(ifstream&);
+	string reportePlazoFijoMas2Anios();
 	string toString();
 };

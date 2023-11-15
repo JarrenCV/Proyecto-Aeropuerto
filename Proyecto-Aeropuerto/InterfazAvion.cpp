@@ -131,7 +131,41 @@ int InterfazAvion::menuEdicionAvion()
 }
 void InterfazAvion::eliminaAvion(Aeropuerto& aeropuerto)
 {
+	string placa;
+	cout << "----------------ELIMINAR UN AVION-------------" << endl;
+	cout << "Digite la placa del avion que desea eliminar: "; cin >> placa;
+	if (aeropuerto.buscaPlaca(placa)) {
+		if (aeropuerto.buscaAvionPlaca(placa)->getTipoAvion() == 1) {
+			if (aeropuerto.buscaAvionPlaca(placa)->getPiloto() == NULL &&
+				aeropuerto.buscaAvionPlaca(placa)->getCopiloto() == NULL &&
+				aeropuerto.buscaAvionPlaca(placa)->getAzafata() == NULL) {
 
+				aeropuerto.eliminaAvionPorPlaca(placa);
+				MensajesGenerales::msjEliminacion();
+			}
+			else {
+				cout << "El avion aun tiene tripulacion asignada." << endl;
+			}
+		}
+		else {
+			if (aeropuerto.buscaAvionPlaca(placa)->getTipoAvion() == 2) {
+				if (aeropuerto.buscaAvionPlaca(placa)->getPiloto() == NULL &&
+					aeropuerto.buscaAvionPlaca(placa)->getCopiloto() == NULL) {
+
+					aeropuerto.eliminaAvionPorPlaca(placa);
+					MensajesGenerales::msjEliminacion();
+				}
+				else {
+					cout << "El avion aun tiene tripulacion asignada." << endl;
+				}
+
+			}
+		}
+
+	}
+	else {
+		MensajesGenerales::msjErrorPlacaNoExiste();
+	}
 }
 void InterfazAvion::editaPlacaAvionComercial(Aeropuerto& aeropuerto)
 {

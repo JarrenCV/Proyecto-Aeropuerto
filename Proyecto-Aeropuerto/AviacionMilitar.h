@@ -11,7 +11,6 @@ public:
 	AviacionMilitar();
 	AviacionMilitar(Fecha&, double, string, double);
 	virtual ~AviacionMilitar();
-	
 	int getTipoAvion();
 
 	//------AVION MILITAR--------
@@ -30,6 +29,10 @@ public:
 
 	string reporteAvionMas20(Fecha&);
 	string reporteSoloAviacion();
+	// ----------------------ARCHIVOS---------------------
+	virtual void save(ofstream&);
+	virtual void read(ifstream&);
+
 	string toString();
 
 };

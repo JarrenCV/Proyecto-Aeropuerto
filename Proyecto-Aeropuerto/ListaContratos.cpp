@@ -234,6 +234,55 @@ string ListaContratos::consultaPorCodContrato(string cod)
 
     return s.str();
 }
+void ListaContratos::saveAll(ofstream& save)
+{
+    NodoContrato* PE = ppio;
+    while (PE != NULL) {
+        PE->getContrato()->save(save);
+        PE = PE->getSigNodo();
+    }
+}
+void ListaContratos::readAll(ifstream& read)
+{
+    // Se asume que el archivo de contratos no tiene ninguna plaza ligada
+    while (read.eof()) {
+        string codContrato, descripcionPuesto;
+        read >> codContrato >> descripcionPuesto;
+
+        double salario;
+        read >> salario;
+
+        int diaI, mesI, anioI, diaC, mesC, anioC;
+        read >> diaI >> mesI >> anioI >> diaC >> mesC >> anioC;
+        Fecha* ingreso = new Fecha(diaI, mesI, anioI);
+        Fecha* culminacion = new Fecha(diaC, mesC, anioC);
+
+        int tipo;
+        read >> tipo;
+
+        if (tipo == 1) {
+            string horario, tipoServicio;
+            read >> horario >> tipoServicio;
+
+            Contrato* cont = new ServicioProfesional(horario, tipoServicio, codContrato, descripcionPuesto, salario, *ingreso, *culminacion);
+            ingresaUltimo(*cont);
+        }
+        if (tipo == 2) {
+            bool elegible;
+            read >> elegible;
+
+            Contrato* cont = new PlazoFijo(elegible, codContrato, descripcionPuesto, salario, *ingreso, *culminacion);
+            ingresaUltimo(*cont);
+        }
+        if (tipo == 3) {
+
+            Contrato* cont = new TiempoIndefinido(codContrato, descripcionPuesto, salario, *ingreso, *culminacion);
+            ingresaUltimo(*cont);
+
+        }
+
+    }
+}
 string ListaContratos::toString()
 {
     stringstream s;

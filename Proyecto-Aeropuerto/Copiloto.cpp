@@ -74,6 +74,17 @@ string Copiloto::getGradoEscolaridad()
     return "-1";
 }
 
+void Copiloto::save(ofstream& save)
+{
+    save << tipoEmpleado << "  " << cedula << "  " << "  " << nombre << "  " <<
+        edad << "  " << telefono << endl;
+}
+
+void Copiloto::read(ifstream& read)
+{
+    read >> tipoEmpleado >> cedula >> nombre >> edad >> telefono;
+}
+
 string Copiloto::toString()
 {
     stringstream s;

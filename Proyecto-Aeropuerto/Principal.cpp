@@ -3,6 +3,8 @@
 #include"InterfazAvion.h"
 #include"InterfazContrato.h"
 #include"InterfazReporteConsulta.h"
+#include"InterfazEnlace.h"
+#include"InterfazArchivo.h"
 #include"ControladoraPrincipal.h"
 
 int main() {
@@ -11,6 +13,14 @@ int main() {
 	//ListaContratos* contContratos = new ListaContratos();
 	//ListaPlaza* contPlazas = new ListaPlaza();
 
+	//(string nomE, string cedJur, string numTelf, ListaAviones& contAvion, ListaContratos& contContrato, ListaEmpleados& contEmpleado)
+	Aeropuerto* aeropuerto = new Aeropuerto("Aeropuerto Tilin", "11114-2314", "9861-4673", *contAviones, *contContratos, *contEmpleados,*contPlazas); // eso tilin 
+	ofstream empleado, avion, contrato, plaza;
+	ifstream empleadoEsc, avionEsc, contratoEsc, plazaEsc;
+	
+	int opcionPrincipal,d,m,a;
+	Fecha* actual;
+	
 	////(string nomE, string cedJur, string numTelf, ListaAviones& contAvion, ListaContratos& contContrato, ListaEmpleados& contEmpleado)
 	//Aeropuerto* aeropuerto = new Aeropuerto("Aeropuerto Tilin", "11114-2314", "9861-4673", *contAviones, *contContratos, *contEmpleados,*contPlazas); // eso tilin 
 
@@ -357,211 +367,410 @@ int main() {
 	//						break;
 	//					}
 
-	//					cin.get();
-	//					cin.get();
-	//					system("cls");
-	//				} while (opEdicionAvi != 6);
+				cin.get();
+				cin.get();	// system("pause") mas fino.
+				system("cls");
 
-	//				break;
-	//			}
-	//			case 3:
-	//			{
-	//				int opEdicionCont = 0;
-	//				do {
-	//					int opEdicionCont = InterfazContrato::menuEdicionContrato();
-	//					switch (opEdicionCont) {
-	//					case 1:
-	//					{
-	//						InterfazContrato::cambiaDescripcionPuesto(*aeropuerto); 
-	//						break;
-	//					}
-	//					case 2:
-	//					{
-	//						InterfazContrato::cambiaSalario(*aeropuerto);
-	//						break;
-	//					}
-	//					case 3:
-	//					{
-	//						InterfazContrato::cambiaHorario(*aeropuerto);
-	//						break;
-	//					}
-	//					case 4:
-	//					{
-	//						InterfazContrato::cambiaTipoServicio(*aeropuerto);
-	//						break;
-	//					}
-	//					case 5:
-	//					{
-	//						InterfazContrato::cambiaPuestoPlaza(*aeropuerto);
-	//						break;
-	//					}
-	//					case 6:
-	//					{
-	//						MensajesGenerales::msjRegreso();
-	//					}
-	//					default: 
-	//						MensajesGenerales::msjErrorRango();
-	//					}
+			} while (opcion != 4);
+			break;
+		}
+		case 2:
+		{
+			int opEdicion;
+			do {
+				opEdicion = MenuPrincipal::menuMantenimiento();
+				
+				switch (opEdicion){
+				case 1: 
+				{
+					int opEdicionEmp;
+					do {
+						opEdicionEmp = InterfazEmpleado::menuEdicionEmpleado();
 
-	//					cin.get();
-	//					cin.get();
-	//					system("cls");
-	//				} while (opEdicionCont);
-	//				break;
-	//			}
-	//			case 4:
-	//			{
-	//				MensajesGenerales::msjRegreso();
-	//				break;
-	//			}
-	//			default:
-	//			{
-	//				MensajesGenerales::msjErrorRango();
-	//				break; 
-	//			}
-	//			}
-	//			
-	//			
-	//			cin.get();
-	//			cin.get();
-	//		} while (opEdicion!=4);
-	//		break;
-	//	}
-	//	case 3: 
-	//	{
-	//		int opcion3;
-	//		do
-	//		{
-	//			opcion3 = MenuPrincipal::menuReportes();
-	//			switch (opcion3)
-	//			{
-	//			case 1:
-	//			{
-	//				InterfazReporteConsulta::reporteContratoEmpleado(*aeropuerto);
-	//				break;
-	//			}
-	//			case 2:
-	//			{
-	//				InterfazReporteConsulta::reporteAeronaveTripulacion(*aeropuerto);
-	//				break;
-	//			}
-	//			case 3:
-	//			{
-	//				InterfazReporteConsulta::reporteAeronave(*aeropuerto);
-	//				break;
-	//			}
-	//			case 4:
-	//			{
-	//				//Personas Contratadas
-	//				InterfazReporteConsulta::reporteContratoEmpleado(*aeropuerto);
-	//				break;
-	//			}
-	//			case 5:
-	//			{
-	//				InterfazReporteConsulta::reportePilotosAvionesDeCarga(*aeropuerto);
-	//				break;
-	//			}
-	//			case 6:
-	//			{
-	//				InterfazReporteConsulta::reporteAvionMas20Anios(*aeropuerto, *actual);
-	//				break;
-	//			}
-	//			case 7:
-	//			{
-	//				InterfazReporteConsulta::reporteServiciosProfesionales(*aeropuerto);
-	//				break;
-	//			}
-	//			case 8:
-	//			{
-	//				InterfazReporteConsulta::reportePlazoFijo(*aeropuerto);
-	//				break;
-	//			}
-	//			case 9:
-	//			{
-	//				InterfazReporteConsulta::reporteTiempoIndefinido(*aeropuerto);
-	//				break;
-	//			}
-	//			case 10:
-	//			{
-	//				InterfazReporteConsulta::reporteTripulacionAvionComercial(*aeropuerto);
-	//				break;
-	//			}
-	//			case 11:
-	//			{
-	//				InterfazReporteConsulta::reportePlazoFijo2Anios(*aeropuerto);
-	//				break;
-	//			}
-	//			case 12:
-	//			{
-	//				InterfazReporteConsulta::reporteAvionDeCargaMayorAreaAcceso(*aeropuerto);
-	//				break;
-	//			}
-	//			case 13:
-	//			{
-	//				MensajesGenerales::msjSalirSistema();
-	//				break;
-	//			}
-	//			default:
-	//				MensajesGenerales::msjErrorRango();
-	//			}
-	//			cin.get();
-	//			cin.get(); // system("pause") más fino
-	//			system("cls");
-	//		} while (opcion3 != 13);
-	//
-	//		break;
-	//	}
-	//	case 4: 
-	//	{
-	//		int opcion4;
-	//		do
-	//		{
-	//			opcion4 = MenuPrincipal::menuConsultas();
-	//			switch (opcion4)
-	//			{
-	//			case 1:
-	//			{
-	//				InterfazReporteConsulta::consultaEmpleado(*aeropuerto);
-	//				break;
-	//			}
-	//			case 2:
-	//			{
-	//				InterfazReporteConsulta::consultaContrato(*aeropuerto);
-	//				break;
-	//			}
-	//			case 3:
-	//			{
-	//				InterfazReporteConsulta::consultaAvion(*aeropuerto);
-	//				break;
-	//			}
-	//			case 4:
-	//			{
-	//				MensajesGenerales::msjRegreso();
-	//				break;
-	//			}
-	//			default:
-	//				MensajesGenerales::msjErrorRango();
-	//			}
-	//			cin.get();
-	//			cin.get(); // system("pause") más fino
-	//			system("cls");
-	//		} while (opcion4 != 4);
-	//		break;
-	//	}
-	//	case 5: 
-	//	{
-	//		MensajesGenerales::msjSalirSistema();
-	//		break;
-	//	}
-	//	default:
-	//	{
-	//		MensajesGenerales::msjErrorRango();
-	//	}
-	//	}
-	//	cin.get();
-	//	cin.get();	// system("pause") mas fino.
-	//	system("cls");
-	//}while (opcionPrincipal != 5);
+						switch (opEdicionEmp) {
+						case 1: 
+						{
+							InterfazEmpleado::eliminaEmpleado(*aeropuerto);
+							break;
+						}
+						case 2:
+						{
+							InterfazEmpleado::cambiaAniosExperiencia(*aeropuerto);
+							break;
+						}
+						case 3:
+						{
+							InterfazEmpleado::cambiaTelefono(*aeropuerto);
+							break;
+						}
+						case 4:
+						{
+							InterfazEmpleado::cambiaNacionalidad(*aeropuerto);
+							break;
+						}
+						case 5:
+						{
+							InterfazEmpleado::cambiaLabor(*aeropuerto);
+							break;
+						}
+						case 6:
+						{
+							InterfazEmpleado::cambiaTituloU(*aeropuerto);
+							break;
+						}
+						case 7:
+						{
+							InterfazEmpleado::cambiaGradoEsc(*aeropuerto);
+							break;
+						}
+						case 8: 
+						{
+							MensajesGenerales::msjRegreso();
+						}
+						default:
+							MensajesGenerales::msjErrorRango();
+						}// fin del switch
+					
+						cin.get();
+						cin.get();
+						system("cls");
+					} while (opEdicionEmp != 8);
+					break;
+				}
+				case 2:
+				{
+					// MANTENIMIENTO AVIONES
+					int opEdicionAvi;
+					do {
+						opEdicionAvi = InterfazAvion::menuEdicionAvion();
+
+						switch (opEdicionAvi) {
+						case 1:
+						{
+							InterfazAvion::eliminaAvion(*aeropuerto);
+							break;
+						}
+						case 2:
+						{
+							InterfazAvion::editaPlacaAvionComercial(*aeropuerto);
+							break;
+						}
+						case 3:
+						{
+							InterfazAvion::editaAnchuraPuerta(*aeropuerto);
+							break;
+						}
+						case 4:
+						{
+							InterfazAvion::editaAlturaPuerta(*aeropuerto);
+							break;
+						}
+						case 5:
+						{
+							InterfazAvion::editaDistanciaRecorrida(*aeropuerto);
+							break;
+						}
+						case 6:
+						{
+							MensajesGenerales::msjRegreso();
+							break;
+						}
+						default:
+							MensajesGenerales::msjErrorRango();
+							break;
+						}
+
+						cin.get();
+						cin.get();
+						system("cls");
+					} while (opEdicionAvi != 6);
+
+					break;
+				}
+				case 3:
+				{
+					int opEdicionCont = 0;
+					do {
+						int opEdicionCont = InterfazContrato::menuEdicionContrato();
+						switch (opEdicionCont) {
+						case 1:
+						{
+							InterfazContrato::cambiaDescripcionPuesto(*aeropuerto); 
+							break;
+						}
+						case 2:
+						{
+							InterfazContrato::cambiaSalario(*aeropuerto);
+							break;
+						}
+						case 3:
+						{
+							InterfazContrato::cambiaHorario(*aeropuerto);
+							break;
+						}
+						case 4:
+						{
+							InterfazContrato::cambiaTipoServicio(*aeropuerto);
+							break;
+						}
+						case 5:
+						{
+							InterfazContrato::cambiaPuestoPlaza(*aeropuerto);
+							break;
+						}
+						case 6:
+						{
+							MensajesGenerales::msjRegreso();
+						}
+						default: 
+							MensajesGenerales::msjErrorRango();
+						}
+
+						cin.get();
+						cin.get();
+						system("cls");
+					} while (opEdicionCont);
+					break;
+				}
+				case 4:
+				{
+					MensajesGenerales::msjRegreso();
+					break;
+				}
+				default:
+				{
+					MensajesGenerales::msjErrorRango();
+					break; 
+				}
+				}
+				
+				
+				cin.get();
+				cin.get();
+			} while (opEdicion!=4);
+			break;
+		}
+		case 3: 
+		{
+			int opcion3;
+			do
+			{
+				opcion3 = MenuPrincipal::menuReportes();
+				switch (opcion3)
+				{
+				case 1:
+				{
+					InterfazReporteConsulta::reporteContratoEmpleado(*aeropuerto);
+					break;
+				}
+				case 2:
+				{
+					InterfazReporteConsulta::reporteAeronaveTripulacion(*aeropuerto);
+					break;
+				}
+				case 3:
+				{
+					InterfazReporteConsulta::reporteAeronave(*aeropuerto);
+					break;
+				}
+				case 4:
+				{
+					//Personas Contratadas
+					InterfazReporteConsulta::reporteContratoEmpleado(*aeropuerto);
+					break;
+				}
+				case 5:
+				{
+					InterfazReporteConsulta::reportePilotosAvionesDeCarga(*aeropuerto);
+					break;
+				}
+				case 6:
+				{
+					InterfazReporteConsulta::reporteAvionMas20Anios(*aeropuerto, *actual);
+					break;
+				}
+				case 7:
+				{
+					InterfazReporteConsulta::reporteServiciosProfesionales(*aeropuerto);
+					break;
+				}
+				case 8:
+				{
+					InterfazReporteConsulta::reportePlazoFijo(*aeropuerto);
+					break;
+				}
+				case 9:
+				{
+					InterfazReporteConsulta::reporteTiempoIndefinido(*aeropuerto);
+					break;
+				}
+				case 10:
+				{
+					InterfazReporteConsulta::reporteTripulacionAvionComercial(*aeropuerto);
+					break;
+				}
+				case 11:
+				{
+					InterfazReporteConsulta::reportePlazoFijo2Anios(*aeropuerto);
+					break;
+				}
+				case 12:
+				{
+					InterfazReporteConsulta::reporteAvionDeCargaMayorAreaAcceso(*aeropuerto);
+					break;
+				}
+				case 13:
+				{
+					MensajesGenerales::msjSalirSistema();
+					break;
+				}
+				default:
+					MensajesGenerales::msjErrorRango();
+				}
+				cin.get();
+				cin.get(); // system("pause") más fino
+				system("cls");
+			} while (opcion3 != 13);
+	
+			break;
+		}
+		case 4: 
+		{
+			int opcion4;
+			do
+			{
+				opcion4 = MenuPrincipal::menuConsultas();
+				switch (opcion4)
+				{
+				case 1:
+				{
+					InterfazReporteConsulta::consultaEmpleado(*aeropuerto);
+					break;
+				}
+				case 2:
+				{
+					InterfazReporteConsulta::consultaContrato(*aeropuerto);
+					break;
+				}
+				case 3:
+				{
+					InterfazReporteConsulta::consultaAvion(*aeropuerto);
+					break;
+				}
+				case 4:
+				{
+					MensajesGenerales::msjRegreso();
+					break;
+				}
+				default:
+					MensajesGenerales::msjErrorRango();
+				}
+				cin.get();
+				cin.get(); // system("pause") más fino
+				system("cls");
+			} while (opcion4 != 4);
+			break;
+		}
+		case 5: 
+		{
+			int op;
+			do
+			{
+				op = InterfazEnlace::menuEnlace();
+				
+				switch (op) {
+				case 1:
+				{
+					InterfazEnlace::enlacePilotoAvion(*aeropuerto);
+					break;
+				}
+				case 2:
+				{
+					InterfazEnlace::enlaceCopilotoAvion(*aeropuerto);
+					
+					break;
+				}
+				case 3:
+				{
+					InterfazEnlace::enlaceAzafataAvion(*aeropuerto);
+					
+					break;
+				}
+				case 4:
+				{
+					InterfazEnlace::enlaceContratoEmpleado(*aeropuerto);
+					
+					break;
+				}
+				case 5:
+				{
+					InterfazEnlace::enlaceContratoPlaza(*aeropuerto);
+					
+					break;
+				}
+				case 6:
+				{
+					MensajesGenerales::msjRegreso();
+					break;
+				}
+				default:
+					MensajesGenerales::msjErrorRango();
+					break;
+				}
+				cin.get();
+				cin.get();
+			} while (op != 6);
+
+			break;
+		}
+		case 6:
+		{
+			// -----------CARGA Y DESCARGA DE ARCHIVOS--------------
+			int opArch;
+			do{
+				opArch = InterfazArchivo::menuArchivo();
+				
+
+				switch (opArch) {
+				case 1:
+				{
+					InterfazArchivo::descargarArchivo(empleadoEsc, avionEsc, contratoEsc, plazaEsc, *aeropuerto);
+					break;
+				}
+				case 2:
+				{
+					InterfazArchivo::cargarArchivos(empleado, avion, contrato, plaza, *aeropuerto);
+					break;
+				}
+				case 3:
+				{
+					MensajesGenerales::msjRegreso();
+					break;
+				}
+				default:
+					MensajesGenerales::msjErrorRango();
+					break;
+				}
+
+				cin.get();
+				cin.get();
+			} while (opArch != 3);
+			break;
+		}
+		case 7:
+		{
+			MensajesGenerales::msjSalirSistema();
+			break;
+		}
+		default:
+		{
+			MensajesGenerales::msjErrorRango();
+		}
+		}
+		cin.get();
+		cin.get();	// system("pause") mas fino.
+		system("cls");
+	}while (opcionPrincipal != 5);
 
 	system("pause");
 	return 0;
