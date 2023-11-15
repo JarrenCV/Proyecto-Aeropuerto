@@ -29,9 +29,11 @@ void ControladoraMantenimiento::control0(Aeropuerto& ar)
 		}
 		case 3: {
 			control3(ar);
+			break;
 		}
 		case 4: {
 			MensajesGenerales::msjRegreso();
+			break;
 		}
 		default: MensajesGenerales::msjErrorRango(); break;
 		};
