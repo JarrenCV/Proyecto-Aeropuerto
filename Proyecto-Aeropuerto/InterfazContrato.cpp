@@ -278,7 +278,7 @@ void InterfazContrato::cambiaPuestoPlaza(Aeropuerto& aeropuerto)
 		if (aeropuerto.esTiempoIndefinido(codigo)) {
 
 			cout << "Digite el nuevo nombre del puesto de la plaza asignada al contrato por tiempo indefinido: "; cin >> nombrePuesto;
-			aeropuerto.cambiaTipoServicio(codigo, nombrePuesto);
+			aeropuerto.cambiaNombrePuestoPlaza(codigo, nombrePuesto);
 			MensajesGenerales::msjEdicionExitosa();
 		}
 		else {
