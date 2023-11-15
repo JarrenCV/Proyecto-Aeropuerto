@@ -39,7 +39,6 @@ public:
 	void save(ofstream&);
 	void read(ifstream&);
 
-
 	string toString();
 };
 

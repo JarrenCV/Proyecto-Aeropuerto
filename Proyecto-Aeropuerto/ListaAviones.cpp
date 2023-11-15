@@ -40,7 +40,28 @@ void ListaAviones::ingresaUltimo(Avion& avi)
         PE->setSigNodo(nuevo);
     }
 }
+bool ListaAviones::eliminaAvionPorPlaca(string placa)
+{
+    NodoAvion* PE = ppio;
+    NodoAvion* elimina = NULL;
 
+    if (PE->getAvion()->getNumeroPlaca() == placa) {
+        elimina = PE;
+        ppio->setSigNodo(elimina->getSigNodo());
+        delete elimina;
+        return true;
+    }
+    while (PE->getSigNodo() != NULL) {
+        if (PE->getSigNodo()->getAvion()->getNumeroPlaca() == placa) {
+            elimina = PE->getSigNodo();
+            PE->setSigNodo(elimina->getSigNodo());
+            delete elimina;
+            return true;
+        }
+        PE = PE->getSigNodo();
+    }
+    return false;
+}
 bool ListaAviones::existeAvionConPlaca(string numP)
 {
     NodoAvion* PE = ppio;
@@ -54,12 +75,38 @@ bool ListaAviones::existeAvionConPlaca(string numP)
     return false;
 }
 
+bool ListaAviones::existeAvionVelocidad(double velocidad)
+{
+    NodoAvion* PE = ppio;
+
+    while (PE != NULL) {
+        if (PE->getAvion()->getVelocidadMaxima() == velocidad) {
+            return true;
+        }
+        PE = PE->getSigNodo();
+    }
+    return false;
+}
+
 Avion* ListaAviones::buscaAvionPlaca(string numP)
 {
     NodoAvion* PE = ppio;
 
     while (PE != NULL) {
         if (PE->getAvion()->getNumeroPlaca() == numP) {
+            return PE->getAvion();
+        }
+        PE = PE->getSigNodo();
+    }
+    return NULL;
+}
+
+Avion* ListaAviones::buscaAvionVelocidad(double velocidad)
+{
+    NodoAvion* PE = ppio;
+
+    while (PE != NULL) {
+        if (PE->getAvion()->getVelocidadMaxima() == velocidad) {
             return PE->getAvion();
         }
         PE = PE->getSigNodo();
@@ -230,6 +277,59 @@ string ListaAviones::avionesMas20(Fecha& f)
     }
     s << "------------------------------------------------------------------------------" << endl;
     return s.str();
+}
+
+void ListaAviones::saveAll(ofstream& save)
+{
+    NodoAvion* PE = ppio;
+
+    while (PE != NULL) {
+        PE->getAvion()->save(save);
+        PE = PE->getSigNodo();
+    }
+}
+
+void ListaAviones::readAll(ifstream& read)
+{
+    // Se asume que el archivo txt no tiene informacion de la tripulacion del avion.
+    while (!read.eof()) {
+        int dia, mes, anio;
+        read >> dia >> mes >> anio;
+        Fecha* creacion = new Fecha(dia, mes, anio);
+
+        double distanciaRecorrida;
+        read >> distanciaRecorrida;
+
+        string categoria;
+        read >> categoria;
+
+        int tipoAvion;
+        read >> tipoAvion;
+        
+        if (tipoAvion == 1) {
+            string numPlaca;
+            read >> numPlaca;
+            
+            Avion* avi = new AvionComercial(*creacion, distanciaRecorrida, categoria, numPlaca);
+            ingresaUltimo(*avi);
+        }
+        if (tipoAvion == 2) {
+            string numPlaca;
+            read >> numPlaca;
+            double alturaP, anchuraP;
+            read >> alturaP >> anchuraP;
+
+            Avion* avi = new AvionDeCarga(*creacion, distanciaRecorrida, categoria, numPlaca, alturaP,anchuraP);
+            ingresaUltimo(*avi);
+        }
+        if (tipoAvion == 3) {
+            double velocidadMax;
+            read >> velocidadMax;
+
+            Avion* avi = new AviacionMilitar(*creacion, distanciaRecorrida, categoria, velocidadMax);
+            ingresaUltimo(*avi);
+        }
+    }
 }
 
 string ListaAviones::toString()

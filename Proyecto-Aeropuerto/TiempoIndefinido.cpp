@@ -10,6 +10,12 @@ TiempoIndefinido::TiempoIndefinido(Plaza& p, string cContra, string dPuesto, dou
     plaza = (Plaza*)&p;
 }
 
+TiempoIndefinido::TiempoIndefinido(string codContrato, string descripcionPuesto, double salario, Fecha& ingreso, Fecha& culminacion)
+    :Contrato(codContrato, descripcionPuesto, salario, ingreso, culminacion)
+{
+    plaza = NULL;
+}
+
 TiempoIndefinido::~TiempoIndefinido()
 {
     if (plaza != NULL) delete plaza;

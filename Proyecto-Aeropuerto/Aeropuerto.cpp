@@ -16,6 +16,7 @@ Aeropuerto::~Aeropuerto()
 	if (contenedorAviones != NULL) delete contenedorAviones;
 	if (contenedorContratos != NULL) delete contenedorContratos;
 	if (contenedorEmpleados != NULL) delete contenedorEmpleados;
+	if (contenedorPlazas != NULL) delete contenedorPlazas;
 }
 
 ListaAviones* Aeropuerto::getListaAviones()
@@ -149,6 +150,10 @@ void Aeropuerto::editaGradoEscolaridad(string ced, string gradoEsc)
 {
 	contenedorEmpleados->editaGradoEscolaridad(ced, gradoEsc);
 }
+bool Aeropuerto::eliminaAvionPorPlaca(string placa)
+{
+	return contenedorAviones->eliminaAvionPorPlaca(placa);
+}
 // AVIONES
 void Aeropuerto::quitaPiloto(string ced)
 {
@@ -184,6 +189,14 @@ bool Aeropuerto::buscaCodigoContrato(string cod)
 {
 	return contenedorContratos->buscaCodigo(cod);
 }
+Contrato* Aeropuerto::buscaContrato(string codContrato)
+{
+	return contenedorContratos->buscaContrato(codContrato);
+}
+Empleado* Aeropuerto::buscaEmpleado(string ced)
+{
+	return contenedorEmpleados->buscaEmpleado(ced);
+}
 bool Aeropuerto::eliminaContratoPorCedula(string ced)
 {
 	return contenedorContratos->eliminaContratoPorCedula(ced);
@@ -211,6 +224,31 @@ void Aeropuerto::cambiaNombrePuestoPlaza(string cod, string nombrePuesto)
 Contrato* Aeropuerto::buscaContratoDeEmpleado(string ced)
 {
 	return contenedorContratos->buscaContratoPorCedula(ced);
+}
+
+Avion* Aeropuerto::buscaAvionPlaca(string placa)
+{
+	return contenedorAviones->buscaAvionPlaca(placa);
+}
+
+Avion* Aeropuerto::buscaAvionVelocidad(double velocidad)
+{
+	return contenedorAviones->buscaAvionVelocidad(velocidad);
+}
+
+bool Aeropuerto::buscaPlaza(string codPlaza)
+{
+	return contenedorPlazas->buscaPlaza(codPlaza);
+}
+
+Plaza* Aeropuerto::buscaPlazaPlaza(string codPlaza)
+{
+	return contenedorPlazas->buscaPlazaPlaza(codPlaza);
+}
+
+bool Aeropuerto::existeAvionVelocidad(double velocidad)
+{
+	return contenedorAviones->existeAvionVelocidad(velocidad);
 }
 
 string Aeropuerto::aviacionCivilPorPlaca(string pla)

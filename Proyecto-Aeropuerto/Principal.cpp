@@ -3,7 +3,8 @@
 #include"InterfazAvion.h"
 #include"InterfazContrato.h"
 #include"InterfazReporteConsulta.h"
-
+#include"InterfazEnlace.h"
+#include"InterfazArchivo.h"
 
 int main() {
 	ListaEmpleados* contEmpleados = new ListaEmpleados();
@@ -13,7 +14,8 @@ int main() {
 
 	//(string nomE, string cedJur, string numTelf, ListaAviones& contAvion, ListaContratos& contContrato, ListaEmpleados& contEmpleado)
 	Aeropuerto* aeropuerto = new Aeropuerto("Aeropuerto Tilin", "11114-2314", "9861-4673", *contAviones, *contContratos, *contEmpleados,*contPlazas); // eso tilin 
-
+	ofstream empleado, avion, contrato, plaza;
+	ifstream empleadoEsc, avionEsc, contratoEsc, plazaEsc;
 	
 	int opcionPrincipal,d,m,a;
 	Fecha* actual;
@@ -312,16 +314,7 @@ int main() {
 						switch (opEdicionAvi) {
 						case 1:
 						{
-							//LESBER LO HACE ...................................... LESBER LO HACE ................. LESBER LO HACE .................. LESBER LO HACE ...
-							string cedula;
-							cout << "----------------ELIMINAR UN AVION-------------" << endl;
-							cout << "Digite la cedula del Empleado que desea eliminar: "; cin >> cedula;
-							
-							
-							
-							
-							
-							
+							InterfazAvion::eliminaAvion(*aeropuerto);
 							break;
 						}
 						case 2:
@@ -547,11 +540,89 @@ int main() {
 		}
 		case 5: 
 		{
-			// -----------MENU ENLACES---------------
+			int op;
+			do
+			{
+				op = InterfazEnlace::menuEnlace();
+				
+				switch (op) {
+				case 1:
+				{
+					InterfazEnlace::enlacePilotoAvion(*aeropuerto);
+					break;
+				}
+				case 2:
+				{
+					InterfazEnlace::enlaceCopilotoAvion(*aeropuerto);
+					
+					break;
+				}
+				case 3:
+				{
+					InterfazEnlace::enlaceAzafataAvion(*aeropuerto);
+					
+					break;
+				}
+				case 4:
+				{
+					InterfazEnlace::enlaceContratoEmpleado(*aeropuerto);
+					
+					break;
+				}
+				case 5:
+				{
+					InterfazEnlace::enlaceContratoPlaza(*aeropuerto);
+					
+					break;
+				}
+				case 6:
+				{
+					MensajesGenerales::msjRegreso();
+					break;
+				}
+				default:
+					MensajesGenerales::msjErrorRango();
+					break;
+				}
+				cin.get();
+				cin.get();
+			} while (op != 6);
+
+			break;
 		}
 		case 6:
 		{
 			// -----------CARGA Y DESCARGA DE ARCHIVOS--------------
+			int opArch;
+			do{
+				opArch = InterfazArchivo::menuArchivo();
+				
+
+				switch (opArch) {
+				case 1:
+				{
+					InterfazArchivo::descargarArchivo(empleadoEsc, avionEsc, contratoEsc, plazaEsc, *aeropuerto);
+					break;
+				}
+				case 2:
+				{
+					InterfazArchivo::cargarArchivos(empleado, avion, contrato, plaza, *aeropuerto);
+					break;
+				}
+				case 3:
+				{
+					MensajesGenerales::msjRegreso();
+					break;
+				}
+				default:
+					MensajesGenerales::msjErrorRango();
+					break;
+				}
+
+				cin.get();
+				cin.get();
+			} while (opArch != 3);
+			break;
 		}
 		case 7:
 		{

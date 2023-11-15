@@ -151,6 +151,66 @@ void ListaEmpleados::editaGradoEscolaridad(string ced, string gradoEsc)
     buscaEmpleado(ced)->setGradoEscolaridad(gradoEsc);
 }
 
+void ListaEmpleados::saveAll(ofstream& save)
+{
+    NodoEmpleado* PE = ppio;
+
+    while (PE != NULL) {
+        PE->getEmpleado()->save(save);
+        PE = PE->getSigNodo();
+    }
+}
+
+void ListaEmpleados::readAll(ifstream& read)
+{
+    while (!read.eof()) {
+        int tipo;
+        read >> tipo;
+
+        string cedula, nombre;
+        read >> cedula, nombre;
+
+        int edad;
+        read >> edad;
+
+        if (tipo == 1) {
+            int aniosExp;
+            read >> aniosExp;
+
+            Empleado* emp = new Piloto(cedula, nombre, edad, aniosExp);
+            ingresaUltimo(*emp);
+        }
+        if (tipo == 2) {
+            string telefono;
+            read >> telefono;
+            
+            Empleado* emp = new Copiloto(cedula, nombre, edad, telefono);
+            ingresaUltimo(*emp);
+        }
+        if (tipo == 3) {
+            string nacionalidad;
+            read >> nacionalidad;
+
+            Empleado* emp = new Azafata(cedula, nombre, edad, nacionalidad);
+            ingresaUltimo(*emp);
+        }
+        if (tipo == 4) {
+            string labor, tituloU;
+            read >> labor >> tituloU;
+
+            Empleado* emp = new Adminitrativo(cedula, nombre, edad, labor, tituloU);
+            ingresaUltimo(*emp);
+        }
+        if (tipo == 5) {
+            string labor, gradoEsc;
+            read >> labor >> gradoEsc;
+
+            Empleado* emp = new Miscelaneo(cedula, nombre, edad, labor, gradoEsc);
+            ingresaUltimo(*emp);
+        }
+    }
+}
+
 string ListaEmpleados::toString()
 {
     stringstream s;

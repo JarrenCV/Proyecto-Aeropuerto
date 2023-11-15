@@ -13,6 +13,7 @@ public:
 
 	TiempoIndefinido();
 	TiempoIndefinido(Plaza&, string, string , double, Fecha&, Fecha&);
+	TiempoIndefinido(string, string, double, Fecha&, Fecha&);
 	
 	virtual ~TiempoIndefinido();
 

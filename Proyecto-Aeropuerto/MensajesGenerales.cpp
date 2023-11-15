@@ -42,6 +42,10 @@ void MensajesGenerales::msjErrorPlacaNoExiste()
 	cout << "ERROR: El numero de placa NO existe en el sistema" << endl;
 }
 
+void MensajesGenerales::msjErrorVelocidadNoExiste()
+{
+	cout << "ERROR: Un avion con esa velocidad NO existe en el sistema" << endl;
+}
 void MensajesGenerales::msjErrorEmpCategoria()
 {
 	cout << "ERROR: El empleado no es de la categoria seleccionada" << endl;

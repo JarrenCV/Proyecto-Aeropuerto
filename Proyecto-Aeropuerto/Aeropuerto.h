@@ -58,6 +58,7 @@ public:
 	void editaGradoEscolaridad(string, string); // Miscelaneo
 
 	// ------------------------CAMBIOS EN AVIONES--------------------------
+	bool eliminaAvionPorPlaca(string);
 	void quitaPiloto(string);
 	void quitaCopiloto(string);
 	void quitaAzafata(string);
@@ -69,7 +70,14 @@ public:
 
 	// ------------------------CAMBIOS EN CONTRATOS--------------------------
 	bool buscaCodigoContrato(string);
+	Contrato* buscaContrato(string);
+	Empleado* buscaEmpleado(string);
 	Contrato* buscaContratoDeEmpleado(string);
+	Avion* buscaAvionPlaca(string);
+	Avion* buscaAvionVelocidad(double);
+	bool buscaPlaza(string);
+	Plaza* buscaPlazaPlaza(string);
+	bool existeAvionVelocidad(double);
 	bool eliminaContratoPorCedula(string);
 	void cambiaDescripcionPuesto(string, string);
 	void cambiaSalario(string, double);

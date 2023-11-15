@@ -13,10 +13,16 @@ public:
 	ListaPlaza();
 	virtual ~ListaPlaza();
 
+	
+	Plaza* buscaPlazaPlaza(string);
 	void ingresaPrimero(Plaza&);
 	void ingresaUltimo(Plaza&);
 	int cantidadNodos();
 	bool buscaPlaza(string);
+
+	// ----------------------ARCHIVOS---------------------
+	void saveAll(ofstream&);
+	void readAll(ifstream&);
 
 	string toString();
 };

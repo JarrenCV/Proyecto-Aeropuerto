@@ -11,7 +11,6 @@ public:
 	AviacionMilitar();
 	AviacionMilitar(Fecha&, double, string, double);
 	virtual ~AviacionMilitar();
-	
 	int getTipoAvion();
 
 	//------AVION MILITAR--------
