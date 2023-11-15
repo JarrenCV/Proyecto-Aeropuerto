@@ -10,7 +10,8 @@ int MenuPrincipal::menuPrincipal()
 	cout << "Digite (2)				Mantenimiento" << endl;
 	cout << "Digite (3)				Reportes" << endl;
 	cout << "Digite (4)				Consultas" << endl;
-	cout << "Digite (5)				Salir" << endl;
+	cout << "Digite (5)				Enlaces(archivos)" << endl;
+	cout << "Digite (5)				Archivos(permanencia de datos)" << endl;
 	cout << "--------------------------------------------------" << endl;
 	cout << "Digite la opcion: "; cin >> op;
 

@@ -69,6 +69,19 @@ string ServicioProfesional::toString()
     if (empContratado != NULL) {
         s << empContratado->toString() << endl;
     }
+    else {
+        s << "CONTRATO DE SERVICIO PROFESIONAL" << endl
+            << "-----------------------------" << endl;
+        s << "Codigo de contrato: " << codigoContrato << endl
+            << "Descripcion de puesto: " << descripcionPuesto << endl
+            << "Salario" << salario << endl
+            << "Ingreso laboral: ";
+        s << ingresoLaboral->toString() << endl;
+        s << "Culminacion laboral" << endl
+            << "Horario: " << horario << endl
+            << "Tipo de servicio: " << tipoServicio << endl;
+    }
+   
     return s.str();
 }
 
@@ -103,22 +116,4 @@ void ServicioProfesional::read(ifstream& read)
     fechaC = new Fecha(diaC, mesC, anioC);
     ingresoLaboral = fechaI;
     culminacionLaboral = fechaC;
-}
-
-string ServicioProfesional::toString()
-{
-    stringstream s;
-    if (empContratado != NULL) {
-    s << "CONTRATO DE SERVICIO PROFESIONAL" << endl
-        << "-----------------------------" << endl;
-    s << "Codigo de contrato: " << codigoContrato << endl
-        << "Descripcion de puesto: " << descripcionPuesto << endl
-        << "Salario" << salario << endl
-        << "Ingreso laboral: ";
-    s << ingresoLaboral->toString() << endl;
-    s << "Culminacion laboral" << endl;
-    s << culminacionLaboral->toString() << endl
-            << "Horario: " << horario << endl
-            << "Tipo de servicio: " << tipoServicio << endl;
-    return s.str();
 }

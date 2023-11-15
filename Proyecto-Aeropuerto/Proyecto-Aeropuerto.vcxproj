@@ -136,10 +136,12 @@
     <ClInclude Include="AvionDeCarga.h" />
     <ClInclude Include="Azafata.h" />
     <ClInclude Include="Contrato.h" />
+    <ClInclude Include="ControladoraArchivos.h" />
     <ClInclude Include="ControladoraAvion.h" />
     <ClInclude Include="ControladoraConsultas.h" />
     <ClInclude Include="ControladoraContrato.h" />
     <ClInclude Include="ControladoraEmpleados.h" />
+    <ClInclude Include="ControladoraEnlace.h" />
     <ClInclude Include="ControladoraIngresos.h" />
     <ClInclude Include="ControladoraMantenimiento.h" />
     <ClInclude Include="ControladoraPrincipal.h" />
@@ -184,10 +186,12 @@
     <ClCompile Include="AvionDeCarga.cpp" />
     <ClCompile Include="Azafata.cpp" />
     <ClCompile Include="Contrato.cpp" />
+    <ClCompile Include="ControladoraArchivos.cpp" />
     <ClCompile Include="ControladoraAvion.cpp" />
     <ClCompile Include="ControladoraConsultas.cpp" />
     <ClCompile Include="ControladoraContrato.cpp" />
     <ClCompile Include="ControladoraEmpleados.cpp" />
+    <ClCompile Include="ControladoraEnlace.cpp" />
     <ClCompile Include="ControladoraIngresos.cpp" />
     <ClCompile Include="ControladoraMantenimiento.cpp" />
     <ClCompile Include="ControladoraPrincipal.cpp" />

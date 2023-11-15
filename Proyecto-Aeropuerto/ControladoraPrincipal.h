@@ -8,6 +8,8 @@
 #include"ControladoraMantenimiento.h"
 #include"ControladoraReportes.h"
 #include"ControladoraConsultas.h"
+#include"ControladoraEnlace.h"
+#include"ControladoraArchivos.h"
 
 class ControladoraPrincipal {
 private:
@@ -17,10 +19,14 @@ private:
 	ListaContratos* contContratos;
 	ListaPlaza* contPlazas;
 	Fecha* fecha;
+	ofstream empleado, avion, contrato, plaza;
+	ifstream empleadoEsc, avionEsc, contratoEsc, plazaEsc;
 	ControladoraIngresos contrIngresos;
 	ControladoraMantenimiento contrMant;
 	ControladoraReportes contrReport;
 	ControladoraConsultas contrCons;
+	ControladoraEnlace contrEnlace;
+	ControladoraArchivo contrArchi;
 
 public:
 
@@ -36,5 +42,6 @@ public:
 	void controlMantenimiento();
 	void controlReportes();
 	void controlConsultas();
-
+	void controlEnlaces();
+	void controlArchivos();
 };

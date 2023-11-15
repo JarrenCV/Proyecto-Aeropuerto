@@ -30,8 +30,8 @@ void ControladoraPrincipal::control0() {
 		case 2: controlMantenimiento(); break;
 		case 3: controlReportes(); break;
 		case 4: controlConsultas(); break;
-		case 5: break;
-		case 6: break;
+		case 5: controlEnlaces(); break;
+		case 6: controlArchivos(); break;
 		case 7:  MensajesGenerales::msjRegreso(); break;
 		default: MensajesGenerales::msjErrorRango(); 
 		} 
@@ -55,4 +55,14 @@ void ControladoraPrincipal::controlReportes()
 void ControladoraPrincipal::controlConsultas()
 {
 	contrCons.control0Cons(*aeropuerto);
+}
+
+void ControladoraPrincipal::controlEnlaces()
+{
+	contrEnlace.control0(*aeropuerto);
+}
+
+void ControladoraPrincipal::controlArchivos()
+{
+	contrArchi.control0(*aeropuerto, empleadoEsc, avionEsc, contratoEsc, plazaEsc, empleado, avion, contrato, plaza);
 }
